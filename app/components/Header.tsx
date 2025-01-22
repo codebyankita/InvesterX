@@ -1,70 +1,81 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import Button from './Button';
-// import Dropdown from './Dropdown';
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
- // Track scroll direction
- useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
 
-    if (currentScrollY > lastScrollY && currentScrollY > 50) {
-      // Scroll down
-      setShowHeader(false);
-    } else {
-      // Scroll up
-      setShowHeader(true);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Handle hover state for Pages
+  const handleHoverEnter = () => {
+    if (!isDropdownOpen) {
+      setIsHovered(true);
     }
-
-    setLastScrollY(currentScrollY);
   };
 
-  window.addEventListener('scroll', handleScroll);
-
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
+  const handleHoverLeave = () => {
+    if (!isDropdownOpen) {
+      setIsHovered(false);
+    }
   };
-}, [lastScrollY]);
 
-// Open dropdown on hover
-const handleMouseEnter = () => setIsDropdownOpen(true);
-const handleMouseLeave = () => setIsDropdownOpen(false);
+  // Toggle dropdown on click
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(prev => !prev);
+  };
+
+  // Close dropdown when navigating away from Pages
+  const handleNavigateAway = () => {
+    if (isHovered || isDropdownOpen) {
+      setIsDropdownOpen(false);
+      setIsHovered(false);
+    }
+  };
 
   return (
-    <header
-    className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
-      showHeader ? 'translate-y-0' : '-translate-y-full'
-    }`}
-  >
+    <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center py-4">
         <nav className="md:flex space-x-5">
           <div className="flex items-center gap-9">
             {/* Logo */}
             <Logo />
-            <Link href="/" className="hover:text-custom-blue">
+            <Link href="/" onClick={handleNavigateAway} className="hover:text-custom-blue">
               Home
             </Link>
-            <Link href="/about" className="hover:text-custom-blue">
+            <Link href="/about" onClick={handleNavigateAway} className="hover:text-custom-blue">
               About
             </Link>
-            <Link href="/blog" className="hover:text-custom-blue">
+            <Link href="/blog" onClick={handleNavigateAway} className="hover:text-custom-blue">
               Blog
             </Link>
-  {/* Pages Dropdown */}
-  <div
-             className="relative"
-             onMouseEnter={handleMouseEnter}
-             onMouseLeave={handleMouseLeave}
-           >
+
+            {/* Pages Dropdown */}
+            <div
+              className="relative"
+              ref={dropdownRef}
+              onMouseEnter={handleHoverEnter} // Open on hover
+              onMouseLeave={handleHoverLeave} // Close on hover leave
+            >
               <button
+                onClick={handleDropdownToggle} // Toggle dropdown on click
                 className="flex items-center justify-center space-x-2 hover:text-custom-blue"
               >
                 Pages
@@ -75,14 +86,11 @@ const handleMouseLeave = () => setIsDropdownOpen(false);
                 )}
               </button>
 
-              {isDropdownOpen && (
-                <div
-                  className="fixed  left-1/4 right-2/4   top-28 justify-center items-center  bg-opacity-50 z-50"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
+              {isDropdownOpen || isHovered ? (
+                <div className="fixed left-1/4 right-2/4 top-28 justify-center items-center bg-opacity-50 z-50">
                   <div
                     className="bg-white w-[900px] rounded-2xl border p-10 overflow-y-auto max-h-[80%]"
-                    onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+                    onClick={(e) => e.stopPropagation()} // Prevent dropdown closure on interaction
                   >
                     <div className="flex flex-row gap-8">
                       {/* Main Pages */}
@@ -110,7 +118,7 @@ const handleMouseLeave = () => setIsDropdownOpen(false);
                           <li><Link href="/pages/portfolio-v2" className="text-custom-blue">More Webflow Template</Link></li>
                         </ul>
                       </div>
-                      
+
                       {/* Utility Pages */}
                       <div>
                         <h3 className="text-lg font-bold mb-3">Utility Pages</h3>
@@ -138,14 +146,14 @@ const handleMouseLeave = () => setIsDropdownOpen(false);
                     </div>
                   </div>
                 </div>
-              )}
+              ) : null}
             </div>
-            <Link href="/cart" className="flex items-center gap-4 hover:text-custom-blue ">
+            <Link href="/cart" onClick={handleNavigateAway} className="flex items-center gap-4 hover:text-custom-blue">
               Cart(0)
             </Link>
           </div>
         </nav>
-        <Button text="Pitch Your Startup" href="/your-link-here" />
+        <Button text="Pitch Your Startup" href="/your-link-here" onClick={handleNavigateAway} />
       </div>
     </header>
   );
