@@ -74,15 +74,15 @@ const HomePage = () => {
         </div>
       </div>
       {/* page2 */}
-      <div className="grid grid-cols-3 gap-4 mx-8 items-center justify-center py-28 p-16 bg-white">
+      <div className="grid grid-cols-4 gap-4 mx-8 px-20  py-28  bg-white">
         <div className=" text-left  mb-8 ">
-          <h1 className="text-7xl font-bold text-gray-900 mb-10 mx-16">
+          <h1 className="text-7xl font-bold text-gray-900 mb-10 ">
             About Our Invest Firm
           </h1>
-          <div className="mb-16 mx-28">
+          <div className="mb-16 mr-32  items-start justify-start ">
             <Button text="Pitch Your Startup" href="/your-link-here" />
           </div>
-          <div className="mb-16 mx-20">
+          <div className="mb-16 mr-20">
             <p className="text-gray-600 mb-4">
               Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
               dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
@@ -95,7 +95,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center ">
+        <div className="items-center col-span-2 justify-center ">
           <div className="rounded-full overflow-hidden mb-8">
             <Image
               src={circle} // Your circle image
@@ -106,29 +106,30 @@ const HomePage = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col text-right font-semibold text-3xl ">
+        <div className="flex flex-col text-right font-semibold text-2xl ">
           <div className="flex flex-col  mb-4">
-            <p className="text-gray-600  m-4">Companies</p>
+          <p className="text-gray-600  my-4">Companies</p>
             <p className="text-blue-600 text-5xl font-bold">+200</p>
           </div>
           <hr className="mb-7 border-1 border-black w-3/5 ml-auto" />
 
           <div className="flex flex-col  mb-4">
-            <p className="text-gray-600 m-4">Team members</p>
+          <p className="text-gray-600 my-4">Team members</p>
             <p className="text-blue-600 text-5xl font-bold">+50</p>
           </div>
           <hr className="mb-7 border-1 border-black w-3/5 ml-auto" />
 
           <div className="flex flex-col  mb-4">
-            <p className="text-gray-600  m-4">Capital investment</p>
+          <p className="text-gray-600 my-4">Capital investment</p>
             <p className="text-blue-600 text-5xl font-bold">+5B</p>
           </div>
           <hr className="mb-7 border-1 border-black w-3/5 ml-auto" />
 
           <div className="flex flex-col  mb-4">
-            <p className="text-gray-600  m-4">Years of experience</p>
+            <p className="text-gray-600  my-4">Years of experience</p>
             <p className="text-blue-600 text-5xl font-bold">+15</p>
           </div>
+          
         </div>
       </div>
     </>
