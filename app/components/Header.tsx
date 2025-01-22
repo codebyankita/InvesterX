@@ -153,7 +153,7 @@ const Header = () => {
             </Link>
           </div>
         </nav>
-        <Button text="Pitch Your Startup" href="/your-link-here" onClick={handleNavigateAway} />
+        <Button text="Pitch Your Startup" href="/your-link-here"  />
       </div>
     </header>
   );
