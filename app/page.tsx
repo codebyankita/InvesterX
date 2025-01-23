@@ -36,7 +36,7 @@ import Andy from "@/public/home-1/andy.jpg";
 import John from "@/public/home-1/john.jpg"
 
 import Matt from "@/public/home-1/matt.jpg"
-
+import PartnerCard from "./components/PartnerCard";
 import Sophie from "@/public/home-1/sophie.jpg"
 
 // import tv from '@/public/home-1/tv.svg';
@@ -141,7 +141,7 @@ const currentResearch = researchData[currentIndex];
           <h1 className="text-7xl font-bold text-gray-900 mb-10 ">
             About Our Invest Firm
           </h1>
-          <div className="mb-16 mr-32  items-start justify-start ">
+          <div className="mb-16 mr-28  items-start justify-start ">
             <Button text="Pitch Your Startup" href="/your-link-here" />
           </div>
           <div className="mb-16 mr-20">
@@ -350,7 +350,7 @@ const currentResearch = researchData[currentIndex];
             </div>
         </div>
         {/* page 6 */}
-        <div className="bg-[#f6f8ff] flex items-center justify-center ">
+        <div className="bg-[#f6f8ff] flex items-center justify-center pb-28">
            
                 <div className="relative rounded-3xl overflow-hidden mx-52">
                 <Image
@@ -394,115 +394,51 @@ const currentResearch = researchData[currentIndex];
             
         </div>
         {/* page 7 */}
+       
         <div className="bg-white text-gray-900">
-            <div className=" px-4 py-16 mx-48">
-                <div className=" flex justify-between text-left mb-12  ">
-                   
-                    <h1 className="text-5xl w-1/3  content-end  font-bold text-gray-900">Our partners</h1>
-                    <p className="text-gray-500 w-1/3 text-xl mt-4  ">
-                        Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo vestibulum ut neque mus.
-                    </p>
-                </div>
-                <div className="grid grid-cols-4 gap-8 ">
-                    {/* Partner Card 1 */}
-                    <div className="bg-white hover:border-blue-500 border rounded-2xl px-10 p-6 text-center relative">
-                       <div className="absolute top-4 right-4 text-gray-500 transition-all duration-300 group-hover:text-white">
-                            <MdOutlineArrowOutward />
-                          </div>
-                        <Image className=" rounded-full mb-4 " src={John} alt="Portrait of John Carter" />
-                        <h2 className="text-lg font-semibold text-gray-900 hover:text-blue-500">John Carter</h2>
-                        <p className="text-gray-500">CEO & Founding Partner</p>
-                        
-                    </div>
-                    {/* Partner Card 2 */}
-                    <div className="bg-white hover:border-blue-500 px-10 hover:text-blue-500 border rounded-lg p-6 text-center relative">
-                    <div className="absolute top-4 right-4 text-gray-500 transition-all duration-300 group-hover:text-white">
-                            <MdOutlineArrowOutward />
-                          </div>
-                        <Image className="rounded-full  mb-4" src={Sophie} alt="Portrait of Sophie Moore" />
-                        <h2 className="text-lg font-semibold text-gray-900 hover:text-blue-500">Sophie Moore</h2>
-                        <p className="text-gray-500">Managing partner</p>
-                       
-                    </div>
-                    {/* Partner Card 3 */}
-                    <div className="bg-white hover:border-blue-500 px-10 border rounded-lg p-6 text-center relative">
-                    <div className="absolute top-4 right-4 text-gray-500 transition-all duration-300 group-hover:text-white">
-                            <MdOutlineArrowOutward />
-                          </div>
-                        <Image className="rounded-full  mb-4" src={Matt} alt="Portrait of Matt Cannon" />
-                        <h2 className="text-lg font-semibold text-gray-900 hover:text-blue-500">Matt Cannon</h2>
-                        <p className="text-gray-500">Managing partner</p>
-                       
-                    </div>
-                    {/* Partner Card 4 */}
-                    <div className="bg-white hover:border-blue-500 px-10 border rounded-lg p-6 text-center relative">
-                    <div className="absolute top-4 right-4 text-gray-500 transition-all duration-300 group-hover:text-white">
-                            <MdOutlineArrowOutward />
-                          </div>
-                        <Image className="rounded-full  mb-4" src={Andy} alt="Portrait of Andy Smith" />
-                        <h2 className="text-lg font-semibold text-gray-900 hover:text-blue-500">Andy Smith</h2>
-                        <p className="text-gray-500">Managing partner</p>
-                       
-                    </div>
-                </div>
-                <div className="mt-12 flex justify-center space-x-4">
-                    <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
-                        Pitch your startup <i className="fas fa-arrow-right ml-2"></i>
-                    </button>
-                    <button className="border border-gray-300 text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition">
-                        Browse all team members
-                    </button>
-                </div>
-            </div>
+        <div className="px-4 py-16 mx-48">
+          {/* Heading Section */}
+          <div className="flex justify-between text-left mb-12 ">
+            <h1 className="text-5xl w-1/3  content-end  font-bold text-gray-900">
+              Our partners
+            </h1>
+            <p className="text-gray-500 w-2/5 text-xl mt-4">
+              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
+              dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
+              tellus felis leo vestibulum ut neque mus.
+            </p>
+          </div>
+          {/* Partner Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <PartnerCard
+              image={John}
+              name="John Carter"
+              title="CEO & Founding Partner"
+            />
+            <PartnerCard
+              image={Sophie}
+              name="Sophie Moore"
+              title="Managing Partner"
+            />
+            <PartnerCard
+              image={Matt}
+              name="Matt Cannon"
+              title="Managing Partner"
+            />
+            <PartnerCard
+              image={Andy}
+              name="Andy Smith"
+              title="Managing Partner"
+            />
+          </div>
+          {/* Footer Buttons */}
+          <div className="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 ">
+            
+              <Button text="Pitch Your Startup" href="/your-link-here" />
+              <SecondaryButton text="   Browse all team members " />
+          </div>
         </div>
-        {/* page 8 */}
-        <div className="max-w-7xl mx-auto p-6">
-                    <h1 className="text-4xl font-bold text-center mb-8">News & Articles</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row items-center">
-                            <img src="https://placehold.co/100x100" alt="Book and magnifying glass icon" className="w-24 h-24 mb-4 md:mb-0 md:mr-6"/>
-                            <div>
-                                <p className="text-sm text-gray-500">Investments <span className="mx-2">—</span> Jul 19, 2023</p>
-                                <h2 className="text-xl font-semibold mt-2">How to raise capital: 5 fundraising strategies for your startup</h2>
-                                <p className="text-gray-600 mt-2">Lorem ipsum dolor amet consectetur diam nullam mauris non turpis mi sit in a nunc id lectus facilisi justo eu egestas amet.</p>
-                                <a href="#" className="text-blue-600 font-semibold mt-4 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-                            <img src="https://placehold.co/100x100" alt="Startup icon" className="w-24 h-24 mb-4"/>
-                            <div>
-                                <p className="text-sm text-gray-500">Business Tips <span className="mx-2">—</span> Jul 15, 2023</p>
-                                <h2 className="text-xl font-semibold mt-2">Building your startup team: Key considerations</h2>
-                                <p className="text-gray-600 mt-2">Explore tips on assembling a strong team that can take your business to the next level.</p>
-                                <a href="#" className="text-blue-600 font-semibold mt-4 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-12">
-                        <h2 className="text-2xl font-semibold text-center mb-6">More Articles</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                            <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-                                <img src="https://placehold.co/100x100" alt="Coins icon" className="w-24 h-24 mb-4"/>
-                                <p className="text-sm text-gray-500">Investments</p>
-                                <h3 className="text-lg font-semibold">Raising Funds Through Crowdfunding</h3>
-                                <a href="#" className="text-blue-600 font-semibold mt-2 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
-                            </div>
-                            <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-                                <img src="https://placehold.co/100x100" alt="Chart icon" className="w-24 h-24 mb-4"/>
-                                <p className="text-sm text-gray-500">Analytics</p>
-                                <h3 className="text-lg font-semibold">Key Metrics Every Startup Should Track</h3>
-                                <a href="#" className="text-blue-600 font-semibold mt-2 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
-                            </div>
-                            <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-                                <img src="https://placehold.co/100x100" alt="Presentation icon" className="w-24 h-24 mb-4"/>
-                                <p className="text-sm text-gray-500">Strategy</p>
-                                <h3 className="text-lg font-semibold">The Power of Networking for Entrepreneurs</h3>
-                                <a href="#" className="text-blue-600 font-semibold mt-2 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
+      </div>
       
 
       

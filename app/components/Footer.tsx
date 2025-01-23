@@ -8,7 +8,7 @@ import Logo from './Logo';
 
 const Footer = () => {
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center bg-[#f6f8ff] pt-20">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-7xl">
         <div className=" flex mb-8">
           <h1 className="text-4xl flex  w-3/5  font-semibold text-gray-900">
