@@ -24,6 +24,20 @@ import { IoMdArrowForward, IoMdArrowBack } from "react-icons/io";
 import reserch02 from '@/public/home-1/reserch02.jpg';
 import reserch03 from '@/public/home-1/reserch03.jpg';
 import reserch01 from '@/public/home-1/reserch01.jpg';
+import { CiMobile2 } from "react-icons/ci";
+import { CgScreen } from "react-icons/cg";
+import { IoSettingsOutline } from "react-icons/io5";
+import ReadMoreButton from './components/ReadMoreButton';
+import { FaFacebookF } from "react-icons/fa6";
+import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { MdOutlineArrowOutward } from "react-icons/md";
+import Andy from "@/public/home-1/andy.jpg";
+import John from "@/public/home-1/john.jpg"
+
+import Matt from "@/public/home-1/matt.jpg"
+
+import Sophie from "@/public/home-1/sophie.jpg"
 
 // import tv from '@/public/home-1/tv.svg';
 const companyLogos = [
@@ -82,7 +96,7 @@ const currentResearch = researchData[currentIndex];
       {/* page1 */}
       <div className="bg-[#f6f8ff]">
         <main className=" flex items-center justify-around ">
-          <div className=" space-y-6 h-fit w-2/4 px-32">
+          <div className=" space-y-6 mb-28 w-2/4 px-32">
             <h1 className="text-7xl font-bold text-gray-800">
               We invest in the companies of the future, today
             </h1>
@@ -95,7 +109,7 @@ const currentResearch = researchData[currentIndex];
               <SecondaryButton text="Investment portfolio" />
             </div>
           </div>
-          <div className="w-2/4 mt-12 md:mt-0">
+          <div className="w-2/4  md:mt-0">
             <Image
               src={homeside}
               alt="Abstract blue and white wavy background"
@@ -236,21 +250,21 @@ const currentResearch = researchData[currentIndex];
         </div>
       </div>
       {/* page4 */}
-      <div className="flex  items-center justify-center p-6 py-28 bg-white">
+      <div className="flex  items-center justify-center p-6 m-10 py-28 bg-white">
       <div className="w-full mx-32 ">
         {/* Header */}
         <div className="flex justify-between">
           <h1 className="text-5xl font-bold text-gray-900">Our approach</h1>
-        <div className="flex items-start space-x-4 mr-20">
+        <div className="flex items-start space-x-5 mr-32">
          
          <Button text="Pitch Your Startup" href="/your-link-here" />
          <SecondaryButton text=" Learn more" />
         
        </div>
         </div>
-        <div className="flex  my-10 ">
+        <div className="flex my-12">
           {/* Left Section - Image */}
-          <div className="mr-14">
+          <div className="">
             <Image
               src={currentResearch.image}
               alt={currentResearch.title}
@@ -261,28 +275,26 @@ const currentResearch = researchData[currentIndex];
             />
           </div>
           {/* Right Section - Content */}
-          <div className="w-1/2 pl-8  ">
+          <div className="w-1/2 px-16 ml-6 mt-4 ">
          
-            <div className="mt-8">
-              <h2 className="text-4xl font-bold text-gray-900">
+            <div className="">
+              <h2 className="text-5xl font-bold  text-gray-900">
                 {currentResearch.id}
               </h2>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-2xl font-semibold my-2 text-gray-900">
                 {currentResearch.title}
               </h3>
-              <p className="mt-4 text-gray-600">{currentResearch.description}</p>
+              <p className="mt-10 text-wrap	mr-6 text-lg text-gray-600">{currentResearch.description}</p>
             </div>
             {/* Navigation Buttons */}
-        <div className="flex  mt-8 ">
-          <button
-            className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-l-full bg-white"
+        <div className="flex  mt-10 ">
+          <button className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-l-full bg-white"
             onClick={() => handleNavigation("prev")}
           >
             <IoMdArrowBack className="text-xl " />
             
           </button>
-          <button
-            className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-r-full bg-white"
+          <button   className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-r-full bg-white"
             onClick={() => handleNavigation("next")}
           >
             
@@ -293,6 +305,209 @@ const currentResearch = researchData[currentIndex];
         </div>
       </div>
     </div>
+    {/* page 5 */}
+    <div className="bg-[#f6f8ff] text-left  py-16 px-16">
+            <div className="text-center mb-8">
+          
+                <h1 className="text-5xl font-semibold text-gray-800">Industries we invest in</h1>
+            </div>
+            <div className="grid grid-cols-3 gap-8 mx-28">
+                <div className=" p-6 mr-6  ">
+                    <CiMobile2  className=" mb-6 h-12 w-12"/>
+                    <div className="mb-4">
+                        <i className="fas fa-mobile-alt text-4xl text-blue-500"></i>
+                    </div>
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Mobile app</h2>
+                    <p className="text-gray-600 text-lg mb-4">
+                        Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
+                    </p>
+                    <ReadMoreButton />
+                </div>
+                <div className=" p-6 mr-6  ">
+                    <CgScreen  className=" mb-6 h-12 w-12"/>
+                    <div className="mb-4">
+                        <i className="fas fa-mobile-alt text-4xl text-blue-500"></i>
+                    </div>
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Hardware companies</h2>
+                    <p className="text-gray-600 text-lg mb-4">
+                        Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
+                    </p>
+                    <ReadMoreButton />
+                </div>
+                <div className=" p-6 mr-6 ">
+                    <IoSettingsOutline  className=" mb-6 h-12 w-12"/>
+                    <div className="mb-4">
+                        <i className="fas fa-mobile-alt text-4xl text-blue-500"></i>
+                    </div>
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Software companies</h2>
+                    <p className="text-gray-600 text-lg mb-4">
+                        Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
+                    </p>
+                    <ReadMoreButton />
+                </div>
+                
+               
+            </div>
+        </div>
+        {/* page 6 */}
+        <div className="bg-[#f6f8ff] flex items-center justify-center ">
+           
+                <div className="relative rounded-3xl overflow-hidden mx-52">
+                <Image
+              src={reserch01}
+              alt="Abstract blue and white wavy background"
+              
+              className="  "
+            />
+                    <div className="absolute inset-0 text-white  bg-black bg-opacity-30 flex flex-col items-center justify-center text-center p-8">
+                       
+                       <div className="">
+
+          <h1 className=" flex  mx-60   text-4xl md:text-5xl font-bold mb-4">
+            We invest in the companies of the future, today
+          </h1>
+          <p className=" text-lg mb-6 mx-80">
+                            Lorem ipsum dolor sit amet consectetur sollicitudin pulvinar ipsum ut senectus malesuada dui lorem ac.
+                        </p>
+                     
+          <div className="flex items-center mx-10 justify-center  gap-8">
+            <Button text="Pitch Your Startup" href="/your-link-here" />
+            <div className="     transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
+              <FaFacebookF />
+            </div>
+            <div className="  transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
+              <FaTwitter />
+            </div>
+            <div className="  transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
+              <AiFillInstagram />
+            </div>
+            <div className="   transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
+              <FaLinkedinIn />
+            </div>
+          </div>
+                       </div>
+       
+                        
+                      
+                    </div>
+                </div>
+            
+        </div>
+        {/* page 7 */}
+        <div className="bg-white text-gray-900">
+            <div className=" px-4 py-16 mx-48">
+                <div className=" flex justify-between text-left mb-12  ">
+                   
+                    <h1 className="text-5xl w-1/3  content-end  font-bold text-gray-900">Our partners</h1>
+                    <p className="text-gray-500 w-1/3 text-xl mt-4  ">
+                        Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo vestibulum ut neque mus.
+                    </p>
+                </div>
+                <div className="grid grid-cols-4 gap-8 ">
+                    {/* Partner Card 1 */}
+                    <div className="bg-white hover:border-blue-500 border rounded-2xl px-10 p-6 text-center relative">
+                       <div className="absolute top-4 right-4 text-gray-500 transition-all duration-300 group-hover:text-white">
+                            <MdOutlineArrowOutward />
+                          </div>
+                        <Image className=" rounded-full mb-4 " src={John} alt="Portrait of John Carter" />
+                        <h2 className="text-lg font-semibold text-gray-900 hover:text-blue-500">John Carter</h2>
+                        <p className="text-gray-500">CEO & Founding Partner</p>
+                        
+                    </div>
+                    {/* Partner Card 2 */}
+                    <div className="bg-white hover:border-blue-500 px-10 hover:text-blue-500 border rounded-lg p-6 text-center relative">
+                    <div className="absolute top-4 right-4 text-gray-500 transition-all duration-300 group-hover:text-white">
+                            <MdOutlineArrowOutward />
+                          </div>
+                        <Image className="rounded-full  mb-4" src={Sophie} alt="Portrait of Sophie Moore" />
+                        <h2 className="text-lg font-semibold text-gray-900 hover:text-blue-500">Sophie Moore</h2>
+                        <p className="text-gray-500">Managing partner</p>
+                       
+                    </div>
+                    {/* Partner Card 3 */}
+                    <div className="bg-white hover:border-blue-500 px-10 border rounded-lg p-6 text-center relative">
+                    <div className="absolute top-4 right-4 text-gray-500 transition-all duration-300 group-hover:text-white">
+                            <MdOutlineArrowOutward />
+                          </div>
+                        <Image className="rounded-full  mb-4" src={Matt} alt="Portrait of Matt Cannon" />
+                        <h2 className="text-lg font-semibold text-gray-900 hover:text-blue-500">Matt Cannon</h2>
+                        <p className="text-gray-500">Managing partner</p>
+                       
+                    </div>
+                    {/* Partner Card 4 */}
+                    <div className="bg-white hover:border-blue-500 px-10 border rounded-lg p-6 text-center relative">
+                    <div className="absolute top-4 right-4 text-gray-500 transition-all duration-300 group-hover:text-white">
+                            <MdOutlineArrowOutward />
+                          </div>
+                        <Image className="rounded-full  mb-4" src={Andy} alt="Portrait of Andy Smith" />
+                        <h2 className="text-lg font-semibold text-gray-900 hover:text-blue-500">Andy Smith</h2>
+                        <p className="text-gray-500">Managing partner</p>
+                       
+                    </div>
+                </div>
+                <div className="mt-12 flex justify-center space-x-4">
+                    <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                        Pitch your startup <i className="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button className="border border-gray-300 text-gray-900 px-6 py-3 rounded-full hover:bg-gray-100 transition">
+                        Browse all team members
+                    </button>
+                </div>
+            </div>
+        </div>
+        {/* page 8 */}
+        <div className="max-w-7xl mx-auto p-6">
+                    <h1 className="text-4xl font-bold text-center mb-8">News & Articles</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="bg-white rounded-lg shadow p-6 flex flex-col md:flex-row items-center">
+                            <img src="https://placehold.co/100x100" alt="Book and magnifying glass icon" className="w-24 h-24 mb-4 md:mb-0 md:mr-6"/>
+                            <div>
+                                <p className="text-sm text-gray-500">Investments <span className="mx-2">—</span> Jul 19, 2023</p>
+                                <h2 className="text-xl font-semibold mt-2">How to raise capital: 5 fundraising strategies for your startup</h2>
+                                <p className="text-gray-600 mt-2">Lorem ipsum dolor amet consectetur diam nullam mauris non turpis mi sit in a nunc id lectus facilisi justo eu egestas amet.</p>
+                                <a href="#" className="text-blue-600 font-semibold mt-4 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                            <img src="https://placehold.co/100x100" alt="Startup icon" className="w-24 h-24 mb-4"/>
+                            <div>
+                                <p className="text-sm text-gray-500">Business Tips <span className="mx-2">—</span> Jul 15, 2023</p>
+                                <h2 className="text-xl font-semibold mt-2">Building your startup team: Key considerations</h2>
+                                <p className="text-gray-600 mt-2">Explore tips on assembling a strong team that can take your business to the next level.</p>
+                                <a href="#" className="text-blue-600 font-semibold mt-4 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-12">
+                        <h2 className="text-2xl font-semibold text-center mb-6">More Articles</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                                <img src="https://placehold.co/100x100" alt="Coins icon" className="w-24 h-24 mb-4"/>
+                                <p className="text-sm text-gray-500">Investments</p>
+                                <h3 className="text-lg font-semibold">Raising Funds Through Crowdfunding</h3>
+                                <a href="#" className="text-blue-600 font-semibold mt-2 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
+                            </div>
+                            <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                                <img src="https://placehold.co/100x100" alt="Chart icon" className="w-24 h-24 mb-4"/>
+                                <p className="text-sm text-gray-500">Analytics</p>
+                                <h3 className="text-lg font-semibold">Key Metrics Every Startup Should Track</h3>
+                                <a href="#" className="text-blue-600 font-semibold mt-2 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
+                            </div>
+                            <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
+                                <img src="https://placehold.co/100x100" alt="Presentation icon" className="w-24 h-24 mb-4"/>
+                                <p className="text-sm text-gray-500">Strategy</p>
+                                <h3 className="text-lg font-semibold">The Power of Networking for Entrepreneurs</h3>
+                                <a href="#" className="text-blue-600 font-semibold mt-2 inline-block">Read article <i className="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+      
+
+      
+
+   
     </>
   );
 };
