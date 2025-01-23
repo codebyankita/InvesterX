@@ -389,21 +389,21 @@ const HomePage = () => {
       </div>
       {/* page 7 */}
 
-      <div className="bg-white text-gray-900">
-        <div className="px-4 py-16 mx-48">
+      <div className="bg-white text-gray-900 ">
+        <div className="px-4 lg:py-16 lg:mx-48 mx-4 py-8">
           {/* Heading Section */}
-          <div className="flex justify-between text-left mb-12 ">
-            <h1 className="text-5xl w-1/3  content-end  font-bold text-gray-900">
+          <div className="flex justify-between gap-6 lg:gap-1 text-left mb-12 ">
+            <h1 className="lg:text-5xl text-3xl lg:w-1/3 w-full lg:content-end  content-center font-bold text-gray-900">
               Our partners
             </h1>
-            <p className="text-gray-500 w-2/5 text-xl mt-4">
+            <p className="text-gray-500 lg:w-2/5 w-full lg:text-xl text-base mt-4">
               Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
               dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
               tellus felis leo vestibulum ut neque mus.
             </p>
           </div>
           {/* Partner Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <PartnerCard
               image={John}
               name="John Carter"
