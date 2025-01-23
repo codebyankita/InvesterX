@@ -130,7 +130,7 @@ const currentResearch = researchData[currentIndex];
         </div>
       </div>
       {/* page2 */}
-      <div className="grid grid-cols-1 gap-4  md:grid-cols-2 lg:grid-cols-4 lg:mx-8 mx-4 px-6 py-4 lg:px-20  lg:py-28  bg-white">
+      <div className="grid grid-cols-1  gap-4  md:grid-cols-2 lg:grid-cols-4 lg:mx-8 mx-4 px-6 py-4 lg:px-20  lg:py-28  bg-white">
         <div className=" text-left  mb-8 ">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-10 ">
             About Our Invest Firm
@@ -192,9 +192,9 @@ const currentResearch = researchData[currentIndex];
       </div>
       {/* page3 */}
       <div className="bg-[#f6f8ff]">
-        <div className=" p-12 mx-28 ">
+        <div className=" lg:p-12 p-2 mx-4 md:mx-24 lg:mx-28 ">
           <h1 className="text-3xl font-semibold text-center text-gray-900 mb-12">Our Portfolio</h1>
-          <div className="grid grid-cols-3 gap-10 m-6">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 m-6">
             <PortfolioCard
               title="Company"
               description="Social Network"
@@ -219,7 +219,7 @@ const currentResearch = researchData[currentIndex];
 
               link="/organization-link"
             />
-            <div className="col-span-2">
+            <div className="lg:col-span-2 col-span-1">
 
               <PortfolioCard
                 title="Venture"

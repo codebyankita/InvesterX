@@ -29,7 +29,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
     </div>
 
     {/* Image */}
-    <div className="flex justify-center items-center mt-20">
+    <div className="flex justify-center items-center lg:mt-20 mt-16">
       <Image
         src={icon}
         alt={`${title} icon`}
