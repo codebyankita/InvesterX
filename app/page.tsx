@@ -246,19 +246,19 @@ const currentResearch = researchData[currentIndex];
         </div>
       </div>
       {/* page4 */}
-      <div className="flex  items-center justify-center p-6 m-10 py-28 bg-white">
-      <div className="w-full mx-32 ">
+      <div className="flex  items-center justify-center lg:p-6 p-4 m-4 py-12 lg:m-10 lg:py-28 bg-white">
+      <div className="w-full lg:mx-32 mx-4 ">
         {/* Header */}
-        <div className="flex justify-between">
-          <h1 className="text-5xl font-bold text-gray-900">Our approach</h1>
-        <div className="flex items-start space-x-5 mr-32">
+        <div className="flex space-y-4 lg:space-y-0 flex-col lg:flex-row justify-between">
+          <h1 className="lg:text-5xl text-3xl font-bold text-gray-900">Our approach</h1>
+        <div className="flex md:flex-row space-y-4 md:space-y-0 flex-col items-start lg:space-x-5 space-x-3  lg:mr-32">
          
          <Button text="Pitch Your Startup" href="/your-link-here" />
          <SecondaryButton text=" Learn more" />
         
        </div>
         </div>
-        <div className="flex my-12">
+        <div className="flex lg:flex-row flex-col my-12">
           {/* Left Section - Image */}
           <div className="">
             <Image
@@ -271,16 +271,16 @@ const currentResearch = researchData[currentIndex];
             />
           </div>
           {/* Right Section - Content */}
-          <div className="w-1/2 px-16 ml-6 mt-4 ">
+          <div className="lg:w-1/2 w-full lg:px-16 lg:ml-6 mt-4 ">
          
             <div className="">
-              <h2 className="text-5xl font-bold  text-gray-900">
+              <h2 className="lg:text-5xl text-3xl font-bold  text-gray-900">
                 {currentResearch.id}
               </h2>
-              <h3 className="text-2xl font-semibold my-2 text-gray-900">
+              <h3 className="lg:text-2xl text-xl font-semibold my-2 text-gray-900">
                 {currentResearch.title}
               </h3>
-              <p className="mt-10 text-wrap	mr-6 text-lg text-gray-600">{currentResearch.description}</p>
+              <p className="lg:mt-10 mt-5 text-wrap	lg:mr-6 mr-0 text-lg text-gray-600">{currentResearch.description}</p>
             </div>
             {/* Navigation Buttons */}
         <div className="flex  mt-10 ">
