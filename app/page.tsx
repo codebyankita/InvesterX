@@ -32,7 +32,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { IoMdArrowForward, IoMdArrowBack } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
-
+import Spline from '@splinetool/react-spline';
 
 const companyLogos = [
   { id: 1, src: company, alt: "Company Logo" },
@@ -68,23 +68,23 @@ const researchData = [
 
 const HomePage = () => {
   // State for the current index
-const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-// Handler for changing the index
-const handleNavigation = (direction: "prev" | "next") => {
-  if (direction === "prev") {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? researchData.length - 1 : prevIndex - 1
-    );
-  } else {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === researchData.length - 1 ? 0 : prevIndex + 1
-    );
-  }
-};
+  // Handler for changing the index
+  const handleNavigation = (direction: "prev" | "next") => {
+    if (direction === "prev") {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? researchData.length - 1 : prevIndex - 1
+      );
+    } else {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === researchData.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
 
-// Current research item
-const currentResearch = researchData[currentIndex];
+  // Current research item
+  const currentResearch = researchData[currentIndex];
   return (
     <>
       {/* page1 */}
@@ -150,8 +150,8 @@ const currentResearch = researchData[currentIndex];
             </p>
           </div>
         </div>
-{/* Center Section */}
-        <div className="items-center col-span-2  justify-center ">
+        {/* Center Section */}
+        <div className="items-center lg:col-span-2  justify-center ">
           <div className="rounded-full overflow-hidden mb-8">
             <Image
               src={circle} // Your circle image
@@ -162,33 +162,33 @@ const currentResearch = researchData[currentIndex];
             />
           </div>
         </div>
-         {/* Right Section */}
+        {/* Right Section */}
         <div className=" flex flex-col lg:col-span-1 md:col-span-2 md:flex-wrap lg:text-right text-center font-semibold text-2xl ">
-        <div className="flex flex-col  mb-4">
-        
+          <div className="flex flex-col  mb-4">
+
             <p className="text-gray-600  my-4">Companies</p>
             <p className="text-blue-600 lg:text-5xl text-4xl font-bold">+200</p>
-          <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
+            <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
           </div>
 
           <div className="flex flex-col  mb-4">
             <p className="text-gray-600 my-4">Team members</p>
             <p className="text-blue-600 lg:text-5xl text-4xl font-bold">+50</p>
-          <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
+            <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
           </div>
 
           <div className="flex flex-col  mb-4">
             <p className="text-gray-600 my-4">Capital investment</p>
             <p className="text-blue-600 lg:text-5xl text-4xl font-bold">+5B</p>
-          <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
+            <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
           </div>
 
           <div className="flex flex-col  mb-4">
             <p className="text-gray-600  my-4">Years of experience</p>
             <p className="text-blue-600 lg:text-5xl text-4xl font-bold">+15</p>
           </div>
-          </div>
-      
+        </div>
+
       </div>
       {/* page3 */}
       <div className="bg-[#f6f8ff]">
@@ -247,151 +247,149 @@ const currentResearch = researchData[currentIndex];
       </div>
       {/* page4 */}
       <div className="flex  items-center justify-center lg:p-6 p-4 m-4 py-12 lg:m-10 lg:py-28 bg-white">
-      <div className="w-full lg:mx-32 mx-4 ">
-        {/* Header */}
-        <div className="flex space-y-4 lg:space-y-0 flex-col lg:flex-row justify-between">
-          <h1 className="lg:text-5xl text-3xl font-bold text-gray-900">Our approach</h1>
-        <div className="flex md:flex-row space-y-4 md:space-y-0 flex-col items-start lg:space-x-5 space-x-3  lg:mr-32">
-         
-         <Button text="Pitch Your Startup" href="/your-link-here" />
-         <SecondaryButton text=" Learn more" />
-        
-       </div>
-        </div>
-        <div className="flex lg:flex-row flex-col my-12">
-          {/* Left Section - Image */}
-          <div className="">
-            <Image
-              src={currentResearch.image}
-              alt={currentResearch.title}
-              className="rounded-2xl"
-              width={900}
-              height={600}
-              priority
-            />
-          </div>
-          {/* Right Section - Content */}
-          <div className="lg:w-1/2 w-full lg:px-16 lg:ml-6 mt-4 ">
-         
-            <div className="">
-              <h2 className="lg:text-5xl text-3xl font-bold  text-gray-900">
-                {currentResearch.id}
-              </h2>
-              <h3 className="lg:text-2xl text-xl font-semibold my-2 text-gray-900">
-                {currentResearch.title}
-              </h3>
-              <p className="lg:mt-10 mt-5 text-wrap	lg:mr-6 mr-0 text-lg text-gray-600">{currentResearch.description}</p>
+        <div className="w-full lg:mx-32 mx-4 ">
+          {/* Header */}
+          <div className="flex space-y-4 lg:space-y-0 flex-col lg:flex-row justify-between">
+            <h1 className="lg:text-5xl text-3xl font-bold text-gray-900">Our approach</h1>
+            <div className="flex md:flex-row space-y-4 md:space-y-0 flex-col items-start lg:space-x-5 space-x-3  lg:mr-32">
+
+              <Button text="Pitch Your Startup" href="/your-link-here" />
+              <SecondaryButton text=" Learn more" />
+
             </div>
-            {/* Navigation Buttons */}
-        <div className="flex  mt-10 ">
-          <button className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-l-full bg-white"
-            onClick={() => handleNavigation("prev")}
-          >
-            <IoMdArrowBack className="text-xl " />
-            
-          </button>
-          <button   className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-r-full bg-white"
-            onClick={() => handleNavigation("next")}
-          >
-            
-            <IoMdArrowForward className="text-xl " />
-          </button>
-        </div>
+          </div>
+          <div className="flex lg:flex-row flex-col my-12">
+            {/* Left Section - Image */}
+            <div className="">
+              <Image
+                src={currentResearch.image}
+                alt={currentResearch.title}
+                className="rounded-2xl"
+                width={900}
+                height={600}
+                priority
+              />
+            </div>
+            {/* Right Section - Content */}
+            <div className="lg:w-1/2 w-full lg:px-16 lg:ml-6 mt-4 ">
+
+              <div className="">
+                <h2 className="lg:text-5xl text-3xl font-bold  text-gray-900">
+                  {currentResearch.id}
+                </h2>
+                <h3 className="lg:text-2xl text-xl font-semibold my-2 text-gray-900">
+                  {currentResearch.title}
+                </h3>
+                <p className="lg:mt-10 mt-5 text-wrap	lg:mr-6 mr-0 text-lg text-gray-600">{currentResearch.description}</p>
+              </div>
+              {/* Navigation Buttons */}
+              <div className="flex  mt-10 ">
+                <button className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-l-full bg-white"
+                  onClick={() => handleNavigation("prev")}
+                >
+                  <IoMdArrowBack className="text-xl " />
+
+                </button>
+                <button className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-r-full bg-white"
+                  onClick={() => handleNavigation("next")}
+                >
+
+                  <IoMdArrowForward className="text-xl " />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    {/* page 5 */}
-    <div className="bg-[#f6f8ff] text-left  py-16 px-16">
-            <div className="text-center mb-8">
-          
-                <h1 className="text-5xl font-semibold text-gray-800">Industries we invest in</h1>
-            </div>
-            <div className="grid grid-cols-3 gap-8 mx-28">
-                <div className=" p-6 mr-6  ">
-                    <CiMobile2  className=" mb-6 h-12 w-12"/>
-                    <div className="mb-4">
-                        <i className="fas fa-mobile-alt text-4xl text-blue-500"></i>
-                    </div>
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Mobile app</h2>
-                    <p className="text-gray-600 text-lg mb-4">
-                        Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
-                    </p>
-                    <ReadMoreButton />
-                </div>
-                <div className=" p-6 mr-6  ">
-                    <CgScreen  className=" mb-6 h-12 w-12"/>
-                    <div className="mb-4">
-                        <i className="fas fa-mobile-alt text-4xl text-blue-500"></i>
-                    </div>
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Hardware companies</h2>
-                    <p className="text-gray-600 text-lg mb-4">
-                        Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
-                    </p>
-                    <ReadMoreButton />
-                </div>
-                <div className=" p-6 mr-6 ">
-                    <IoSettingsOutline  className=" mb-6 h-12 w-12"/>
-                    <div className="mb-4">
-                        <i className="fas fa-mobile-alt text-4xl text-blue-500"></i>
-                    </div>
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-2">Software companies</h2>
-                    <p className="text-gray-600 text-lg mb-4">
-                        Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
-                    </p>
-                    <ReadMoreButton />
-                </div>
-                
-               
-            </div>
-        </div>
-        {/* page 6 */}
-        <div className="bg-[#f6f8ff] flex items-center justify-center pb-28">
-           
-                <div className="relative rounded-3xl overflow-hidden mx-52">
-                <Image
-              src={reserch01}
-              alt="Abstract blue and white wavy background"
-              
-              className="  "
-            />
-                    <div className="absolute inset-0 text-white  bg-black bg-opacity-30 flex flex-col items-center justify-center text-center p-8">
-                       
-                       <div className="">
+      {/* page 5 */}
+      <div className="bg-[#f6f8ff] lg:text-left text-center lg:p-16  p-2 ">
+        <div className="text-center mb-8">
 
-          <h1 className=" flex  mx-60   text-4xl md:text-5xl font-bold mb-4">
-            We invest in the companies of the future, today
-          </h1>
-          <p className=" text-lg mb-6 mx-80">
-                            Lorem ipsum dolor sit amet consectetur sollicitudin pulvinar ipsum ut senectus malesuada dui lorem ac.
-                        </p>
-                     
-          <div className="flex items-center mx-10 justify-center  gap-8">
-            <Button text="Pitch Your Startup" href="/your-link-here" />
-            <div className="     transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
-              <FaFacebookF />
-            </div>
-            <div className="  transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
-              <FaTwitter />
-            </div>
-            <div className="  transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
-              <AiFillInstagram />
-            </div>
-            <div className="   transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
-              <FaLinkedinIn />
-            </div>
-          </div>
-                       </div>
-       
-                        
-                      
-                    </div>
-                </div>
-            
+          <h1 className="lg:text-5xl text-3xl font-semibold text-gray-800">Industries we invest in</h1>
         </div>
-        {/* page 7 */}
-       
-        <div className="bg-white text-gray-900">
+        <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-8 lg:mx-28 mx-4 gap-2">
+        <div className="lg:p-6 lg:mr-6 mr-0 p-2 flex flex-col items-center lg:items-start">
+            <CiMobile2 className=" mb-6 h-12 w-12   " />
+            
+            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Mobile app</h2>
+            <p className="text-gray-600 text-lg mb-4">
+              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
+            </p>
+            <ReadMoreButton />
+          </div>
+          <div className="lg:p-6 lg:mr-6 mr-0 p-2 flex flex-col items-center lg:items-start">
+            <CgScreen className=" mb-6 h-12 w-12" />
+            
+            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Hardware companies</h2>
+            <p className="text-gray-600 text-lg mb-4">
+              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
+            </p>
+            <ReadMoreButton />
+          </div>
+          <div className="lg:p-6 lg:mr-6 mr-0 p-2 flex flex-col items-center lg:items-start">
+            <IoSettingsOutline className=" mb-6 h-12 w-12" />
+           
+            <h2 className="text-2xl font-semibold text-gray-800 mb-2">Software companies</h2>
+            <p className="text-gray-600 text-lg mb-4">
+              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a nunc id lectus facilisi justo eu egestas amet tellus felis leo.
+            </p>
+            <ReadMoreButton />
+          </div>
+
+
+        </div>
+      </div>
+      {/* page 6 */}
+      <div className="bg-[#f6f8ff] flex items-center justify-center lg:pb-28 pb-16">
+
+        <div className="relative rounded-3xl overflow-hidden lg:mx-52 mx-4">
+
+          {/* Adjust Spline size for sm and md screens */}
+    <div className="sm:scale-110 md:scale-125 sm:mt-8 md:mt-10 lg:scale-100 lg:mt-0 transition-all duration-300">
+      <Spline
+        scene="https://prod.spline.design/FbCmIqGsydBqn1vi/scene.splinecode"
+      />
+    </div>
+          <div className="absolute inset-0 text-white  bg-black bg-opacity-30 flex flex-col items-center justify-center text-center lg:p-8 p-4">
+
+           
+
+              <h1 className=" flex  lg:mx-56 mx-4   text-2xl md:text-3xl lg:text-4xl lg:font-bold font-semibold lg:mb-4 mb-2">
+                We invest in the companies of the future, today
+              </h1>
+              <p className=" lg:text-lg md:text-base text-sm lg:mb-6 mb-2 lg:mx-80 mx-4">
+                Lorem ipsum dolor sit amet consectetur sollicitudin pulvinar ipsum ut senectus malesuada dui lorem ac.
+              </p>
+
+              <div className="flex   lg:flex-row flex-col items-center lg:mx-10 mx-4 justify-center  lg:gap-8 gap-4">
+                <Button text="Pitch Your Startup" href="/your-link-here" />
+                <div className="flex gap-4 ">
+                <div className="     transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
+                  <FaFacebookF />
+                </div>
+                <div className="  transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
+                  <FaTwitter />
+                </div>
+                <div className="  transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
+                  <AiFillInstagram />
+                </div>
+                <div className="   transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
+                  <FaLinkedinIn />
+                </div>
+                </div>
+
+              </div>
+          
+
+
+
+          </div>
+        </div>
+
+      </div>
+      {/* page 7 */}
+
+      <div className="bg-white text-gray-900">
         <div className="px-4 py-16 mx-48">
           {/* Heading Section */}
           <div className="flex justify-between text-left mb-12 ">
@@ -429,17 +427,17 @@ const currentResearch = researchData[currentIndex];
           </div>
           {/* Footer Buttons */}
           <div className="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 ">
-            
-              <Button text="Pitch Your Startup" href="/your-link-here" />
-              <SecondaryButton text="   Browse all team members " />
+
+            <Button text="Pitch Your Startup" href="/your-link-here" />
+            <SecondaryButton text="   Browse all team members " />
           </div>
         </div>
       </div>
-      
 
-      
 
-   
+
+
+
     </>
   );
 };
