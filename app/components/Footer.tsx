@@ -1,42 +1,43 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
-import Button from './Button';
-import Logo from './Logo';
-
-
+import Button from "./Button";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
     <div className="flex flex-col items-center bg-[#f6f8ff] pt-20">
-      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-7xl">
-        <div className=" flex mb-8">
-          <h1 className="text-4xl flex  w-3/5  font-semibold text-gray-900">
+      <div className="bg-white rounded-lg shadow-lg p-8 w-full lg:max-w-7xl">
+        <div className="flex lg:flex-row flex-col mb-8 lg:justify-between">
+          <h1 className="lg:text-4xl text-3xl flex my-4 lg:my-0 lg:w-2/5 w-full lg:text-left text-center font-semibold text-gray-900">
             We invest in the companies of the future, today
           </h1>
-          <div className="flex items-center justify-end w-2/5 gap-5">
-            <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
-              <FaFacebookF />
-            </div>
-            <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
-              <FaTwitter />
-            </div>
-            <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
-              <AiFillInstagram />
-            </div>
-            <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
-              <FaLinkedinIn />
+          <div className="flex flex-col md:flex-row items-center justify-center  lg:w-2/5 w-full lg:gap-5 gap-2">
+            <div className="flex gap-2 md:gap-4 justify-center">
+              <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
+                <FaFacebookF />
+              </div>
+              <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
+                <FaTwitter />
+              </div>
+              <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
+                <AiFillInstagram />
+              </div>
+              <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
+                <FaLinkedinIn />
+              </div>
             </div>
             <Button text="Pitch Your Startup" href="/your-link-here" />
           </div>
         </div>
+
         {/* pages part */}
-        <div className="flex flex-row gap-8 ">
-          <div>
+        <div className="grid lg:grid-cols-6   md:grid-cols-4 grid-cols-1 gap-8">
+          <div className="md:col-span-3 lg:col-span-3 col-span-1">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Main pages
             </h2>
-            <ul className="text-gray-700 grid grid-cols-3 gap-2 ">
+            <ul className="text-gray-700 grid md:grid-rows-7  grid-rows-10 grid-flow-col space-y-2 ">
               <li>Home (sales)</li>
               <li>Home V1</li>
               <li>Home V2</li>
@@ -57,7 +58,7 @@ const Footer = () => {
               <li>Shop single</li>
 
               <li>
-                <a href="#" className="text-blue-600">
+                <a href="#" className="text-blue-600 flex flex-wrap">
                   More Webflow Template
                 </a>
               </li>
@@ -75,7 +76,9 @@ const Footer = () => {
               <li>Update Password</li>
             </ul>
           </div>
-          <div>
+         
+          <div className="">
+
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Template pages
             </h2>
@@ -88,7 +91,7 @@ const Footer = () => {
               <li>Changelog</li>
             </ul>
           </div>
-          <div>
+          <div className="">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Contact us
             </h2>
@@ -107,10 +110,11 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          
         </div>
         <hr  className="mt-7"/>
-        <div className="text-center flex justify-between text-gray-700 pt-8">
-          <div className="flex justify-center items-center  ">
+        <div className="text-center flex lg:flex-row flex-col justify-between text-gray-700 pt-8  ">
+          <div className="flex justify-center items-center my-4  ">
            <Logo />
           </div>
           <p>
