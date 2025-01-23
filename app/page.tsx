@@ -130,15 +130,15 @@ const currentResearch = researchData[currentIndex];
         </div>
       </div>
       {/* page2 */}
-      <div className="grid grid-cols-4 gap-4 mx-8 px-20  py-28  bg-white">
+      <div className="grid grid-cols-1 gap-4  md:grid-cols-2 lg:grid-cols-4 lg:mx-8 mx-4 px-6 py-4 lg:px-20  lg:py-28  bg-white">
         <div className=" text-left  mb-8 ">
-          <h1 className="text-7xl font-bold text-gray-900 mb-10 ">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-10 ">
             About Our Invest Firm
           </h1>
-          <div className="mb-16 mr-28  items-start justify-start ">
+          <div className="mb-16 lg:mr-28  items-start justify-start ">
             <Button text="Pitch Your Startup" href="/your-link-here" />
           </div>
-          <div className="mb-16 mr-20">
+          <div className="mb-16 lg:mr-20 md:justify-center">
             <p className="text-gray-600 mb-4">
               Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
               dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
@@ -150,8 +150,8 @@ const currentResearch = researchData[currentIndex];
             </p>
           </div>
         </div>
-
-        <div className="items-center col-span-2 justify-center ">
+{/* Center Section */}
+        <div className="items-center col-span-2  justify-center ">
           <div className="rounded-full overflow-hidden mb-8">
             <Image
               src={circle} // Your circle image
@@ -162,31 +162,33 @@ const currentResearch = researchData[currentIndex];
             />
           </div>
         </div>
-        <div className="flex flex-col text-right font-semibold text-2xl ">
-          <div className="flex flex-col  mb-4">
+         {/* Right Section */}
+        <div className=" flex flex-col lg:col-span-1 md:col-span-2 md:flex-wrap lg:text-right text-center font-semibold text-2xl ">
+        <div className="flex flex-col  mb-4">
+        
             <p className="text-gray-600  my-4">Companies</p>
-            <p className="text-blue-600 text-5xl font-bold">+200</p>
+            <p className="text-blue-600 lg:text-5xl text-4xl font-bold">+200</p>
+          <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
           </div>
-          <hr className="mb-7 border-1 border-black w-3/5 ml-auto" />
 
           <div className="flex flex-col  mb-4">
             <p className="text-gray-600 my-4">Team members</p>
-            <p className="text-blue-600 text-5xl font-bold">+50</p>
+            <p className="text-blue-600 lg:text-5xl text-4xl font-bold">+50</p>
+          <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
           </div>
-          <hr className="mb-7 border-1 border-black w-3/5 ml-auto" />
 
           <div className="flex flex-col  mb-4">
             <p className="text-gray-600 my-4">Capital investment</p>
-            <p className="text-blue-600 text-5xl font-bold">+5B</p>
+            <p className="text-blue-600 lg:text-5xl text-4xl font-bold">+5B</p>
+          <hr className="my-4 border-1 border-black lg:w-3/5  w-full lg:ml-auto" />
           </div>
-          <hr className="mb-7 border-1 border-black w-3/5 ml-auto" />
 
           <div className="flex flex-col  mb-4">
             <p className="text-gray-600  my-4">Years of experience</p>
-            <p className="text-blue-600 text-5xl font-bold">+15</p>
+            <p className="text-blue-600 lg:text-5xl text-4xl font-bold">+15</p>
           </div>
-
-        </div>
+          </div>
+      
       </div>
       {/* page3 */}
       <div className="bg-[#f6f8ff]">
