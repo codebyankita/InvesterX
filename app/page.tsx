@@ -89,25 +89,25 @@ const currentResearch = researchData[currentIndex];
     <>
       {/* page1 */}
       <div className="bg-[#f6f8ff]">
-        <main className=" flex items-center justify-around ">
-          <div className=" space-y-6 mb-28 w-2/4 px-32">
-            <h1 className="text-7xl font-bold text-gray-800">
+        <main className=" flex items-center justify-center lg:flex-row md:flex-col  flex-col lg:justify-between lg:px-0 lg:p-0 p-8 md:p-10 ">
+          <div className=" space-y-6 mb-28 w-full lg:px-14 sm:w-full lg:w-2/4">
+            <h1 className="text-3xl lg:text-left text-center justify-center sm:text-4xl lg:text-6xl font-bold text-gray-800">
               We invest in the companies of the future, today
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 lg:text-left  text-center  sm:text-sm lg:text-base">
               Lorem ipsum dolor sit amet consectetur sollicitudin pulvinar ipsum
               ut senectus malesuada dui lorem ac id vel nunc sapien magna.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-col md:justify-center md:flex-row lg:justify-self-start lg:flex-row space-y-5 md:space-y-0 md:space-x-4 lg:space-x-6">
               <Button text="Pitch Your Startup" href="/your-link-here" />
               <SecondaryButton text="Investment portfolio" />
             </div>
           </div>
-          <div className="w-2/4  md:mt-0">
+          <div className="w-full sm:w-full lg:w-2/4">
             <Image
               src={homeside}
               alt="Abstract blue and white wavy background"
-              className=" rounded-lg shadow-lg "
+              className=" rounded-lg  shadow-md"
             />
           </div>
         </main>
@@ -117,7 +117,7 @@ const currentResearch = researchData[currentIndex];
           <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-white via-white/50 to-transparent z-10 pointer-events-none"></div>
 
           {/* Scrolling Logos */}
-          <div className="flex animate-scroll space-x-36">
+          <div className="flex animate-scroll space-x-16 sm:space-x-12 md:space-x-16 lg:space-x-36">
             {[...companyLogos, ...companyLogos].map((logo, index) => (
               <Image
                 key={index}
