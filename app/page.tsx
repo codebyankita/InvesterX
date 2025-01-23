@@ -2,44 +2,38 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Button from "@/app/components/Button";
-import homeside from "@/public/home-1/sidehomeimage.jpg";
 import SecondaryButton from "@/app/components/SecondButton";
+import PortfolioCard from "@/app/components/PortfolioCard";
+import PartnerCard from "./components/PartnerCard";
 import company from "@/public/home/company.svg";
 import enterprice from "@/public/home/enterprice.svg";
 import organization from "@/public/home/oragnization.svg";
 import startup from "@/public/home/startup.svg";
 import venture from "@/public/home/venture.svg";
-// import { Marquee } from "@/components/magicui/marquee";
-// import articles from '@/public/home-1/articles.svg';
-// import bar from '@/public/home-1/bar.svg';
+import homeside from "@/public/home-1/sidehomeimage.jpg";
 import circle from "@/public/home-1/circleblue.jpg";
 import companylogo from '@/public/home-1/companylogo.svg';
 import enterpricelogo from '@/public/home-1/enterpricelogo.svg';
 import oragnzationlogo from '@/public/home-1/organizationlogo.svg';
 import venturelogo from '@/public/home-1/venturelogo.svg';
 import startuplogo from '@/public/home-1/startuplogo.svg';
-import PortfolioCard from "@/app/components/PortfolioCard";
-import { IoMdArrowForward, IoMdArrowBack } from "react-icons/io";
-// import reading from '@/public/home-1/reading.svg';
+import Andy from "@/public/home-1/andy.jpg";
+import John from "@/public/home-1/john.jpg"
+import Matt from "@/public/home-1/matt.jpg"
+import Sophie from "@/public/home-1/sophie.jpg"
 import reserch02 from '@/public/home-1/reserch02.jpg';
 import reserch03 from '@/public/home-1/reserch03.jpg';
 import reserch01 from '@/public/home-1/reserch01.jpg';
-import { CiMobile2 } from "react-icons/ci";
-import { CgScreen } from "react-icons/cg";
-import { IoSettingsOutline } from "react-icons/io5";
 import ReadMoreButton from './components/ReadMoreButton';
 import { FaFacebookF } from "react-icons/fa6";
+import { CgScreen } from "react-icons/cg";
+import { CiMobile2 } from "react-icons/ci";
+import { IoSettingsOutline } from "react-icons/io5";
 import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { IoMdArrowForward, IoMdArrowBack } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
-import { MdOutlineArrowOutward } from "react-icons/md";
-import Andy from "@/public/home-1/andy.jpg";
-import John from "@/public/home-1/john.jpg"
 
-import Matt from "@/public/home-1/matt.jpg"
-import PartnerCard from "./components/PartnerCard";
-import Sophie from "@/public/home-1/sophie.jpg"
 
-// import tv from '@/public/home-1/tv.svg';
 const companyLogos = [
   { id: 1, src: company, alt: "Company Logo" },
   { id: 2, src: venture, alt: "Venture Logo" },
@@ -164,7 +158,7 @@ const currentResearch = researchData[currentIndex];
               alt="Your image description"
               width={900} // Make the image larger
               height={900}
-              className="object-cover"
+              className="object-cover overflow-hidden"
             />
           </div>
         </div>

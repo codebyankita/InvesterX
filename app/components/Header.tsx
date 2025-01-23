@@ -4,12 +4,15 @@ import Link from 'next/link';
 import Logo from './Logo';
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import Button from './Button';
+import { TbMenu } from "react-icons/tb";
+import { RiCloseLargeFill } from "react-icons/ri";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -49,14 +52,23 @@ const Header = () => {
       setIsHovered(false);
     }
   };
-
+  // Toggle mobile menu
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  };
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto flex justify-between items-center py-4">
-        <nav className="md:flex space-x-5">
+    <header className="sticky top-0 z-50 bg-white md:bg-[#f6f8ff] shadow-md">
+      <div className="container mx-auto flex justify-between items-center py-4 sm:py-2">
+
+        
+
+        {/* Logo and Desktop Navigation */}
+        <nav className=" flex space-x-5">
           <div className="flex items-center gap-9">
             {/* Logo */}
             <Logo />
+            {/* Links for Large Screens */}
+            <div className="hidden lg:flex space-x-5">
             <Link href="/" onClick={handleNavigateAway} className="hover:text-custom-blue">
               Home
             </Link>
@@ -67,7 +79,7 @@ const Header = () => {
               Blog
             </Link>
 
-            {/* Pages Dropdown */}
+          {/* Pages Dropdown for Desktop */}
             <div
               className="relative"
               ref={dropdownRef}
@@ -148,15 +160,67 @@ const Header = () => {
                 </div>
               ) : null}
             </div>
-            <Link href="/cart" onClick={handleNavigateAway} className="flex items-center gap-4 hover:text-custom-blue">
+            </div>
+            {/* Cart for Large Screens */}
+            <Link href="/cart" onClick={handleNavigateAway} className=" flex md:items-end md:justify-end gap-4 hover:text-custom-blue">
               Cart(0)
             </Link>
           </div>
         </nav>
-        <Button text="Pitch Your Startup" href="/your-link-here"  />
-      </div>
-    </header>
-  );
-};
+             {/* Mobile Menu Button */}
+        <div className="lg:hidden mx-4 flex items-center">
+          <button onClick={handleMobileMenuToggle}>
+            {isMobileMenuOpen ? (
+              <RiCloseLargeFill className="h-7 w-7" />
+            ) : (
+              <TbMenu className="h-7 w-7" />
+            )}
+          </button>
+        </div>
+         {/* Button for Desktop */}
+         <div className="hidden lg:block ">
 
+        <Button text="Pitch Your Startup" href="/your-link-here"  />
+         </div>
+      </div>
+   {/* Mobile Menu */}
+   {isMobileMenuOpen && (
+    <div className="lg:hidden absolute left-0 right-0 bg-white shadow-lg z-40 py-6">
+      <div className="flex flex-col mx-6 text-left space-y-6">
+        <Link href="/" onClick={handleNavigateAway} className="text-lg hover:text-custom-blue">Home</Link>
+        <Link href="/about" onClick={handleNavigateAway} className="text-lg hover:text-custom-blue">About</Link>
+        <Link href="/blog" onClick={handleNavigateAway} className="text-lg hover:text-custom-blue">Blog</Link>
+
+        {/* Mobile Pages Dropdown */}
+        <div className="relative">
+          <button
+            onClick={handleDropdownToggle}
+            className="flex items-center justify-center space-x-2 text-lg hover:text-custom-blue"
+          >
+            Pages
+            {isDropdownOpen ? <RiArrowDropUpLine className="h-6 w-6" /> : <RiArrowDropDownLine className="h-6 w-6" />}
+          </button>
+
+          {isDropdownOpen && (
+            <div className="bg-white p-6 w-full mt-2 shadow-lg border rounded-xl z-50">
+              <ul className="space-y-2">
+                {/* Links for Mobile Pages */}
+                <li><Link href="/pages/home-sales" className="hover:text-custom-blue">Main Pages</Link></li>
+                <li><Link href="/pages/about" className="hover:text-custom-blue">Utility Pages</Link></li>
+                <li><Link href="/pages/contact" className="hover:text-custom-blue">Template Pages</Link></li>
+              </ul>
+            </div>
+          )}
+        </div>
+
+        {/* Pitch Your Startup Button in Mobile Menu */}
+        <div>
+          <Button text="Pitch Your Startup" href="/your-link-here" />
+        </div>
+      </div>
+    </div>
+  )}
+</header>
+);
+};
 export default Header;
