@@ -1,9 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import Link from "next/link";
 
-const PartnerCard = ({ image, name, title }) => {
+interface PartnerCardProps {
+  id: string;
+  image: string;
+  name: string;
+  title: string;
+}
+const PartnerCard: React.FC<PartnerCardProps> = ({ id, image, name, title }) => {
   return (
+    <Link href={`/investors/${id}`}>
     <div className="bg-white border rounded-2xl px-6 py-12 text-center relative transition-all duration-300 group hover:border-2 hover:border-blue-500 hover:shadow-lg transform hover:scale-95">
       <div className="absolute top-4 right-4 text-gray-500 transition-colors duration-300 group-hover:text-blue-500">
         <MdOutlineArrowOutward size={24} />
@@ -26,6 +34,7 @@ const PartnerCard = ({ image, name, title }) => {
         <p className="text-gray-500 text-lg">{title}</p>
       </div>
     </div>
+    </Link>
   );
 };
 

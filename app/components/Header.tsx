@@ -123,7 +123,7 @@ const Header = () => {
                           <li><Link href="/pages/home-v3" className="hover:text-custom-blue">Blog V3</Link></li>
                           <li><Link href="/pages/about" className="hover:text-custom-blue">Blog post</Link></li>
                           <li><Link href="/pages/portfolio-v1" className="hover:text-custom-blue">Contact</Link></li>
-                          <li><Link href="/pages/portfolio-v2" className="hover:text-custom-blue">Investors</Link></li>
+                          <li><Link href="/invester" className="hover:text-custom-blue">Investors</Link></li>
                           <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue">Investor single</Link></li>
                           <li><Link href="/pages/portfolio-v1" className="hover:text-custom-blue">Shop</Link></li>
                           <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue">Shop single</Link></li>
