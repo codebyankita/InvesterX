@@ -9,12 +9,12 @@ export default function page() {
 <div className="bg-[#f6f8ff] text-gray-900 ">
         <div className="px-4 lg:py-16 lg:mx-48 mx-4 py-8">
           {/* Heading Section */}
-          <div className="flex justify-between gap-6 lg:gap-1 text-left mb-12 ">
+          <div className="flex lg:flex-row flex-col justify-between gap-6 lg:gap-1 text-left mb-12 ">
             <h1 className="lg:text-5xl text-3xl lg:w-1/3 w-full lg:content-end  content-center font-bold text-gray-900">
               Our partners
 
             </h1>
-            <div className="text-gray-500 flex gap-4 lg:text-xl text-base mt-4">
+            <div className="flex md:flex-row flex-col text-gray-500  gap-4 lg:text-xl text-base mt-4">
             <Button text="Pitch Your Startup" href="/your-link-here" />
             <SecondaryButton text="  All " />
 

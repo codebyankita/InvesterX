@@ -12,7 +12,7 @@ interface PartnerCardProps {
 const PartnerCard: React.FC<PartnerCardProps> = ({ id, image, name, title }) => {
   return (
     <Link href={`/investors/${id}`}>
-    <div className="bg-white border rounded-2xl px-6 py-12 text-center relative transition-all duration-300 group hover:border-2 hover:border-blue-500 hover:shadow-lg transform hover:scale-95">
+    <div className="bg-white border rounded-2xl  py-12 text-center relative transition-all duration-300 group hover:border-2 hover:border-blue-500 hover:shadow-lg transform hover:scale-95">
       <div className="absolute top-4 right-4 text-gray-500 transition-colors duration-300 group-hover:text-blue-500">
         <MdOutlineArrowOutward size={24} />
       </div>
@@ -28,7 +28,7 @@ const PartnerCard: React.FC<PartnerCardProps> = ({ id, image, name, title }) => 
       </div>
       {/* Name and Title at the Bottom */}
       <div className="mt-8">
-        <h2 className="text-2xl font-semibold text-gray-900 transition-colors duration-300 group-hover:text-blue-500">
+        <h2 className="text-2xl flex-wrap font-semibold text-gray-900 transition-colors duration-300 group-hover:text-blue-500">
           {name}
         </h2>
         <p className="text-gray-500 text-lg">{title}</p>

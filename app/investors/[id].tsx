@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+
 import Image from "next/image";
 import { investors } from "../components/data/investors";
 
@@ -80,11 +81,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// Fetch data for each investor page
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log("Fetching data for ID:", params?.id); // Check the ID here
   const investor = investors.find((inv) => inv.id === params?.id);
 
   if (!investor) {
+    console.log("Investor not found:", params?.id);
     return { notFound: true };
   }
 
@@ -92,3 +94,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: { investor },
   };
 };
+
