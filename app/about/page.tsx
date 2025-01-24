@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Link from 'next/link';
+// import Link from 'next/link';
 import Image from "next/image";
 import Aboutfirm from "@/public/about/aboutfirm.jpg";
 import ScrollingLogos from "../components/ScrollingLogos";
@@ -19,6 +19,7 @@ import miami from "@/public/about/miamioffice.jpg";
 import Ny from "@/public/about/office.jpg";
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
 import { investors } from "@/app/components/data/investors";
+import NavigationButton from "@/app/components/NavigationButton";
 const offices = [
   {
     id: "newyork",
@@ -295,18 +296,8 @@ export default function about() {
           <h1 className="text-4xl font-semibold ">Visit our offices</h1>
           {/* Navigation Buttons */}
           <div className="flex   ">
-            <button
-              className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-l-full bg-white"
-              onClick={handlePrevious}
-            >
-              <IoMdArrowBack className="text-xl " />
-            </button>
-            <button
-              className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-r-full bg-white"
-              onClick={handleNext}
-            >
-              <IoMdArrowForward className="text-xl " />
-            </button>
+             <NavigationButton direction="prev" onClick={handlePrevious} />
+        <NavigationButton direction="next" onClick={handleNext} />
           </div>
         </div>
         <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start">
@@ -340,20 +331,7 @@ export default function about() {
             </div>
           </div>
         </div>
-        {/* <div className="flex mt-6">
-        <button
-          onClick={handlePrevious}
-          className="bg-gray-200 p-2 rounded-full mr-2 hover:bg-gray-300"
-        >
-          <i className="fas fa-arrow-left"></i>
-        </button>
-        <button
-          onClick={handleNext}
-          className="bg-gray-200 p-2 rounded-full hover:bg-gray-300"
-        >
-          <i className="fas fa-arrow-right"></i>
-        </button>
-      </div> */}
+     
       </div>
     </div>
   );

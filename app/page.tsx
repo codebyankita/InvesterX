@@ -26,6 +26,8 @@ import { AiFillInstagram } from "react-icons/ai";
 import Spline from "@splinetool/react-spline";
 import ScrollingLogos from "./components/ScrollingLogos";
 import { investors } from "@/app/components/data/investors";
+import NavigationButton from "@/app/components/NavigationButton";
+
 const researchData = [
   {
     id: "01",
@@ -58,16 +60,16 @@ const HomePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Handler for changing the index
-  const handleNavigation = (direction: "prev" | "next") => {
-    if (direction === "prev") {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? researchData.length - 1 : prevIndex - 1
-      );
-    } else {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === researchData.length - 1 ? 0 : prevIndex + 1
-      );
-    }
+  const handlePrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? researchData.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === researchData.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   // Current research item
@@ -253,18 +255,8 @@ const HomePage = () => {
               </div>
               {/* Navigation Buttons */}
               <div className="flex  mt-10 ">
-                <button
-                  className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-l-full bg-white"
-                  onClick={() => handleNavigation("prev")}
-                >
-                  <IoMdArrowBack className="text-xl " />
-                </button>
-                <button
-                  className="flex items-center justify-center px-6 py-3 text-black hover:text-white border border-gray-300 hover:bg-blue-600 rounded-r-full bg-white"
-                  onClick={() => handleNavigation("next")}
-                >
-                  <IoMdArrowForward className="text-xl " />
-                </button>
+              <NavigationButton direction="prev" onClick={handlePrevious} />
+              <NavigationButton direction="next" onClick={handleNext} />
               </div>
             </div>
           </div>
