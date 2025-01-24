@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-// import Link from 'next/link';
+import Link from 'next/link';
 import Image from "next/image";
 import Aboutfirm from "@/public/about/aboutfirm.jpg";
 import ScrollingLogos from "../components/ScrollingLogos";
