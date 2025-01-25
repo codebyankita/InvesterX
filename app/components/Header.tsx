@@ -45,6 +45,10 @@ const Header = () => {
   if (noFooterPages.includes(pathname)) {
     return null;  // Return null if on pages where the footer should not be shown
   }
+  // Function to handle link clicks inside the dropdown
+  const handleLinkClick = () => {
+    setIsDropdownOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white md:bg-[#f6f8ff] shadow-md">
@@ -59,10 +63,10 @@ const Header = () => {
             <Logo />
             {/* Links for Large Screens */}
             <div className="hidden lg:flex space-x-5">
-              <Link href="/" className="hover:text-custom-blue">
+              <Link href="/" className="hover:text-custom-blue" onClick={handleLinkClick}>
                 Home
               </Link>
-              <Link href="/about" className="hover:text-custom-blue">
+              <Link href="/about" className="hover:text-custom-blue" onClick={handleLinkClick}>
                 About
               </Link>
               {/* <Link href="/blog" className="hover:text-custom-blue">
@@ -99,25 +103,25 @@ const Header = () => {
                         <div>
                           <h3 className="text-lg font-bold mb-3">Main Pages</h3>
                           <ul className="grid grid-cols-3 gap-2 text-sm">
-                            <li><Link href="/pages/home-sales" className="hover:text-custom-blue">Home (sales)</Link></li>
-                            <li><Link href="/pages/home-v1" className="hover:text-custom-blue">Home V1</Link></li>
-                            <li><Link href="/pages/home-v2" className="hover:text-custom-blue">Home V2</Link></li>
-                            <li><Link href="/pages/home-v3" className="hover:text-custom-blue">Home V3</Link></li>
-                            <li><Link href="/pages/about" className="hover:text-custom-blue">About</Link></li>
-                            <li><Link href="/pages/portfolio-v1" className="hover:text-custom-blue">Portfolio V1</Link></li>
-                            <li><Link href="/pages/portfolio-v2" className="hover:text-custom-blue">Portfolio V2</Link></li>
-                            <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue">Portfolio V3</Link></li>
-                            <li><Link href="/pages/home-sales" className="hover:text-custom-blue">Portfolio single</Link></li>
-                            <li><Link href="/pages/home-v1" className="hover:text-custom-blue">Blog V1</Link></li>
-                            <li><Link href="/pages/home-v2" className="hover:text-custom-blue">Blog V2</Link></li>
-                            <li><Link href="/pages/home-v3" className="hover:text-custom-blue">Blog V3</Link></li>
-                            <li><Link href="/pages/about" className="hover:text-custom-blue">Blog post</Link></li>
-                            <li><Link href="/pages/portfolio-v1" className="hover:text-custom-blue">Contact</Link></li>
-                            <li><Link href="/investors" className="hover:text-custom-blue">Investors</Link></li>
-                            <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue">Investor single</Link></li>
-                            <li><Link href="/pages/portfolio-v1" className="hover:text-custom-blue">Shop</Link></li>
-                            <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue">Shop single</Link></li>
-                            <li><Link href="/pages/portfolio-v2" className="text-custom-blue">More Webflow Template</Link></li>
+                            <li><Link href="/pages/home-sales" className="hover:text-custom-blue" onClick={handleLinkClick}>Home (sales)</Link></li>
+                            <li><Link href="/pages/home-v1" className="hover:text-custom-blue" onClick={handleLinkClick}>Home V1</Link></li>
+                            <li><Link href="/pages/home-v2" className="hover:text-custom-blue" onClick={handleLinkClick}>Home V2</Link></li>
+                            <li><Link href="/pages/home-v3" className="hover:text-custom-blue" onClick={handleLinkClick}>Home V3</Link></li>
+                            <li><Link href="/pages/about" className="hover:text-custom-blue" onClick={handleLinkClick}>About</Link></li>
+                            <li><Link href="/pages/portfolio-v1" className="hover:text-custom-blue" onClick={handleLinkClick}>Portfolio V1</Link></li>
+                            <li><Link href="/pages/portfolio-v2" className="hover:text-custom-blue" onClick={handleLinkClick}>Portfolio V2</Link></li>
+                            <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue" onClick={handleLinkClick}>Portfolio V3</Link></li>
+                            <li><Link href="/pages/home-sales" className="hover:text-custom-blue" onClick={handleLinkClick}>Portfolio single</Link></li>
+                            <li><Link href="/pages/home-v1" className="hover:text-custom-blue" onClick={handleLinkClick}>Blog V1</Link></li>
+                            <li><Link href="/pages/home-v2" className="hover:text-custom-blue" onClick={handleLinkClick}>Blog V2</Link></li>
+                            <li><Link href="/pages/home-v3" className="hover:text-custom-blue" onClick={handleLinkClick}>Blog V3</Link></li>
+                            <li><Link href="/pages/about" className="hover:text-custom-blue" onClick={handleLinkClick}>Blog post</Link></li>
+                            <li><Link href="/pages/portfolio-v1" className="hover:text-custom-blue" onClick={handleLinkClick}>Contact</Link></li>
+                            <li><Link href="/investors" className="hover:text-custom-blue" onClick={handleLinkClick}>Investors</Link></li>
+                            <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue" onClick={handleLinkClick}>Investor single</Link></li>
+                            <li><Link href="/pages/portfolio-v1" className="hover:text-custom-blue" onClick={handleLinkClick}>Shop</Link></li>
+                            <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue" onClick={handleLinkClick}>Shop single</Link></li>
+                            <li><Link href="/pages/portfolio-v2" className="text-custom-blue" onClick={handleLinkClick}>More Webflow Template</Link></li>
                           </ul>
                         </div>
 
@@ -125,11 +129,11 @@ const Header = () => {
                         <div>
                           <h3 className="text-lg font-bold mb-3">Utility Pages</h3>
                           <ul className="space-y-2 text-sm">
-                            <li><Link href="/pages/coming-soon" className="hover:text-custom-blue">Coming Soon</Link></li>
-                            <li><Link href="/pages/sign-in" className="hover:text-custom-blue">Sign In</Link></li>
-                            <li><Link href="/pages/sign-up" className="hover:text-custom-blue">Sign Up</Link></li>
-                            <li><Link href="/pages/reset-password" className="hover:text-custom-blue">Reset Password</Link></li>
-                            <li><Link href="/pages/update-password" className="hover:text-custom-blue">Update Password</Link></li>
+                            <li><Link href="/pages/coming-soon" className="hover:text-custom-blue" onClick={handleLinkClick}>Coming Soon</Link></li>
+                            <li><Link href="/sign-in" className="hover:text-custom-blue" onClick={handleLinkClick}>Sign In</Link></li>
+                            <li><Link href="/sign-up" className="hover:text-custom-blue" onClick={handleLinkClick}>Sign Up</Link></li>
+                            <li><Link href="/pages/reset-password" className="hover:text-custom-blue" onClick={handleLinkClick}>Reset Password</Link></li>
+                            <li><Link href="/pages/update-password" className="hover:text-custom-blue" onClick={handleLinkClick}>Update Password</Link></li>
                           </ul>
                         </div>
 
@@ -137,12 +141,12 @@ const Header = () => {
                         <div>
                           <h3 className="text-lg font-bold mb-3">Template Pages</h3>
                           <ul className="space-y-2 text-sm">
-                            <li><Link href="/pages/start-here" className="hover:text-custom-blue">Start Here</Link></li>
-                            <li><Link href="/pages/style-guide" className="hover:text-custom-blue">Style Guide</Link></li>
-                            <li><Link href="/pages/404-not-found" className="hover:text-custom-blue">404 Not Found</Link></li>
-                            <li><Link href="/pages/password-protected" className="hover:text-custom-blue">Password Protected</Link></li>
-                            <li><Link href="/pages/licenses" className="hover:text-custom-blue">Licenses</Link></li>
-                            <li><Link href="/pages/changelog" className="hover:text-custom-blue">Changelog</Link></li>
+                            <li><Link href="/pages/start-here" className="hover:text-custom-blue" onClick={handleLinkClick}>Start Here</Link></li>
+                            <li><Link href="/pages/style-guide" className="hover:text-custom-blue" onClick={handleLinkClick}>Style Guide</Link></li>
+                            <li><Link href="/pages/404-not-found" className="hover:text-custom-blue" onClick={handleLinkClick}>404 Not Found</Link></li>
+                            <li><Link href="/pages/password-protected" className="hover:text-custom-blue" onClick={handleLinkClick}>Password Protected</Link></li>
+                            <li><Link href="/pages/licenses" className="hover:text-custom-blue" onClick={handleLinkClick}>Licenses</Link></li>
+                            <li><Link href="/pages/changelog" className="hover:text-custom-blue" onClick={handleLinkClick}>Changelog</Link></li>
                           </ul>
                         </div>
                       </div>
@@ -152,7 +156,7 @@ const Header = () => {
               </div>
             </div>
             {/* Cart for Large Screens */}
-            <Link href="/cart" className=" flex  justify-items-end lg:gap-4  hover:text-custom-blue">
+            <Link href="/cart" className=" flex  justify-items-end lg:gap-4  hover:text-custom-blue" onClick={handleLinkClick}>
               Cart(0)
             </Link>
           </div>
