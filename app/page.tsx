@@ -21,7 +21,6 @@ import { CgScreen } from "react-icons/cg";
 import { CiMobile2 } from "react-icons/ci";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { IoMdArrowForward, IoMdArrowBack } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 import Spline from "@splinetool/react-spline";
 import ScrollingLogos from "./components/ScrollingLogos";
@@ -54,8 +53,8 @@ const researchData = [
 
 const HomePage = () => {
 
-     // Slice the first 4 investors for Home or About page
-     const limitedInvestors = investors.slice(0, 4);
+  // Slice the first 4 investors for Home or About page
+  const limitedInvestors = investors.slice(0, 4);
   // State for the current index
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -76,7 +75,7 @@ const HomePage = () => {
   const currentResearch = researchData[currentIndex];
 
 
-  
+
   return (
     <>
       {/* page1 */}
@@ -255,8 +254,8 @@ const HomePage = () => {
               </div>
               {/* Navigation Buttons */}
               <div className="flex  mt-10 ">
-              <NavigationButton direction="prev" onClick={handlePrevious} />
-              <NavigationButton direction="next" onClick={handleNext} />
+                <NavigationButton direction="prev" onClick={handlePrevious} />
+                <NavigationButton direction="next" onClick={handleNext} />
               </div>
             </div>
           </div>
@@ -364,15 +363,15 @@ const HomePage = () => {
           </div>
           {/* Partner Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {limitedInvestors.map((investor) => (
-            <PartnerCard
-              key={investor.id}
-              id={investor.id}
-              image={investor.image}
-              name={investor.name}
-              title={investor.title}
-            />
-          ))}
+            {limitedInvestors.map((investor) => (
+              <PartnerCard
+                key={investor.id}
+                id={investor.id}
+                image={investor.image}
+                name={investor.name}
+                title={investor.title}
+              />
+            ))}
           </div>
           {/* Footer Buttons */}
           <div className="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 ">
