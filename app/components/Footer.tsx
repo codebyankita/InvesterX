@@ -1,10 +1,19 @@
+'use client'
 import React from "react";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import Button from "./Button";
 import Logo from "./Logo";
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+  const pathname = usePathname();  // Get the current pathname
+  const noFooterPages = ['/sign-in', '/sign-up'];
+
+  if (noFooterPages.includes(pathname)) {
+    return null;  // Return null if on pages where the footer should not be shown
+  }
+
   return (
     <div className="flex flex-col items-center bg-[#f6f8ff] pt-20">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full lg:max-w-7xl">
@@ -76,7 +85,7 @@ const Footer = () => {
               <li>Update Password</li>
             </ul>
           </div>
-         
+
           <div className="">
 
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
@@ -110,12 +119,12 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
         </div>
-        <hr  className="mt-7"/>
+        <hr className="mt-7" />
         <div className="text-center flex lg:flex-row flex-col justify-between text-gray-700 pt-8  ">
           <div className="flex justify-center items-center my-4  ">
-           <Logo />
+            <Logo />
           </div>
           <p>
             Copyright © Investor X | Designed by{" "}
@@ -129,7 +138,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-     
+
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import Button from './Button';
 import { TbMenu } from "react-icons/tb";
 import { RiCloseLargeFill } from "react-icons/ri";
-
+import { usePathname } from 'next/navigation';
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   // const [isHovered, setIsHovered] = useState(false);
@@ -39,7 +39,12 @@ const Header = () => {
     setIsMobileMenuOpen(prev => !prev);
   };
 
+  const pathname = usePathname();  // Get the current pathname
+  const noFooterPages = ['/sign-in', '/sign-up'];
 
+  if (noFooterPages.includes(pathname)) {
+    return null;  // Return null if on pages where the footer should not be shown
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white md:bg-[#f6f8ff] shadow-md">
@@ -60,9 +65,9 @@ const Header = () => {
               <Link href="/about" className="hover:text-custom-blue">
                 About
               </Link>
-              <Link href="/blog" className="hover:text-custom-blue">
+              {/* <Link href="/blog" className="hover:text-custom-blue">
                 Blog
-              </Link>
+              </Link> */}
 
               {/* Pages Dropdown for Desktop */}
               <div
@@ -162,7 +167,7 @@ const Header = () => {
         <div className="lg:hidden mx-4 md:mx-2 flex items-center">
           <button onClick={handleMobileMenuToggle}>
             {isMobileMenuOpen ? (
-              <RiCloseLargeFill className="h-7 w-7" />
+              <RiCloseLargeFill className="h-7 w-7 transition-transform duration-300 ease-in-out transform" />
             ) : (
               <TbMenu className="h-7 w-7" />
             )}
@@ -171,7 +176,7 @@ const Header = () => {
       </div>
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute left-0 right-0 bg-white shadow-lg z-40 py-6">
+        <div className="lg:hidden absolute left-0 right-0 bg-white shadow-lg z-40 py-6 transition-all duration-200 ease-in-out">
           <div className="flex flex-col mx-6 text-left space-y-6">
             <Link href="/" className="text-lg hover:text-custom-blue">Home</Link>
             <Link href="/about" className="text-lg hover:text-custom-blue">About</Link>
