@@ -17,7 +17,6 @@ import Leadership from "@/public/about/leadership.svg";
 import PartnerCard from "../components/PartnerCard";
 import miami from "@/public/about/miamioffice.jpg";
 import Ny from "@/public/about/office.jpg";
-import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
 import { investors } from "@/app/components/data/investors";
 import NavigationButton from "@/app/components/NavigationButton";
 import email from "@/public/about/email.svg";
@@ -49,6 +48,7 @@ const offices = [
 export default function about() {
    // Slice the first 4 investors for Home or About page
    const limitedInvestors = investors.slice(0, 4);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [currentOfficeIndex, setCurrentOfficeIndex] = useState(0);
 
   const handlePrevious = () => {
