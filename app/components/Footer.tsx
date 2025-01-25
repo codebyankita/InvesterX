@@ -129,23 +129,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <footer className="w-full mt-20">
- {/* main footer */}
-        {/* <div className="bg-blue-600 text-white py-4 fixed bottom-0 w-full">
-          <div className="flex justify-center items-center">
-            <span>
-              Like Investor X Webflow Template? Get it today on the Webflow
-              Marketplace
-            </span>
-            <a
-              href="#"
-              className="ml-4 bg-white text-blue-600 px-4 py-2 rounded-full"
-            >
-              Buy now
-            </a>
-          </div>
-        </div>  */}
-      </footer>
+     
     </div>
   );
 };
