@@ -312,21 +312,26 @@ const HomePage = () => {
       </div>
       {/* page 6 */}
       <div className="bg-[#f6f8ff] flex items-center justify-center lg:pb-28 pb-16">
-        <div className="relative rounded-3xl overflow-hidden lg:mx-52 mx-4">
+        <div className="relative rounded-3xl overflow-hidden lg:mx-52 mx-4 w-full max-w-screen-lg">
           {/* Adjust Spline size for sm and md screens */}
-          <div className="sm:scale-110 md:scale-125 sm:mt-8 md:mt-10 lg:scale-100 lg:mt-0 transition-all duration-300">
-            <Spline scene="https://prod.spline.design/FbCmIqGsydBqn1vi/scene.splinecode" />
+          <div className="w-full h-auto aspect-w-16 aspect-h-12 sm:max-h-[500px] sm:overflow-y-auto">
+            <Spline
+              scene="https://prod.spline.design/RKv4Qedw-h9DMTxy/scene.splinecode"
+              className="w-full h-full"
+            />
           </div>
+          {/* Overlay Content */}
           <div className="absolute inset-0 text-white  bg-black bg-opacity-30 flex flex-col items-center justify-center text-center lg:p-8 p-4">
-            <h1 className=" flex  lg:mx-56 mx-4   text-2xl md:text-3xl lg:text-4xl lg:font-bold font-semibold lg:mb-4 mb-2">
+            <h1 className=" flex  lg:mx-10 mx-4   text-xl md:text-3xl lg:text-4xl lg:font-bold font-semibold lg:mb-4 mb-2">
               We invest in the companies of the future, today
             </h1>
-            <p className=" lg:text-lg md:text-base text-sm lg:mb-6 mb-2 lg:mx-80 mx-4">
+            <p className=" lg:text-lg text-center text-wrap md:text-base text-sm lg:mb-6 mb-2 lg:mx-10 mx-4">
               Lorem ipsum dolor sit amet consectetur sollicitudin pulvinar ipsum
               ut senectus malesuada dui lorem ac.
             </p>
 
             <div className="flex   lg:flex-row flex-col items-center lg:mx-10 mx-4 justify-center  lg:gap-8 gap-4">
+
               <Button text="Pitch Your Startup" href="/your-link-here" />
               <div className="flex gap-4 ">
                 <div className="     transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
