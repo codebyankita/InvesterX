@@ -1,7 +1,8 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-
+//app/investors/[id]/page.tsx
+// app/investors/[id]/page.tsx
+import React from "react";
 import Image from "next/image";
-import { investors } from "../components/data/investors";
+import { investors } from "@/app/components/data/investors-data";
 
 type Investor = {
   id: string;
@@ -14,11 +15,14 @@ type Investor = {
   image: string;
 };
 
-type InvestorPageProps = {
-  investor: Investor;
-};
+export default function InvestorPage({ params }: { params: { id: string } }) {
+  const investor = investors.find((inv) => inv.id === params.id) as Investor | undefined;
 
-export default function InvestorPage({ investor }: InvestorPageProps) {
+
+  if (!investor) {
+    return <div className="text-center text-red-600">Investor not found</div>;
+  }
+
   return (
     <div className="bg-blue-50 min-h-screen py-12">
       <div className="container mx-auto p-6">
@@ -38,7 +42,7 @@ export default function InvestorPage({ investor }: InvestorPageProps) {
           </div>
           {/* Additional Info */}
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-gray-900 text-lg font-semibold">More information</h2>
+            <h2 className="text-gray-900 text-lg font-semibold">More Information</h2>
             <div className="mt-4">
               <div className="flex items-center space-x-2">
                 <i className="fas fa-envelope text-blue-600"></i>
@@ -49,7 +53,7 @@ export default function InvestorPage({ investor }: InvestorPageProps) {
               <div className="flex items-center space-x-2 mt-2">
                 <i className="fas fa-globe text-blue-600"></i>
                 <a href={investor.website} className="text-blue-600">
-                  {investor.website} <i className="fas fa-external-link-alt"></i>
+                  {investor.website}
                 </a>
               </div>
             </div>
@@ -71,27 +75,3 @@ export default function InvestorPage({ investor }: InvestorPageProps) {
     </div>
   );
 }
-
-// Generate paths for each investor
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = investors.map((investor) => ({
-    params: { id:investor.id },
-  }));
-
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log("Fetching data for ID:", params?.id); // Check the ID here
-  const investor = investors.find((inv) => inv.id === params?.id);
-
-  if (!investor) {
-    console.log("Investor not found:", params?.id);
-    return { notFound: true };
-  }
-
-  return {
-    props: { investor },
-  };
-};
-

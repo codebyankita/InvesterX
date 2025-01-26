@@ -24,7 +24,7 @@ import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import Spline from "@splinetool/react-spline";
 import ScrollingLogos from "./components/ScrollingLogos";
-import { investors } from "@/app/components/data/investors";
+import { investors } from "@/app/components/data/investors-data";
 import NavigationButton from "@/app/components/NavigationButton";
 
 const researchData = [
