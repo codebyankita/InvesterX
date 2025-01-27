@@ -83,7 +83,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
       href={isHovered ? "#" : link} // Disable link if hovered
       target={isHovered ? "" : "_blank"}
       rel={isHovered ? "" : "noopener noreferrer"}
-      className={`relative p-9 h-96 rounded-2xl border border-solid bg-white text-black group hover:bg-custom-blue hover:text-white transition-all duration-300 flex flex-col cursor-${isHovered ? "not-allowed" : "pointer"}`}
+      className={`relative p-4 lg:p-8 my-4 h-96 rounded-2xl border border-solid bg-white text-black group hover:bg-custom-blue hover:text-white transition-all duration-300 flex flex-col cursor-${isHovered ? "not-allowed" : "pointer"}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

@@ -94,7 +94,7 @@ const SignUp = () => {
                 <div className="flex justify-center items-center my-4">
                     <Logo />
                 </div>
-                <p>
+                {/* <p>
                     Copyright © Investor X | Designed by{" "}
                     <a href="#" className="text-blue-600">
                         BRIX Templates
@@ -103,7 +103,7 @@ const SignUp = () => {
                     <a href="#" className="text-blue-600">
                         Webflow
                     </a>
-                </p>
+                </p> */}
             </footer>
         </div>
     );

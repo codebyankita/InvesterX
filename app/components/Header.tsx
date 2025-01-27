@@ -2,23 +2,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
-import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
+// import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import Button from './Button';
 import { TbMenu } from "react-icons/tb";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { usePathname } from 'next/navigation';
 const Header = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   // const [isHovered, setIsHovered] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+  // const [isMobileDropdownOpen] = useState(false);
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
+        // setIsDropdownOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -27,10 +27,10 @@ const Header = () => {
     };
   }, []);
 
-  // Toggle dropdown on click
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen(prev => !prev);
-  };
+  // // Toggle dropdown on click
+  // const handleDropdownToggle = () => {
+  //   setIsDropdownOpen(prev => !prev);
+  // };
   // Toggle mobile menu
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(prev => !prev);
@@ -44,18 +44,18 @@ const Header = () => {
   }
   // Function to handle link clicks inside the dropdown
   const handleLinkClick = () => {
-    setIsDropdownOpen(false);
+    // setIsDropdownOpen(false);
   };
 
   return (
     <header className="sticky top-0 z-50 bg-white md:bg-[#f6f8ff] shadow-md">
-      <div className="lg:container mx-auto flex  justify-between items-center py-4 sm:py-2">
+      <div className="lg:container mx-auto flex px-4  justify-between items-center py-4 sm:py-2">
 
 
 
         {/* Logo and Desktop Navigation */}
         <nav className=" flex space-x-5">
-          <div className="flex items-center justify-start  lg:gap-9 md:gap-36 gap-20">
+          <div className="flex items-center justify-start  lg:gap-9 md:gap-30 gap-20">
             {/* Logo */}
             <Logo />
             {/* Links for Large Screens */}
@@ -92,7 +92,7 @@ const Header = () => {
                   )}
                 </button> */}
 
-                {isDropdownOpen && (
+                {/* {isDropdownOpen && (
                   <div className="fixed left-1/4 right-2/4 top-28 justify-center items-center bg-opacity-50 z-50">
                     <div
                       className="bg-white w-[900px] rounded-2xl border p-10 overflow-y-auto max-h-[calc(100vh-4rem)]"
@@ -100,7 +100,7 @@ const Header = () => {
                     >
                       <div className="flex flex-row gap-8">
                         {/* Main Pages */}
-                        <div>
+                {/* <div>
                           <h3 className="text-lg font-bold mb-3">Main Pages</h3>
                           <ul className="grid grid-cols-3 gap-2 text-sm">
                             <li><Link href="/pages/home-sales" className="hover:text-custom-blue" onClick={handleLinkClick}>Home (sales)</Link></li>
@@ -123,10 +123,10 @@ const Header = () => {
                             <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue" onClick={handleLinkClick}>Shop single</Link></li>
                             <li><Link href="/pages/portfolio-v2" className="text-custom-blue" onClick={handleLinkClick}>More Webflow Template</Link></li>
                           </ul>
-                        </div>
+                        </div> */}
 
-                        {/* Utility Pages */}
-                        <div className='grid grid-cols-2'>
+                {/* Utility Pages */}
+                {/* <div className='grid grid-cols-2'>
 
 
                           <div>
@@ -138,10 +138,10 @@ const Header = () => {
                               <li><Link href="/pages/reset-password" className="hover:text-custom-blue" onClick={handleLinkClick}>Reset Password</Link></li>
                               <li><Link href="/pages/update-password" className="hover:text-custom-blue" onClick={handleLinkClick}>Update Password</Link></li>
                             </ul>
-                          </div>
+                          </div> */}
 
-                          {/* Template Pages */}
-                          <div>
+                {/* Template Pages */}
+                {/* <div>
                             <h3 className="text-lg font-bold mb-3">Template Pages</h3>
                             <ul className="space-y-2 text-sm">
                               <li><Link href="/pages/start-here" className="hover:text-custom-blue" onClick={handleLinkClick}>Start Here</Link></li>
@@ -156,7 +156,7 @@ const Header = () => {
                       </div>
                     </div>
                   </div>
-                )}
+                )}  */}
               </div>
             </div>
             {/* Cart for Large Screens */}
@@ -169,7 +169,7 @@ const Header = () => {
         {/* Button for Desktop */}
         <div className="hidden lg:block ">
 
-          <Button text="Pitch Your Startup" href="/your-link-here" />
+          <Button text="Pitch Your Startup" />
         </div>
         {/* Mobile Menu Button */}
         <div className="lg:hidden mx-4  flex items-center">
@@ -204,10 +204,10 @@ const Header = () => {
                 {isMobileDropdownOpen ? <RiArrowDropUpLine className="h-6 w-6" /> : <RiArrowDropDownLine className="h-6 w-6" />}
               </button> */}
 
-              {isMobileDropdownOpen && (
-                <div className="bg-white   p-6 w-full mt-2 shadow-lg border rounded-xl z-50">
-                  {/* Main Pages */}
-                  <div>
+              {/* {isMobileDropdownOpen && (
+                <div className="bg-white   p-6 w-full mt-2 shadow-lg border rounded-xl z-50"> */}
+              {/* Main Pages */}
+              {/* <div>
                     <h3 className="text-lg font-bold mb-3">Main Pages</h3>
                     <ul className="grid grid-cols-3 gap-2 text-sm">
                       <li><Link href="/pages/home-sales" className="hover:text-custom-blue" onClick={handleLinkClick}>Home (sales)</Link></li>
@@ -230,10 +230,10 @@ const Header = () => {
                       <li><Link href="/pages/portfolio-v3" className="hover:text-custom-blue" onClick={handleLinkClick}>Shop single</Link></li>
                       <li><Link href="/pages/portfolio-v2" className="text-custom-blue" onClick={handleLinkClick}>More Webflow Template</Link></li>
                     </ul>
-                  </div>
+                  </div> */}
 
-                  {/* Utility Pages */}
-                  <div>
+              {/* Utility Pages */}
+              {/* <div>
                     <h3 className="text-lg font-bold my-3">Utility Pages</h3>
                     <ul className="grid grid-cols-3 gap-2 text-sm">
                       <li><Link href="/pages/coming-soon" className="hover:text-custom-blue" onClick={handleLinkClick}>Coming Soon</Link></li>
@@ -242,10 +242,10 @@ const Header = () => {
                       <li><Link href="/pages/reset-password" className="hover:text-custom-blue" onClick={handleLinkClick}>Reset Password</Link></li>
                       <li><Link href="/pages/update-password" className="hover:text-custom-blue" onClick={handleLinkClick}>Update Password</Link></li>
                     </ul>
-                  </div>
+                  </div> */}
 
-                  {/* Template Pages */}
-                  <div>
+              {/* Template Pages */}
+              {/* <div>
                     <h3 className="text-lg font-bold my-3">Template Pages</h3>
                     <ul className="grid grid-cols-3 gap-2 text-sm">
                       <li><Link href="/pages/start-here" className="hover:text-custom-blue" onClick={handleLinkClick}>Start Here</Link></li>
@@ -255,14 +255,14 @@ const Header = () => {
                       <li><Link href="/pages/licenses" className="hover:text-custom-blue" onClick={handleLinkClick}>Licenses</Link></li>
                       <li><Link href="/pages/changelog" className="hover:text-custom-blue" onClick={handleLinkClick}>Changelog</Link></li>
                     </ul>
-                  </div>
-                </div>
-              )}
+                  </div> */}
+              {/* </div>
+              )} */}
             </div>
 
             {/* Pitch Your Startup Button in Mobile Menu */}
             <div>
-              <Button text="Pitch Your Startup" href="/your-link-here" />
+              <Button text="Pitch Your Startup" />
             </div>
           </div>
         </div>

@@ -15,8 +15,8 @@ type Investor = {
   image: string;
 };
 
-export default function InvestorPage({ params }: { params: { id: string } }) {
-  const investor = investors.find((inv) => inv.id === params.id) as Investor | undefined;
+export default function InvestorPage() {
+  const investor = investors.find((inv) => inv.id) as Investor | undefined;
 
 
   if (!investor) {
@@ -75,3 +75,4 @@ export default function InvestorPage({ params }: { params: { id: string } }) {
     </div>
   );
 }
+
