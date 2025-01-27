@@ -36,12 +36,12 @@ const Footer = () => {
                 <FaLinkedinIn />
               </div>
             </div>
-            <Button text="Pitch Your Startup" href="/your-link-here" />
+            <Button text="Pitch Your Startup" />
           </div>
         </div>
 
         {/* pages part */}
-        <div className="grid lg:grid-cols-6   md:grid-cols-4 grid-cols-1 gap-8">
+        {/* <div className="grid lg:grid-cols-6   md:grid-cols-4 grid-cols-1 gap-8">
           <div className="md:col-span-3 lg:col-span-3 col-span-1">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Main pages
@@ -99,7 +99,8 @@ const Footer = () => {
               <li>Licenses</li>
               <li>Changelog</li>
             </ul>
-          </div>
+          </div> */}
+        <div className="">
           <div className="">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Contact us
@@ -121,20 +122,20 @@ const Footer = () => {
           </div>
 
         </div>
-        <hr className="mt-7" />
-        <div className="text-center flex lg:flex-row flex-col justify-between text-gray-700 pt-8  ">
-          <div className="flex justify-center items-center my-4  ">
+        <hr className="mt-6" />
+        <div className="text-center flex lg:flex-row flex-col justify-between text-gray-700 py-5  ">
+          <div className="flex justify-center items-center   ">
             <Logo />
           </div>
           <p>
-            Copyright © Investor X | Designed by{" "}
-            <a href="#" className="text-blue-600">
+            Copyright © Angelica Capital
+            {/* <a href="#" className="text-blue-600">
               BRIX Templates
             </a>{" "}
             - Powered by{" "}
             <a href="#" className="text-blue-600">
               Webflow
-            </a>
+            </a> */}
           </p>
         </div>
       </div>

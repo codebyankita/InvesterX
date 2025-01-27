@@ -49,7 +49,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white md:bg-[#f6f8ff] shadow-md">
-      <div className="lg:container mx-auto flex lg:justify-between justify-around items-center py-4 sm:py-2">
+      <div className="lg:container mx-auto flex  justify-between items-center py-4 sm:py-2">
 
 
 
@@ -59,12 +59,15 @@ const Header = () => {
             {/* Logo */}
             <Logo />
             {/* Links for Large Screens */}
-            <div className="hidden lg:flex space-x-5">
+            <div className="hidden lg:flex space-x-5 ml-4">
               <Link href="/" className="hover:text-custom-blue" onClick={handleLinkClick}>
                 Home
               </Link>
               <Link href="/about" className="hover:text-custom-blue" onClick={handleLinkClick}>
                 About
+              </Link>
+              <Link href="/investors" className="hover:text-custom-blue" onClick={handleLinkClick}>
+                Investors
               </Link>
               {/* <Link href="/blog" className="hover:text-custom-blue">
                 Blog
@@ -77,7 +80,7 @@ const Header = () => {
               // Open on hover
               // onMouseLeave={handleHoverLeave} // Close on hover leave
               >
-                <button
+                {/* <button
                   onClick={handleDropdownToggle} // Toggle dropdown on click
                   className="flex items-center justify-center space-x-2 hover:text-custom-blue"
                 >
@@ -87,7 +90,7 @@ const Header = () => {
                   ) : (
                     <RiArrowDropDownLine className="h-7 w-7" />
                   )}
-                </button>
+                </button> */}
 
                 {isDropdownOpen && (
                   <div className="fixed left-1/4 right-2/4 top-28 justify-center items-center bg-opacity-50 z-50">
@@ -157,19 +160,19 @@ const Header = () => {
               </div>
             </div>
             {/* Cart for Large Screens */}
-            <Link href="/cart" className=" flex  justify-items-end lg:gap-4  hover:text-custom-blue" onClick={handleLinkClick}>
+            {/* <Link href="/cart" className=" flex  justify-items-end lg:gap-4  hover:text-custom-blue" onClick={handleLinkClick}>
               Cart(0)
-            </Link>
+            </Link> */}
           </div>
         </nav>
 
         {/* Button for Desktop */}
-        <div className="hidden md:block ">
+        <div className="hidden lg:block ">
 
           <Button text="Pitch Your Startup" href="/your-link-here" />
         </div>
         {/* Mobile Menu Button */}
-        <div className="lg:hidden mx-4 md:mx-2 flex items-center">
+        <div className="lg:hidden mx-4  flex items-center">
           <button onClick={handleMobileMenuToggle}>
             {isMobileMenuOpen ? (
               <RiCloseLargeFill className="h-7 w-7 transition-transform duration-300 ease-in-out transform" />
@@ -182,14 +185,16 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute left-0 right-0 bg-white shadow-lg z-40 py-4 transition-all duration-200 ease-in-out">
-          <div className="flex flex-col mx-6 text-left space-y-4">
+          <div className="flex flex-col pl-2 mx-6 text-left space-y-4">
             <Link href="/" className="text-lg hover:text-custom-blue">Home</Link>
             <Link href="/about" className="text-lg hover:text-custom-blue">About</Link>
-            <Link href="/blog" className="text-lg hover:text-custom-blue">Blog</Link>
+            <Link href="/investors" className="text-lg hover:text-custom-blue">Investors</Link>
+            {/* <Li
+            {/* <Link href="/blog" className="text-lg hover:text-custom-blue">Blog</Link> */}
 
             {/* Mobile Pages Dropdown */}
             <div className="relative">
-              <button
+              {/* <button
                 // onClick={handleDropdownToggle}
                 onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
 
@@ -197,7 +202,7 @@ const Header = () => {
               >
                 Pages
                 {isMobileDropdownOpen ? <RiArrowDropUpLine className="h-6 w-6" /> : <RiArrowDropDownLine className="h-6 w-6" />}
-              </button>
+              </button> */}
 
               {isMobileDropdownOpen && (
                 <div className="bg-white   p-6 w-full mt-2 shadow-lg border rounded-xl z-50">

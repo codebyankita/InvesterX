@@ -6,8 +6,11 @@ import Footer from "./components/Footer";
 
 
 export const metadata: Metadata = {
-  title: "InvesterX",
-  description: "Investment for Future",
+  title: "Angelica Capital",
+  description: "Empowering the Future of Web3 Innovation",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -18,6 +21,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className="font-thicccboi antialiased ">
         <Header />
         <main>{children}</main>

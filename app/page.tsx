@@ -32,21 +32,21 @@ const researchData = [
     id: "01",
     title: "Discovery",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi vitae diam dolor id in massa commodo vivamus in. Magna convallis non auctor aliquet pellentesque. Vitae massa eu proin laoreet purus sed. Sodales.",
+      "Our journey begins with identifying groundbreaking ideas and visionary founders. Through a proactive outreach and a robust network of industry experts, we stay ahead of emerging trends in blockchain, decentralized finance (DeFi), NFTs, and Web3 infrastructure.",
     image: reserch01,
   },
   {
     id: "02",
     title: "Research",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi vitae diam dolor id in massa commodo vivamus in. Magna convallis non auctor aliquet pellentesque. Vitae massa eu proin laoreet purus sed. Sodales.",
+      "We conduct comprehensive research to evaluate the potential of each opportunity. Our due diligence process ensures we understand the market, the team, and the technology behind every project we consider.",
     image: reserch02,
   },
   {
     id: "03",
     title: "Investment",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mi vitae diam dolor id in massa commodo vivamus in. Magna convallis non auctor aliquet pellentesque. Vitae massa eu proin laoreet purus sed. Sodales.",
+      "Once we identify and validate a promising project, we invest with a commitment to long-term success. Our investments are more than financial; we provide strategic support, mentorship, and access to a global network of partners to accelerate growth..",
     image: reserch03,
   },
 ];
@@ -86,11 +86,10 @@ const HomePage = () => {
               We invest in the companies of the future, today
             </h1>
             <p className="text-gray-600 lg:text-left  text-center  sm:text-sm lg:text-base">
-              Lorem ipsum dolor sit amet consectetur sollicitudin pulvinar ipsum
-              ut senectus malesuada dui lorem ac id vel nunc sapien magna.
+              We are a venture capital firm dedicated to fueling the next wave of Web3 innovation. From blockchain protocols to decentralized finance (DeFi), we partner with visionary founders to shape the decentralized future.
             </p>
             <div className="flex flex-col md:justify-center md:flex-row lg:justify-self-start lg:flex-row space-y-5 md:space-y-0 md:space-x-4 lg:space-x-6">
-              <Button text="Pitch Your Startup" href="/your-link-here" />
+              <Button text="Pitch Your Startup" />
               <SecondaryButton text="Investment portfolio" />
             </div>
           </div>
@@ -112,17 +111,14 @@ const HomePage = () => {
             About Our Invest Firm
           </h1>
           <div className="mb-16 lg:mr-28  items-start justify-start ">
-            <Button text="Pitch Your Startup" href="/your-link-here" />
+            <Button text="Pitch Your Startup" />
           </div>
           <div className="mb-16 lg:mr-20 md:justify-center">
             <p className="text-gray-600 mb-4">
-              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
-              dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
-              tellus felis leo vestibulum ut neque mus. Tempus arcu metus.
+              To support bold entrepreneurs and groundbreaking projects that leverage blockchain, smart contracts, and decentralized systems to revolutionize industries.
             </p>
             <p className="text-gray-600">
-              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
-              dis mi sit. In a nunc id lectus facilisi justo eu.
+              We envision a world where decentralization empowers individuals, fosters trust, and enhances global connectivity.
             </p>
           </div>
         </div>
@@ -181,14 +177,14 @@ const HomePage = () => {
             <PortfolioCard
               title="Startup"
               description="Cloud Software"
-              year="2024"
+              year="2025"
               icon={startuplogo.src}
               link="/startup-link"
             />
             <PortfolioCard
               title="Organization"
               description="Streaming"
-              year="2022"
+              year="2025"
               icon={oragnzationlogo.src}
               link="/organization-link"
             />
@@ -196,7 +192,7 @@ const HomePage = () => {
               <PortfolioCard
                 title="Venture"
                 description="E-commerce"
-                year="2023"
+                year="2025"
                 icon={venturelogo.src}
                 link="/venture-link"
               />
@@ -223,7 +219,7 @@ const HomePage = () => {
               Our approach
             </h1>
             <div className="flex md:flex-row space-y-4 md:space-y-0 flex-col items-start lg:space-x-5 space-x-3  lg:mr-32">
-              <Button text="Pitch Your Startup" href="/your-link-here" />
+              <Button text="Pitch Your Startup" />
               <SecondaryButton text=" Learn more" />
             </div>
           </div>
@@ -267,8 +263,10 @@ const HomePage = () => {
           <h1 className="lg:text-5xl text-3xl font-semibold text-gray-800">
             Industries we invest in
           </h1>
+          {/* Grid Container */}
         </div>
         <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-8 lg:mx-28 mx-4 gap-2">
+          {/* Card 1 */}
           <div className="lg:p-6 lg:mr-6 mr-0 p-2 flex flex-col items-center lg:items-start">
             <CiMobile2 className=" mb-6 h-12 w-12   " />
 
@@ -276,11 +274,11 @@ const HomePage = () => {
               Mobile app
             </h2>
             <p className="text-gray-600 text-lg mb-4">
-              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
-              dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
-              tellus felis leo.
+              We back innovative mobile app developers creating seamless, user-centric experiences. From groundbreaking consumer apps to enterprise solutions, we invest in ideas that redefine how people interact with technology on the go.
             </p>
-            <ReadMoreButton />
+            <div className="mt-auto w-full flex justify-center lg:justify-start">
+              <ReadMoreButton />
+            </div>
           </div>
           <div className="lg:p-6 lg:mr-6 mr-0 p-2 flex flex-col items-center lg:items-start">
             <CgScreen className=" mb-6 h-12 w-12" />
@@ -289,11 +287,11 @@ const HomePage = () => {
               Hardware companies
             </h2>
             <p className="text-gray-600 text-lg mb-4">
-              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
-              dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
-              tellus felis leo.
+              We support forward-thinking hardware companies building the foundation for next-generation technologies. Our investments focus on devices and infrastructure that enable smarter, faster, and more efficient solutions.
             </p>
-            <ReadMoreButton />
+            <div className="mt-auto w-full flex justify-center lg:justify-start">
+              <ReadMoreButton />
+            </div>
           </div>
           <div className="lg:p-6 lg:mr-6 mr-0 p-2 flex flex-col items-center lg:items-start">
             <IoSettingsOutline className=" mb-6 h-12 w-12" />
@@ -302,11 +300,11 @@ const HomePage = () => {
               Software companies
             </h2>
             <p className="text-gray-600 text-lg mb-4">
-              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
-              dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
-              tellus felis leo.
+              We empower software innovators driving digital transformation. Whether it’s SaaS, AI, or enterprise platforms, we invest in scalable solutions that solve complex challenges and unlock new possibilities.
             </p>
-            <ReadMoreButton />
+            <div className="mt-auto w-full flex justify-center lg:justify-start">
+              <ReadMoreButton />
+            </div>
           </div>
         </div>
       </div>
@@ -314,25 +312,24 @@ const HomePage = () => {
       <div className="bg-[#f6f8ff] flex items-center justify-center lg:pb-28 pb-16">
         <div className="relative rounded-3xl overflow-hidden lg:mx-52 mx-4 w-full max-w-screen-lg">
           {/* Adjust Spline size for sm and md screens */}
-          <div className="w-full h-auto aspect-w-16 aspect-h-12 sm:max-h-[500px] sm:overflow-y-auto">
+          <div className="w-full h-auto ">
             <Spline
               scene="https://prod.spline.design/RKv4Qedw-h9DMTxy/scene.splinecode"
               className="w-full h-full"
             />
           </div>
           {/* Overlay Content */}
-          <div className="absolute inset-0 text-white  bg-black bg-opacity-30 flex flex-col items-center justify-center text-center lg:p-8 p-4">
+          <div className="absolute inset-0 text-white  bg-black bg-opacity-30 flex flex-col items-center justify-center text-center lg:p-8 p-5">
             <h1 className=" flex  lg:mx-10 mx-4   text-xl md:text-3xl lg:text-4xl lg:font-bold font-semibold lg:mb-4 mb-2">
               We invest in the companies of the future, today
             </h1>
             <p className=" lg:text-lg text-center text-wrap md:text-base text-sm lg:mb-6 mb-2 lg:mx-10 mx-4">
-              Lorem ipsum dolor sit amet consectetur sollicitudin pulvinar ipsum
-              ut senectus malesuada dui lorem ac.
+              Investing in cutting-edge technologies and protocols that drive the decentralized economy.
             </p>
 
             <div className="flex   lg:flex-row flex-col items-center lg:mx-10 mx-4 justify-center  lg:gap-8 gap-4">
 
-              <Button text="Pitch Your Startup" href="/your-link-here" />
+              <Button text="Pitch Your Startup" />
               <div className="flex gap-4 ">
                 <div className="     transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
                   <FaFacebookF />
@@ -361,9 +358,7 @@ const HomePage = () => {
               Our partners
             </h1>
             <p className="text-gray-500 lg:w-2/5 w-full lg:text-xl text-base mt-4">
-              Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis
-              dis mi sit. In a nunc id lectus facilisi justo eu egestas amet
-              tellus felis leo vestibulum ut neque mus.
+              we believe that collaboration is the cornerstone of success. Our partners are visionaries, industry leaders, and innovators who share our passion for shaping the future of Web3. Together, we create a thriving ecosystem that fosters growth, innovation, and impact.
             </p>
           </div>
           {/* Partner Cards */}
@@ -380,7 +375,7 @@ const HomePage = () => {
           </div>
           {/* Footer Buttons */}
           <div className="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 ">
-            <Button text="Pitch Your Startup" href="/your-link-here" />
+            <Button text="Pitch Your Startup" />
             <SecondaryButton text="   Browse all team members " />
           </div>
         </div>

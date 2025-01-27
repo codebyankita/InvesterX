@@ -213,10 +213,10 @@ export default function about() {
             </p>
           </div>
 
-          {/* Card 2023 */}
+          {/* Card 2025 */}
           <div className="bg-white rounded-3xl p-10 py-24 shadow-md">
 
-            <h3 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">2023</h3>
+            <h3 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">2025</h3>
             <p className="text-gray-600">
               Lorem ipsum dolor amet consectetur diam nulla nullam mauris turpis dis mi sit. In a
               nunc id lectus facilisi justo eu egestas amet tellus felis leo.
