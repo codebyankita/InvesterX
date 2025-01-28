@@ -69,6 +69,9 @@ const Header = () => {
               <Link href="/investors" className="hover:text-custom-blue" onClick={handleLinkClick}>
                 Investors
               </Link>
+              <Link href="/portfolio" className="hover:text-custom-blue" onClick={handleLinkClick}>
+                Portfolio
+              </Link>
               {/* <Link href="/blog" className="hover:text-custom-blue">
                 Blog
               </Link> */}
@@ -189,6 +192,7 @@ const Header = () => {
             <Link href="/" className="text-lg hover:text-custom-blue">Home</Link>
             <Link href="/about" className="text-lg hover:text-custom-blue">About</Link>
             <Link href="/investors" className="text-lg hover:text-custom-blue">Investors</Link>
+            <Link href="/portfolio" className="text-lg hover:text-custom-blue">Portfoilo</Link>
             {/* <Li
             {/* <Link href="/blog" className="text-lg hover:text-custom-blue">Blog</Link> */}
 
