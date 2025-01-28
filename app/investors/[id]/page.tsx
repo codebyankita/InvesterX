@@ -1,8 +1,83 @@
-//app/investors/[id]/page.tsx
-// app/investors/[id]/page.tsx
-import React from "react";
+// import React from "react";
+// import Image from "next/image";
+// import { investors } from "@/app/components/data/investors-data";
+// import { MdOutlineMail } from "react-icons/md";
+// import { CiGlobe } from "react-icons/ci";
+
+// type Investor = {
+//   id: string;
+//   name: string;
+//   title: string;
+//   description: string;
+//   email: string;
+//   website: string;
+//   articles: string[];
+//   image: string;
+// };
+
+// export default function InvestorPage() {
+//   const investor = investors.find((inv) => inv.id) as Investor | undefined;
+
+//   if (!investor) {
+//     return <div className="text-center text-red-600">Investor not found</div>;
+//   }
+
+//   return (
+//     <div className="bg-blue-50 py-12">
+//       <div className="container mx-auto p-6">
+//         {/* Profile Section */}
+//         <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 items-stretch">
+//           {/* Investor Profile */}
+//           <div className="bg-white p-6 rounded-3xl flex flex-col lg:grid lg:grid-cols-2">
+//             <div className="flex justify-center items-center mb-6">
+//               <Image
+//                 src={investor.image}
+//                 alt="Portrait of investor"
+//                 width={200}
+//                 height={200}
+//                 className="rounded-full"
+//               />
+//             </div>
+//             <div className="text-left">
+//               <h2 className="text-blue-600 my-2 text-sm font-semibold">{investor.title}</h2>
+//               <h1 className="text-5xl font-bold my-2 text-black">{investor.name}</h1>
+//               <p className="text-gray-600 my-2">{investor.description}</p>
+//             </div>
+//           </div>
+
+//           {/* Additional Info */}
+//           <div className="bg-white p-6 rounded-3xl flex flex-col">
+//             <h2 className="text-gray-900 text-lg font-semibold">More Information</h2>
+//             <p className="text-gray-600 my-2 flex-1">{investor.description}</p>
+//             <div className="mt-4">
+//               <div className="flex items-center mt-4">
+//                 <MdOutlineMail className="mr-2" />
+//                 <span className="text-black">Send me a message</span>
+//               </div>
+//               <a href={`mailto:${investor.email}`} className="text-black text-lg font-bold ml-6">
+//                 {investor.email}
+//               </a>
+//               <div className="flex items-center mt-4">
+//                 <CiGlobe className="mr-2" />
+//                 <span className="text-black">Visit my Website</span>
+//               </div>
+//               <a href={investor.website} className="text-black text-lg  font-bold ml-6">
+//                 {investor.website}
+//               </a>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+"use client";
+
+import React, { use } from "react";
 import Image from "next/image";
 import { investors } from "@/app/components/data/investors-data";
+import { MdOutlineMail } from "react-icons/md";
+import { CiGlobe } from "react-icons/ci";
 
 type Investor = {
   id: string;
@@ -15,64 +90,66 @@ type Investor = {
   image: string;
 };
 
-export default function InvestorPage() {
-  const investor = investors.find((inv) => inv.id) as Investor | undefined;
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
 
+export default function InvestorPage({ params }: PageProps) {
+  const resolvedParams = use(params); // Resolve the Promise
+  const { id } = resolvedParams;
+
+  const investor = investors.find((inv) => inv.id === id) as Investor | undefined;
 
   if (!investor) {
     return <div className="text-center text-red-600">Investor not found</div>;
   }
 
   return (
-    <div className="bg-blue-50 min-h-screen py-12">
+    <div className="bg-blue-50 py-12">
       <div className="container mx-auto p-6">
         {/* Profile Section */}
-        <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-6">
-          <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-            <Image
-              src={investor.image}
-              alt={`Portrait of ${investor.name}`}
-              width={100}
-              height={100}
-              className="rounded-full mb-4"
-            />
-            <h2 className="text-blue-600 text-sm font-semibold">{investor.title}</h2>
-            <h1 className="text-3xl font-bold text-gray-900">{investor.name}</h1>
-            <p className="text-gray-600 mt-4 text-center">{investor.description}</p>
-          </div>
-          {/* Additional Info */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-gray-900 text-lg font-semibold">More Information</h2>
-            <div className="mt-4">
-              <div className="flex items-center space-x-2">
-                <i className="fas fa-envelope text-blue-600"></i>
-                <a href={`mailto:${investor.email}`} className="text-blue-600">
-                  {investor.email}
-                </a>
-              </div>
-              <div className="flex items-center space-x-2 mt-2">
-                <i className="fas fa-globe text-blue-600"></i>
-                <a href={investor.website} className="text-blue-600">
-                  {investor.website}
-                </a>
-              </div>
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-6 items-stretch">
+          {/* Investor Profile */}
+          <div className="bg-white p-6 rounded-3xl flex flex-col lg:grid lg:grid-cols-2">
+            <div className="flex justify-center items-center mb-6">
+              <Image
+                src={investor.image}
+                alt={`Portrait of ${investor.name}`}
+                width={200}
+                height={200}
+                className="rounded-full"
+              />
+            </div>
+            <div className="text-left">
+              <h2 className="text-blue-600 my-2 text-sm font-semibold">{investor.title}</h2>
+              <h1 className="text-5xl font-bold my-2 text-black">{investor.name}</h1>
+              <p className="text-gray-600 my-2">{investor.description}</p>
             </div>
           </div>
-        </div>
 
-        {/* Articles Section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-3xl font-bold text-gray-900">Articles by {investor.name}</h2>
-          <ul className="mt-6 space-y-4">
-            {investor.articles.map((article, index) => (
-              <li key={index} className="text-blue-600">
-                {article}
-              </li>
-            ))}
-          </ul>
+          {/* Additional Info */}
+          <div className="bg-white p-6 rounded-3xl flex flex-col">
+            <h2 className="text-gray-900 text-lg font-semibold">More Information</h2>
+            <p className="text-gray-600 my-2 flex-1">{investor.description}</p>
+            <div className="mt-4">
+              <div className="flex items-center mt-4">
+                <MdOutlineMail className="mr-2" />
+                <span className="text-black">Send me a message</span>
+              </div>
+              <a href={`mailto:${investor.email}`} className="text-black text-lg font-bold ml-6">
+                {investor.email}
+              </a>
+              <div className="flex items-center mt-4">
+                <CiGlobe className="mr-2" />
+                <span className="text-black">Visit my Website</span>
+              </div>
+              <a href={investor.website} className="text-black text-lg font-bold ml-6">
+                {investor.website}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
