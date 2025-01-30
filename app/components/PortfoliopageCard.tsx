@@ -110,7 +110,7 @@ const PortfoliopageCard: React.FC<PortfoliopageCardProps> = ({
                 {/* Centered Image with gray background and transition on hover */}
                 <div className="flex justify-center items-center mx-auto w-30 h-30 group">
                     <Image
-                        className="rounded-full transform transition-transform m-4 overflow-visible p-4 bg-gray-400 hover:bg-blue-500 duration-300 group-hover:scale-110"
+                        className="rounded-full m-4 overflow-visible p-4   bg-blue-500"
                         src={image}
                         alt={`Portfolio of ${title}`}
                         width={80}

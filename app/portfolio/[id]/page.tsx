@@ -5,18 +5,25 @@ import Image from "next/image";
 import Button from "@/app/components/Button";
 import startuplogo from "@/public/portfoilo/startup.svg";
 import startup from "@/public/portfoilo/startupimg.jpeg";
+import company from "@/public/portfoilo/company.svg";
+import cryptomatic from "@/public/portfoilo/cryptomatic.svg";
+import business from "@/public/portfoilo/business.svg";
+import corporate from "@/public/portfoilo/corporate.svg";
+import enterprice from "@/public/portfoilo/enterprice.svg";
+import oranization from "@/public/portfoilo/organization.svg";
 
+import venture from "@/public/portfoilo/venture.svg";
 
 // Sample data (in a real app, fetch from an API or database)
 const portfolioData = [
-    { id: "1", image: startuplogo, title: "Company", category: "Social Network", year: "2025" },
-    { id: "2", image: startuplogo, title: "Venture", category: "Social Network", year: "2025" },
-    { id: "3", image: startuplogo, title: "Cryptomatic", category: "Cloud Software", year: "2025" },
-    { id: "4", image: startuplogo, title: "Business", category: "Cloud Software", year: "2025" },
-    { id: "5", image: startuplogo, title: "Corporate", category: "Streaming", year: "2025" },
-    { id: "6", image: startuplogo, title: "Enterprise", category: "Cloud Software", year: "2025" },
-    { id: "7", image: startuplogo, title: "Organization", category: "Streaming", year: "2025" },
-    { id: "8", image: startuplogo, title: "Startup", category: "Cloud Software", year: "2025" },
+    { id: "company", image: company, title: "Company", category: "Social Network", year: "2025" },
+    { id: "venture", image: venture, title: "Venture", category: "Social Network", year: "2025" },
+    { id: "cryptomatic", image: cryptomatic, title: "Cryptomatic", category: "Cloud Software", year: "2025" },
+    { id: "business", image: business, title: "Business", category: "Cloud Software", year: "2025" },
+    { id: "corporate", image: corporate, title: "Corporate", category: "Streaming", year: "2025" },
+    { id: "enterprice", image: enterprice, title: "Enterprise", category: "Cloud Software", year: "2025" },
+    { id: "oranization", image: oranization, title: "Organization", category: "Streaming", year: "2025" },
+    { id: "startup", image: startuplogo, title: "Startup", category: "Cloud Software", year: "2025" },
 ];
 
 export default function PortfolioDetailPage() {

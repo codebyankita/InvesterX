@@ -18,14 +18,14 @@ import Link from "next/link";
 
 export default function PortfolioPage() {
     const portfolioData = [
-        { id: "1", image: company, title: "Company", category: "Social Network", year: "2025" },
-        { id: "2", image: venture, title: "Venture", category: "Social Network", year: "2023" },
-        { id: "3", image: cryptomatic, title: "Cryptomatic", category: "Cloud Software", year: "2020" },
-        { id: "4", image: business, title: "Business", category: "Cloud Software", year: "2021" },
-        { id: "5", image: corporate, title: "Corporate", category: "Streaming", year: "2022" },
-        { id: "6", image: enterprice, title: "Enterprise", category: "Cloud Software", year: "2020" },
-        { id: "7", image: oranization, title: "Organization", category: "Streaming", year: "2022" },
-        { id: "8", image: startup, title: "Startup", category: "Cloud Software", year: "2024" },
+        { id: "company", image: company, title: "Company", category: "Social Network", year: "2025" },
+        { id: "venture", image: venture, title: "Venture", category: "Social Network", year: "2025" },
+        { id: "cryptomatic", image: cryptomatic, title: "Cryptomatic", category: "Cloud Software", year: "2025" },
+        { id: "business", image: business, title: "Business", category: "Cloud Software", year: "2025" },
+        { id: "corporate", image: corporate, title: "Corporate", category: "Streaming", year: "2025" },
+        { id: "enterprice", image: enterprice, title: "Enterprise", category: "Cloud Software", year: "2025" },
+        { id: "oranization", image: oranization, title: "Organization", category: "Streaming", year: "2025" },
+        { id: "startup", image: startup, title: "Startup", category: "Cloud Software", year: "2025" },
     ];
 
     return (
