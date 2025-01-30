@@ -172,7 +172,7 @@ const Header = () => {
         {/* Button for Desktop */}
         <div className="hidden lg:block ">
 
-          <Button text="Pitch Your Startup" />
+          <Button text="About Your Pitch Deck" href="/contact-us" />
         </div>
         {/* Mobile Menu Button */}
         <div className="lg:hidden mx-4  flex items-center">
@@ -266,7 +266,7 @@ const Header = () => {
 
             {/* Pitch Your Startup Button in Mobile Menu */}
             <div>
-              <Button text="Pitch Your Startup" />
+              <Button text="About Your Pitch Deck" href="/contact-us" />
             </div>
           </div>
         </div>

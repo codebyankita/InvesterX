@@ -1,161 +1,95 @@
-// pages/signup.tsx
+'use client'
+import { useState } from 'react';
+import { FaRegUser } from "react-icons/fa";
+import Logo from '../components/Logo';
 
-'use client';
-import React, { useState } from "react";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
-import Logo from "../components/Logo";
-import { CiLinkedin } from "react-icons/ci";
+const SignUp = () => {
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [termsAccepted, setTermsAccepted] = useState(false);
 
-const SignUp: React.FC = () => {
-    const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
-    const [errorMessage, setErrorMessage] = useState<string>("");
-    const [phoneNumber, setPhoneNumber] = useState<string>("");
-    const [phoneError, setPhoneError] = useState<string>("");
-
-    const handleFileEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setErrorMessage("");
-        const files = event.target.files;
-        if (files) {
-            const fileArray = Array.from(files);
-            const validFiles = fileArray.filter((file) => file.size <= 10 * 1024 * 1024);
-            const invalidFiles = fileArray.filter((file) => file.size > 10 * 1024 * 1024);
-
-            if (invalidFiles.length > 0) {
-                setErrorMessage("Some files exceed the 10 MB limit and were not added.");
-            }
-
-            setUploadedFiles([...uploadedFiles, ...validFiles]);
-        }
-    };
-
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (uploadedFiles.length === 0) {
-            setErrorMessage("Please upload at least one file.");
-            return;
-        }
-        if (phoneError) {
-            setErrorMessage("Please provide a valid phone number.");
-            return;
-        }
-
-        console.log("Form submitted with files:", uploadedFiles, "Phone Number:", phoneNumber);
+        // Handle form submission logic (e.g., API call or validation)
+        console.log({ fullName, email, password, termsAccepted });
     };
 
     return (
-        <div className="flex bg-[#f6f8ff] items-center min-h-screen justify-center">
-            <div className="w-full h-full md:max-w-lg p-8 bg-white  rounded-3xl">
-                <div className="justify-items-center my-6">
+        <div className="bg-[#f6f8ff] min-h-screen flex flex-col items-center justify-center py-6">
+            <div className="max-w-lg mx-auto p-6 bg-white rounded-3xl shadow-lg">
+                <div className=" justify-items-center  mb-6">
                     <Logo />
                 </div>
-                <div className="text-center">
-                    <h1 className="text-3xl font-bold mb-2">Contact Us</h1>
-                    <p className="mb-6">Complete the form below and we will contact you to discuss your project.</p>
+                <div className="justify-items-center mb-6">
+                    <FaRegUser className='h-8 w-8 my-4' />
+                    <h2 className="text-3xl font-bold text-gray-900 my-4">Create your account</h2>
+                    <p className="text-gray-500 text-center">
+                        Join Angelica Capital and take the first step towards smarter investments.
+                    </p>
                 </div>
-
-                <form className="space-y-4" onSubmit={handleFormSubmit}>
-                    <div className="flex md:flex-row flex-col md:space-x-4 space-y-4 md:space-y-0">
-                        <input
-                            type="text"
-                            placeholder="Name"
-                            className="w-full p-3 border border-gray-300 rounded-lg"
-                        />
-                        <input
-                            type="email"
-                            placeholder="Email"
-                            className="w-full p-3 border border-gray-300 rounded-lg"
-                        />
-                    </div>
-
-                    {/* Styled Phone Input */}
-                    <div className="flex flex-col space-y-4">
-
-                        <div className="flex items-center w-full p-3 border border-gray-300 rounded-lg">
-                            <CiLinkedin className="fab fa-linkedin text-blue-700 h-6 w-6 mr-2" />
-
-
+                <form onSubmit={handleSubmit}>
+                    <div className="grid grid-cols-1 gap-4 mb-4">
+                        <div className="flex flex-col">
+                            <label className="text-gray-700 font-semibold">Full name</label>
                             <input
                                 type="text"
-                                placeholder="Linkedin Username"
-                                className="w-full outline-none"
+                                placeholder="Enter your name"
+                                value={fullName}
+                                onChange={(e) => setFullName(e.target.value)}
+                                className="mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
-
-
-                        <div >
-                            <PhoneInput
-                                enableSearch={true}
-                                country={'us'}
-                                value={phoneNumber}
-                                onChange={(phone) => setPhoneNumber(phone)}
-                                placeholder="Enter phone number"
-                                inputProps={{
-                                    name: 'phone',
-                                    required: true,
-                                    autoFocus: false,
-                                }}
-                                isValid={(value) => {
-                                    if (value.match(/12345/)) {
-                                        setPhoneError('Invalid value: ' + value);
-                                        return false;
-                                    }
-                                    setPhoneError(""); // Clear error if valid
-                                    return true;
-                                }}
-                                containerClass=""
-                                inputClass="w-full border-0"
-                                buttonClass="bg-white border-0"
-                                containerStyle={{
-
-                                    // Optional: Set border-radius here if needed
-                                }}
-                                buttonStyle={{}}
+                        <div className="flex flex-col">
+                            <label className="text-gray-700 font-semibold">Email</label>
+                            <input
+                                type="email"
+                                placeholder="Enter your email address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
-                            {phoneError && <p className="text-red-600 text-sm">{phoneError}</p>}
+                        </div>
+                        <div className="flex flex-col">
+                            <label className="text-gray-700 font-semibold">Password</label>
+                            <input
+                                type="password"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
                         </div>
                     </div>
-
-                    <textarea
-                        placeholder="About Your Company"
-                        className="w-full p-3 border border-gray-300 rounded-lg h-32"
-                    ></textarea>
-
-                    {/* File Upload */}
-                    <div>
-                        <label
-                            htmlFor="file-upload"
-                            className="block text-sm font-semibold text-gray-900 mb-2"
-                        >
-                            Upload pitch Deck (less than 10MB)
-                        </label>
+                    <div className="flex items-center mb-4">
                         <input
-                            id="file-upload"
-                            type="file"
-                            className="block w-full text-sm text-gray-500 border border-gray-300 rounded-lg file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white hover:file:bg-blue-700"
-                            onChange={handleFileEvent}
-                            multiple
+                            type="checkbox"
+                            id="terms"
+                            checked={termsAccepted}
+                            onChange={() => setTermsAccepted(!termsAccepted)}
+                            className="mr-2"
                         />
-                        {errorMessage && (
-                            <p className="text-red-600 text-sm mt-2">{errorMessage}</p>
-                        )}
-                        <div className="mt-2">
-                            {uploadedFiles.map((file, index) => (
-                                <p key={index} className="text-sm text-gray-700">
-                                    {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
-                                </p>
-                            ))}
-                        </div>
+                        <label htmlFor="terms" className="text-gray-700">
+                            I have read agree to the{' '}
+                            <a href="#" className="text-blue-500">
+                                Terms & Conditions
+                            </a>
+                        </label>
                     </div>
-
                     <button
                         type="submit"
-                        className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700"
+                        className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                     >
-                        Submit Now
+                        Subscribe <i className="fas fa-arrow-right ml-2"></i>
                     </button>
                 </form>
+                <div className="text-center mt-4">
+                    <p className="text-gray-700">
+                        Have an account already? <a href="#" className="text-blue-500">Sign in</a>
+                    </p>
+                </div>
             </div>
+
         </div>
     );
 };
