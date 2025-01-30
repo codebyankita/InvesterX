@@ -1,3 +1,4 @@
+//app/components/portfolioCard.tsx
 import React, { useState } from "react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import Image from "next/image";

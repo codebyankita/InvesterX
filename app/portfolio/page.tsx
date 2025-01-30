@@ -1,3 +1,5 @@
+
+//app/portfolio/page.tsx
 import React from "react";
 import PortfolioCard from "@/app/components/PortfoliopageCard"; // Importing the PortfolioCard
 import SecondaryButton from "../components/SecondButton";
@@ -9,6 +11,7 @@ import enterprice from "@/public/portfoilo/enterprice.svg";
 import oranization from "@/public/portfoilo/organization.svg";
 import startup from "@/public/portfoilo/startup.svg";
 import venture from "@/public/portfoilo/venture.svg";
+import Link from "next/link";
 
 
 
@@ -45,14 +48,17 @@ export default function PortfolioPage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {portfolioData.map((item) => (
-                        <PortfolioCard
-                            key={item.id}
-                            id={item.id}
-                            image={item.image}
-                            title={item.title}
-                            category={item.category}
-                            year={item.year}
-                        />
+                        <Link key={item.id} href={`/portfolio/${item.id}`}>
+                            <PortfolioCard
+                                key={item.id}
+                                id={item.id}
+                                image={item.image}
+                                title={item.title}
+                                category={item.category}
+                                year={item.year}
+                            />
+                        </Link>
+
                     ))}
                 </div>
             </div>
