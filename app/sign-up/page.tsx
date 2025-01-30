@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import Logo from "../components/Logo";
+import { CiLinkedin } from "react-icons/ci";
 
 const SignUp: React.FC = () => {
     const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
@@ -44,7 +45,7 @@ const SignUp: React.FC = () => {
 
     return (
         <div className="flex bg-[#f6f8ff] items-center min-h-screen justify-center">
-            <div className="w-full h-full md:max-w-lg p-8 bg-white rounded-lg">
+            <div className="w-full h-full md:max-w-lg p-8 bg-white  rounded-3xl">
                 <div className="justify-items-center my-6">
                     <Logo />
                 </div>
@@ -71,7 +72,9 @@ const SignUp: React.FC = () => {
                     <div className="flex flex-col space-y-4">
 
                         <div className="flex items-center w-full p-3 border border-gray-300 rounded-lg">
-                            <i className="fab fa-linkedin text-blue-700 mr-2"></i>
+                            <CiLinkedin className="fab fa-linkedin text-blue-700 h-6 w-6 mr-2" />
+
+
                             <input
                                 type="text"
                                 placeholder="Linkedin Username"
