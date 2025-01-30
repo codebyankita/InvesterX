@@ -1,18 +1,42 @@
+//app/sign-up/page.tsx
 'use client'
 import { useState } from 'react';
 import { FaRegUser } from "react-icons/fa";
 import Logo from '../components/Logo';
+import { useRouter } from 'next/navigation'; // Import useRouter
+
+
 
 const SignUp = () => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [termsAccepted, setTermsAccepted] = useState(false);
+    const router = useRouter(); // Initialize router
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission logic (e.g., API call or validation)
-        console.log({ fullName, email, password, termsAccepted });
+
+        // Here, you would send a request to your backend to handle user registration.
+        try {
+            // Example API call (replace with your actual API)
+            // const response = await fetch('/api/signup', {
+            const response = await fetch('http://localhost:5000/api/auth/signup', { // Use correct backend route
+
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: fullName, email, password, termsAccepted })
+            });
+
+            if (response.ok) {
+                console.log('User signed up successfully');
+                router.push('/'); // Redirect to home page
+            } else {
+                console.error('Signup failed');
+            }
+        } catch (error) {
+            console.error('Error during signup:', error);
+        }
     };
 
     return (
