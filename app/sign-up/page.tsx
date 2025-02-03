@@ -12,32 +12,35 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [termsAccepted, setTermsAccepted] = useState(false);
+    const [message, setMessage] = useState('');
+
     const router = useRouter(); // Initialize router
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Here, you would send a request to your backend to handle user registration.
         try {
-            // Example API call (replace with your actual API)
-            // const response = await fetch('/api/signup', {
-            const response = await fetch('http://localhost:5000/api/auth/signup', { // Use correct backend route
-
+            const response = await fetch('http://localhost:5000/api/auth/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: fullName, email, password, termsAccepted })
+                body: JSON.stringify({ name: fullName, email, password })
             });
 
+            const data = await response.json();
             if (response.ok) {
-                console.log('User signed up successfully');
-                router.push('/'); // Redirect to home page
+                setMessage('User signed up successfully');
+                setTimeout(async () => {
+                    await router.push('/');
+                }, 2000);
             } else {
-                console.error('Signup failed');
+                setMessage(data.message || 'Signup failed. Please try again.');
             }
         } catch (error) {
             console.error('Error during signup:', error);
+            setMessage('Error during signup. Please try again later.');
         }
     };
+
 
     return (
         <div className="bg-[#f6f8ff] min-h-screen flex flex-col items-center justify-center py-6">
@@ -52,6 +55,8 @@ const SignUp = () => {
                         Join Angelica Capital and take the first step towards smarter investments.
                     </p>
                 </div>
+                {message && <p className="text-center text-green-600 mb-4">{message}</p>}
+
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 gap-4 mb-4">
                         <div className="flex flex-col">
@@ -104,12 +109,12 @@ const SignUp = () => {
                         type="submit"
                         className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                     >
-                        Subscribe <i className="fas fa-arrow-right ml-2"></i>
+                        Sign In
                     </button>
                 </form>
                 <div className="text-center mt-4">
                     <p className="text-gray-700">
-                        Have an account already? <a href="#" className="text-blue-500">Sign in</a>
+                        Have an account already? <a href="/sign-in" className="text-blue-500">Sign in</a>
                     </p>
                 </div>
             </div>
