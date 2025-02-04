@@ -71,14 +71,14 @@ const ContactUs: React.FC = () => {
                 setFormData({ name: "", email: "", linkedinUsername: "", aboutCompany: "" });
                 setUploadedFile(null);
                 setPhoneNumber("");
+                // } else {
+                //     // Check if the error message is "Email already exists!"
+                //     if (result.message === "Email already exists!") {
+                //         setErrorMessage("This email is already registered. Please use a different email.");
             } else {
-                // Check if the error message is "Email already exists!"
-                if (result.message === "Email already exists!") {
-                    setErrorMessage("This email is already registered. Please use a different email.");
-                } else {
-                    setErrorMessage(result.message);
-                }
+                setErrorMessage(result.message);
             }
+            // }
         } catch (error) {
             console.error(error);  // Log the error to the console for debugging
             setErrorMessage("Server error. Please try again.");
