@@ -56,8 +56,13 @@ const Header = () => {
         {/* Logo and Desktop Navigation */}
         <nav className=" flex space-x-5">
           <div className="flex items-center justify-start  lg:gap-9 md:gap-30 gap-20">
-            {/* Logo */}
-            <Logo />
+            {/* Clickable Logo */}
+            <Link href="/" passHref>
+              <div className="cursor-pointer">
+                <Logo />
+              </div>
+            </Link>
+
             {/* Links for Large Screens */}
             <div className="hidden lg:flex space-x-5 ml-4">
               <Link href="/" className="hover:text-custom-blue" onClick={handleLinkClick}>
