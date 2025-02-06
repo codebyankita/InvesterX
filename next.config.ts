@@ -5,3 +5,10 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+module.exports = {
+  reactStrictMode: true,
+  images: {
+    domains: ["localhost"],
+  },
+};
