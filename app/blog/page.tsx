@@ -82,13 +82,11 @@
 // };
 
 // export default Blog;
+
 // app/blog/page.tsx
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-
-
 
 interface data {
   Title: string;
@@ -100,8 +98,7 @@ interface data {
   publishedAt: string;
   authors?: { Name: string }[];
   Slug: string;
-};
-
+}
 
 // Fetch the data server-side
 const BlogPage = async () => {
@@ -125,7 +122,6 @@ const BlogPage = async () => {
               className="bg-white rounded-lg shadow-md overflow-hidden "
             // hover:scale-105 ease-in-out duration-300"
             >
-
               {/* Blog cover image */}
 
               <Image
@@ -146,10 +142,7 @@ const BlogPage = async () => {
                 {/* Blog description */}
                 <p className="mb-4">
                   {data.Description.split(" ").length > 6
-                    ? data.Description
-                      .split(" ")
-                      .slice(0, 11)
-                      .join(" ") + "..."
+                    ? data.Description.split(" ").slice(0, 11).join(" ") + "..."
                     : data.Description}
                 </p>
 
@@ -157,21 +150,21 @@ const BlogPage = async () => {
                 <div className="text-sm mb-4">
                   {/* <span>By {data.author.name}</span> |{" "} */}
                   {data.authors && data.authors.length > 0 && (
-                    <p className=" my-4">By {data.authors[0].Name}
+                    <p className=" my-4">
+                      By {data.authors[0].Name}
                       {/* | Published on {new Date(data.publishedAt).toDateString()} */}
                     </p>
                   )}
                   <span>
-                    {new Date(data.publishedAt).toLocaleDateString(
-                      "en-GB",
-
-                    )}
+                    {new Date(data.publishedAt).toLocaleDateString("en-GB")}
                   </span>
                 </div>
 
                 {/* Read more link */}
                 <Link href={`/blogpost/${data.Slug}`}>
-                  <button className="m-2 rounded-lg bg-blue-500 hover:bg-blue-700 text-white p-2">Read More</button>
+                  <button className="m-2 rounded-lg bg-blue-500 hover:bg-blue-700 text-white p-2">
+                    Read More
+                  </button>
                 </Link>
               </div>
             </div>
@@ -183,6 +176,3 @@ const BlogPage = async () => {
 };
 
 export default BlogPage;
-
-
-

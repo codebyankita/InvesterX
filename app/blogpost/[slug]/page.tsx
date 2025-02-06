@@ -110,11 +110,15 @@
 //   );
 // }
 
-
+//app/blogpost/[slug]/page.tsx
 import React from "react";
 import MarkdownHTML from "@/app/components/MarkdownHTML";
 // import Link from "next/link";
 import Image from "next/image";
+interface Category {
+  Name: string;
+  Slug: string;
+}
 
 interface Blog {
   Title: string;
@@ -122,15 +126,19 @@ interface Blog {
   publishedAt: string;
   authors?: { Name: string }[];
   Cover?: { url: string };
+  categories?: Category[];
 }
 
 // Fetch the blog data directly in the component
 const BlogDetail = async ({ params }: { params: { slug: string } }) => {
   // Ensure that `params` is awaited
   const { slug } = await params;
-  const res = await fetch(`http://localhost:1337/api/blogs?filters[Slug]=${slug}&populate=*`, {
-    cache: "no-store", // Prevent caching for fresh data
-  });
+  const res = await fetch(
+    `http://localhost:1337/api/blogs?filters[Slug]=${slug}&populate=*`,
+    {
+      cache: "no-store", // Prevent caching for fresh data
+    }
+  );
   const data = await res.json();
 
   if (data.data.length === 0) {
@@ -144,8 +152,27 @@ const BlogDetail = async ({ params }: { params: { slug: string } }) => {
     <div className="container mx-auto px-4 py-8 ">
       <h1 className="text-4xl mx-20 font-bold">{blog.Title}</h1>
       {blog.authors && blog.authors.length > 0 && (
-        <p className="text-gray-500 mx-20 my-4">By {blog.authors[0].Name} | Published on {new Date(blog.publishedAt).toDateString()}</p>
+        <p className="text-gray-500 mx-20 my-4">
+          By {blog.authors[0].Name} | Published on{" "}
+          {new Date(blog.publishedAt).toDateString()}
+        </p>
       )}
+
+
+      {/* Display the categories */}
+      {blog.categories && blog.categories.length > 0 && (
+        <div className="mx-20 mt-4 ">
+          <span>Categories: </span>
+          {blog.categories.map((category, index) => (
+            <span key={category.Slug}>
+              {category.Name}
+              {index < (blog.categories ?? []).length - 1 && ", "}
+            </span>
+          ))}
+        </div>
+      )}
+
+
       {blog.Cover && (
         <Image
           src={`http://localhost:1337${blog.Cover.url}`}
@@ -155,7 +182,6 @@ const BlogDetail = async ({ params }: { params: { slug: string } }) => {
           className=" w-full h-80 object-cover rounded-lg m-auto mx-20"
           priority
         />
-
       )}
       <div className="mt-6 text-lg text-gray-700  mx-20">
         <MarkdownHTML markdown={blog.Content} />
@@ -165,4 +191,3 @@ const BlogDetail = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default BlogDetail;
-
