@@ -109,7 +109,7 @@ const BlogPage = async () => {
     cache: "no-store",
   });
   const data: { data: data[] } = await res.json();
-  console.log(data)
+  // console.log(data)
   // const imageUrl = new URL(data.Cover.name, "http://localhost:1337");
 
   return (
