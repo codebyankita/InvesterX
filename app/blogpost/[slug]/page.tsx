@@ -154,9 +154,9 @@ const BlogDetail = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div className="container mx-auto px-4 py-8 ">
-      <h1 className="text-4xl mx-20 font-bold">{blog.Title}</h1>
+      <h1 className="text-4xl lg:mx-20 mx-4 font-bold">{blog.Title}</h1>
       {blog.authors && blog.authors.length > 0 && (
-        <p className="text-gray-500 mx-20 my-4">
+        <p className="text-gray-500 lg:mx-20 mx-4 my-4">
           By {blog.authors[0].Name} | Published on{" "}
           {new Date(blog.publishedAt).toDateString()}
         </p>
@@ -165,7 +165,7 @@ const BlogDetail = async ({ params }: { params: { slug: string } }) => {
 
       {/* Display the categories */}
       {blog.categories && blog.categories.length > 0 && (
-        <div className="mx-20 mt-4 ">
+        <div className="lg:mx-20 mx-4 my-4 ">
           <span>Categories: </span>
           {blog.categories.map((category, index) => (
             <span key={category.Slug}>
@@ -181,13 +181,13 @@ const BlogDetail = async ({ params }: { params: { slug: string } }) => {
         <Image
           src={`http://localhost:1337${blog.Cover.url}`}
           alt={blog.Title}
-          width={800} // Set the width
-          height={400} // Set the height
-          className=" w-full h-80 object-cover rounded-lg m-auto mx-20"
+          width={600} // Set the width
+          height={300} // Set the height
+          className=" lg:max-w-4xl h-80  rounded-lg lg:mx-20 mx-4 "
           priority
         />
       )}
-      <div className="mt-6 text-lg text-gray-700  mx-20">
+      <div className="mt-6 text-lg text-gray-700  lg:mx-20 mx-4">
         <MarkdownHTML markdown={blog.Content} />
       </div>
     </div>

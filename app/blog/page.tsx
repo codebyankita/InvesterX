@@ -82,7 +82,7 @@
 // };
 
 // export default Blog;
-
+// ----------------------------------------------------------------
 // app/blog/page.tsx
 import React from "react";
 import Link from "next/link";
@@ -130,7 +130,7 @@ const BlogPage = async () => {
                 alt={data.Title}
                 width={500} // Set the width
                 height={300} // Set the height
-                className=" rounded-lg m-auto object-cover"
+                className="  rounded-lg m-auto mobject-cover"
                 priority
               />
 
