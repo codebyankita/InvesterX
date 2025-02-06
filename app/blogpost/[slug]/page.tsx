@@ -110,6 +110,10 @@
 //   );
 // }
 
+
+// ----------------------------------------------------------------
+// this url for all blog post you can see 
+// http://localhost:1337/api/blogs?populate=*
 //app/blogpost/[slug]/page.tsx
 import React from "react";
 import MarkdownHTML from "@/app/components/MarkdownHTML";
