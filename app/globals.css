@@ -116,12 +116,41 @@ body {
   * {
     @apply border-border;
   }
+
   /* Custom utility class to allow animations during hover */
   .no-pause-on-hover {
     pointer-events: auto;
     animation-play-state: running !important;
   }
+
   body {
     @apply bg-background text-foreground;
+    @apply animate-fadeIn;
+  }
+  /* img {
+    width: auto;
+    height: auto;
+  } */
+
+  main {
+    @apply animate-slideUp;
+  }
+
+  @keyframes bg-move {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  body {
+    /* background: linear-gradient(45deg, #3354ff, #ff3c7e, #ffcc00); */
+    background-size: 300% 300%;
+    animation: bg-move 10s infinite alternate ease-in-out;
   }
 }

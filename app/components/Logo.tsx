@@ -10,6 +10,8 @@ export default function Logo() {
         alt="InvesterX Logo"
         width={160}
         height={180}
+
+
       // className="transition-transform duration-200 group-hover:scale-90"
       />
     </div>

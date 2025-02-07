@@ -131,7 +131,7 @@ const BlogPage = async () => {
                 width={500} // Set the width
                 height={300} // Set the height
                 className="  rounded-lg m-auto mobject-cover"
-                priority
+
               />
 
               {/* Blog content */}
