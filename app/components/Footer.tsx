@@ -162,6 +162,8 @@ import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 // import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
 import { motion } from "framer-motion";
+import WavyLine from "./WavyLine"; // Import WavyLine Component
+
 
 const Footer = () => {
   const pathname = usePathname(); // Get the current pathname
@@ -230,7 +232,10 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <hr className="mt-6" />
+          {/* <hr className="mt-6" /> */}
+
+          {/* Use the animated line instead of <hr> */}
+          <WavyLine />
           <div className="text-center flex lg:flex-row flex-col justify-between text-gray-700 py-5  ">
             <div className="flex justify-center items-center   ">
               <Logo />
