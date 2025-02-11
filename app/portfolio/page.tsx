@@ -3,14 +3,14 @@
 import React from "react";
 import PortfolioCard from "@/app/components/PortfoliopageCard"; // Importing the PortfolioCard
 import SecondaryButton from "../components/SecondButton";
-import company from "@/public/portfoilo/company.svg";
-import cryptomatic from "@/public/portfoilo/cryptomatic.svg";
-import business from "@/public/portfoilo/business.svg";
-import corporate from "@/public/portfoilo/corporate.svg";
-import enterprice from "@/public/portfoilo/enterprice.svg";
-import oranization from "@/public/portfoilo/organization.svg";
-import startup from "@/public/portfoilo/startup.svg";
-import venture from "@/public/portfoilo/venture.svg";
+import company from "@/public/portfoilo/company.webp";
+import cryptomatic from "@/public/portfoilo/cryptomatic.webp";
+import business from "@/public/portfoilo/business.webp";
+import corporate from "@/public/portfoilo/corporate.webp";
+import enterprice from "@/public/portfoilo/enterprice.webp";
+import oranization from "@/public/portfoilo/organization.webp";
+import startup from "@/public/portfoilo/startup.webp";
+import venture from "@/public/portfoilo/venture.webp";
 import Link from "next/link";
 import ScrollAnimationWrapper from "../components/ScrollAnimationWrapper";
 
@@ -19,14 +19,14 @@ import ScrollAnimationWrapper from "../components/ScrollAnimationWrapper";
 
 export default function PortfolioPage() {
     const portfolioData = [
-        { id: "company", image: company, title: "Company", category: "Social Network", year: "2025" },
-        { id: "venture", image: venture, title: "Venture", category: "Social Network", year: "2025" },
-        { id: "cryptomatic", image: cryptomatic, title: "Cryptomatic", category: "Cloud Software", year: "2025" },
-        { id: "business", image: business, title: "Business", category: "Cloud Software", year: "2025" },
-        { id: "corporate", image: corporate, title: "Corporate", category: "Streaming", year: "2025" },
-        { id: "enterprice", image: enterprice, title: "Enterprise", category: "Cloud Software", year: "2025" },
-        { id: "oranization", image: oranization, title: "Organization", category: "Streaming", year: "2025" },
-        { id: "startup", image: startup, title: "Startup", category: "Cloud Software", year: "2025" },
+        { id: "company", image: company.src, title: "Company", category: "Social Network", year: "2025" },
+        { id: "venture", image: venture.src, title: "Venture", category: "Social Network", year: "2025" },
+        { id: "cryptomatic", image: cryptomatic.src, title: "Cryptomatic", category: "Cloud Software", year: "2025" },
+        { id: "business", image: business.src, title: "Business", category: "Cloud Software", year: "2025" },
+        { id: "corporate", image: corporate.src, title: "Corporate", category: "Streaming", year: "2025" },
+        { id: "enterprice", image: enterprice.src, title: "Enterprise", category: "Cloud Software", year: "2025" },
+        { id: "oranization", image: oranization.src, title: "Organization", category: "Streaming", year: "2025" },
+        { id: "startup", image: startup.src, title: "Startup", category: "Cloud Software", year: "2025" },
     ];
 
     return (

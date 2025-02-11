@@ -3,16 +3,16 @@ import { useParams } from "next/navigation";
 import React from "react";
 import Image from "next/image";
 import Button from "@/app/components/Button";
-import startuplogo from "@/public/portfoilo/startup.svg";
+import startuplogo from "@/public/portfoilo/startup.webp";
 import startup from "@/public/portfoilo/startupimg.jpeg";
-import company from "@/public/portfoilo/company.svg";
-import cryptomatic from "@/public/portfoilo/cryptomatic.svg";
-import business from "@/public/portfoilo/business.svg";
-import corporate from "@/public/portfoilo/corporate.svg";
-import enterprice from "@/public/portfoilo/enterprice.svg";
-import oranization from "@/public/portfoilo/organization.svg";
+import company from "@/public/portfoilo/company.webp";
+import cryptomatic from "@/public/portfoilo/cryptomatic.webp";
+import business from "@/public/portfoilo/business.webp";
+import corporate from "@/public/portfoilo/corporate.webp";
+import enterprice from "@/public/portfoilo/enterprice.webp";
+import oranization from "@/public/portfoilo/organization.webp";
 
-import venture from "@/public/portfoilo/venture.svg";
+import venture from "@/public/portfoilo/venture.webp";
 import ScrollAnimationWrapper from "@/app/components/ScrollAnimationWrapper";
 
 // Sample data (in a real app, fetch from an API or database)
