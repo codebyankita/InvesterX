@@ -158,7 +158,7 @@ const PortfoliopageCard: React.FC<PortfoliopageCardProps> = ({ image, title, cat
             {/* Image */}
             <div className="flex justify-center items-center mx-auto w-30 h-30">
                 <Image
-                    className="rounded-full w-auto h-auto m-4 p-4 bg-custom-blue"
+                    className="rounded-full w-auto h-auto overflow-visible m-4 p-4 bg-custom-blue"
                     src={image}
                     alt={`Portfolio of ${title}`}
                     width={80}

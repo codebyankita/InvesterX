@@ -155,7 +155,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, year,
           alt={title}
           width={80}
           height={80}
-          className="transition-transform group-hover:scale-110 duration-300 rounded-full bg-custom-blue p-4"
+          className="transition-transform group-hover:scale-110 duration-300 overflow-visible rounded-full bg-custom-blue p-4"
         />
       </div>
 
