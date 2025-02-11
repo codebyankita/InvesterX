@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function ScrollAnimationWrapper({ children }: { children: React.ReactNode }) {
     const controls = useAnimation();
-    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+    const { ref, inView } = useInView({ threshold: 0.2 });
 
     useEffect(() => {
         if (inView) {
@@ -33,14 +33,18 @@ export default function ScrollAnimationWrapper({ children }: { children: React.R
 
 // export default function ScrollAnimationWrapper({ children }: { children: React.ReactNode }) {
 //     const controls = useAnimation();
-//     const { ref, inView, entry } = useInView({ triggerOnce: true, threshold: 0.2 });
+//     const { ref, inView } = useInView({
+//         triggerOnce: false, // Keeps animation persistent
+//         threshold: 0.1, // Adjust for better visibility
+//     });
 
 //     useEffect(() => {
 //         if (inView) {
-//             console.log("Entry Data:", entry); // Logs intersection details
 //             controls.start({ opacity: 1, y: 0 });
+//         } else {
+//             controls.start({ opacity: 1, y: 0 }); // Keep it visible
 //         }
-//     }, [inView, entry, controls]);
+//     }, [inView, controls]);
 
 //     return (
 //         <motion.div
