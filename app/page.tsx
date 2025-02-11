@@ -110,10 +110,10 @@ const HomePage = () => {
             <div className="w-full sm:w-full lg:w-2/4">
               <Image
                 src={homeside}
-                alt="Abstract blue and white wavy background"
+                alt="Optimized image"
                 className=" rounded-lg  shadow-md"
                 placeholder="blur"
-
+              // priority
               />
             </div>
             {/* </motion.div> */}
