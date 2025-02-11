@@ -83,23 +83,13 @@ const HomePage = () => {
     <>
       {/*-------------------------------- page1 ---------------------*/}
       {/* Page 1 - Hero Section */}
-      {/* <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="bg-[#f6f8ff]"
-      > */}
+
       <div className="bg-[#f6f8ff]">
         <ScrollAnimationWrapper>
           <main className=" flex items-center justify-center lg:flex-row md:flex-col  flex-col lg:justify-between lg:px-0 lg:p-0 p-8 md:p-10 ">
             <div className=" space-y-6 mb-28 w-full lg:px-10 xl:px-14 sm:w-full lg:w-2/4">
               {/* Left Content */}
-              {/* <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="space-y-6 mb-28 w-full lg:px-10 xl:px-14 sm:w-full lg:w-2/4"
-          > */}
+
 
               <h1 className="text-3xl lg:text-left text-center justify-center sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800">
                 We invest in the companies of the future, today
@@ -112,16 +102,11 @@ const HomePage = () => {
                 <SecondaryButton text="Investment portfolio" />
               </div>
 
-              {/* </motion.div> */}
+
 
             </div>
             {/* Right Image */}
-            {/* <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="w-full sm:w-full lg:w-2/4"
-            > */}
+
             <div className="w-full sm:w-full lg:w-2/4">
               <Image
                 src={homeside}
@@ -445,7 +430,7 @@ const HomePage = () => {
           </div>
         </ScrollAnimationWrapper>
       </div >
-      {/* </motion.div > */}
+
     </>
   );
 };

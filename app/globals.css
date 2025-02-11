@@ -153,4 +153,12 @@ body {
     background-size: 300% 300%;
     animation: bg-move 10s infinite alternate ease-in-out;
   }
+  /* body,
+  main,
+  header,
+  section,
+  div {
+    opacity: 1 !important;
+    visibility: visible !important;
+  } */
 }
