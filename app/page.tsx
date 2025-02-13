@@ -92,7 +92,7 @@ const HomePage = () => {
 
 
               <h1 className="text-3xl lg:text-left text-center justify-center sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800">
-                We invest in the companies of the future, today
+                We invest in the companies of the future.
               </h1>
               <p className="text-gray-600 lg:text-left  text-center  sm:text-sm lg:text-base">
                 We are a venture capital firm dedicated to fueling the next wave of Web3 innovation. From blockchain protocols to decentralized finance (DeFi), we partner with visionary founders to shape the decentralized future.
@@ -368,7 +368,7 @@ const HomePage = () => {
             {/* Overlay Content */}
             <div className="absolute inset-0 text-white  bg-black bg-opacity-30 flex flex-col items-center justify-center text-center lg:p-8 p-5">
               <h1 className=" flex  lg:mx-10 mx-4   text-xl md:text-3xl lg:text-4xl lg:font-bold font-semibold lg:mb-4 mb-2">
-                We invest in the companies of the future, today
+                We invest in the companies of the future.
               </h1>
               <p className=" lg:text-lg text-center text-wrap md:text-base text-sm lg:mb-6 mb-2 lg:mx-10 mx-4">
                 Investing in cutting-edge technologies and protocols that drive the decentralized economy.

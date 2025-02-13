@@ -187,7 +187,7 @@ const Footer = () => {
         <div className="bg-white rounded-lg shadow-lg p-8 w-full lg:max-w-7xl">
           <div className="flex lg:flex-row flex-col mb-8 lg:justify-between">
             <h1 className="lg:text-4xl text-3xl flex my-4 lg:my-0 lg:w-1/2 xl:w-2/5 w-full lg:text-left text-center font-semibold text-gray-900">
-              We invest in the companies of the future, today
+              We invest in the companies of the future.
             </h1>
             <div className="flex flex-col md:flex-row items-center justify-center  lg:w-2/5 w-full lg:gap-5 gap-2">
               <div className="lg:hidden mb-4">

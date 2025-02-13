@@ -191,7 +191,7 @@ const Header = () => {
   if (noFooterPages.includes(pathname)) return null;
 
   return (
-    <header className="sticky top-0 z-50 bg-white md:bg-[#f6f8ff] shadow-md">
+    <header className="sticky top-0 z-50 bg-white ">
       <div className="lg:container mx-auto flex px-4 justify-between items-center py-4 sm:py-2">
         <nav className="flex space-x-5">
           <div className="flex items-center justify-start lg:gap-9 md:gap-30 gap-20">
@@ -215,7 +215,7 @@ const Header = () => {
           </div>
         </nav>
         <div className="hidden lg:block">
-          <Button text="About Your Pitch Deck" href="/contact-us" />
+          <Button text=" Pitch Us" href="/contact-us" />
         </div>
         <div className="lg:hidden mx-4 flex items-center">
           <button onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
@@ -248,7 +248,7 @@ const Header = () => {
               </motion.div>
             ))}
             <motion.div custom={4} variants={menuVariants} initial="hidden" animate="visible">
-              <Button text="About Your Pitch Deck" href="/contact-us" />
+              <Button text="Pitch Us" href="/contact-us" />
             </motion.div>
           </div>
         </motion.div>
