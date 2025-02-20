@@ -1,70 +1,11 @@
 // //app/components/Landingpage.tsx
-// "use client";
-
-// import { useEffect, useState } from "react";
-
-// import AnimatedLogo from "./Animatedlogo";
-
-// import { motion } from "framer-motion";
-// import HomePage from "../page";
-
-// export default function Home() {
-//     const [showContent, setShowContent] = useState(false);
-//     const [showNavbarFooter, setShowNavbarFooter] = useState(false);
-
-//     useEffect(() => {
-//         const handleScroll = () => {
-//             const scrollPosition = window.scrollY;
-//             if (scrollPosition > window.innerHeight * 0.8 && !showContent) {
-//                 setShowContent(true);
-//             }
-//             if (scrollPosition > window.innerHeight * 0.9 && !showNavbarFooter) {
-//                 setShowNavbarFooter(true);
-//             }
-//         };
-
-//         window.addEventListener("scroll", handleScroll);
-//         return () => window.removeEventListener("scroll", handleScroll);
-//     }, [showContent, showNavbarFooter]);
-
-//     return (
-//         <div className="min-h-screen">
-//             {/* Animated Logo */}
-
-//             <AnimatedLogo />
-
-//             {/* Home Page Content Revealed Inside Bird Mask */}
-//             <motion.div
-//                 initial={{ opacity: 0 }}
-//                 animate={showContent ? { opacity: 1 } : { opacity: 0 }}
-//                 transition={{ duration: 1, ease: "easeOut" }}
-//                 className="relative overflow-hidden"
-//                 style={{
-//                     WebkitMaskImage: `url('/birdlogo.jpg')`,
-//                     maskImage: `url('/birdlogo.jpg')`,
-//                     WebkitMaskSize: "cover",
-//                     maskSize: "cover",
-//                 }}
-//             ></motion.div>
-
-//             {/* Main Content */}
-//             <motion.div
-//                 initial={{ opacity: 0, y: 20 }}
-//                 animate={showContent ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-//                 transition={{ duration: 1, ease: "easeOut" }}
-//             >
-//                 <HomePage />
-//             </motion.div>
-//         </div>
-//     );
-// }
 "use client";
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedLogo from "./Animatedlogo";
 import HomePage from "../page";
-// import Header from "./Header"; // Import Navbar Component
+// import Header from "./Header"; // 
 
 export default function Home() {
     const [showContent, setShowContent] = useState(false);
@@ -101,3 +42,62 @@ export default function Home() {
         </div>
     );
 }
+// // app/components/Landingpage.tsx
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import { motion } from "framer-motion";
+// import AnimatedLogo from "./Animatedlogo";
+// import HomePage from "../page";
+// import Header from "./Header";
+
+// export default function Home() {
+//     const [showHeader, setShowHeader] = useState(false);
+//     const [showContent, setShowContent] = useState(false);
+//     const [logoFinished, setLogoFinished] = useState(false); // Track logo animation
+
+//     useEffect(() => {
+//         const handleScroll = () => {
+//             const scrollPosition = window.scrollY;
+//             if (scrollPosition > window.innerHeight * 0.2 && logoFinished) { // Check if logo finished
+//                 setShowHeader(true);
+//                 setShowContent(true);
+//             } else {
+//               setShowHeader(false);
+//               setShowContent(false);
+//             }
+//         };
+
+//         window.addEventListener("scroll", handleScroll);
+//         return () => window.removeEventListener("scroll", handleScroll);
+//     }, [logoFinished]); // Add logoFinished to dependency array
+
+//     const handleLogoComplete = () => {
+//         setLogoFinished(true); // Set state when logo animation finishes
+//         // Optionally, you can trigger a scroll event here to immediately show the header
+//         // if the user is already scrolled past the threshold.
+//         if (window.scrollY > window.innerHeight * 0.2) {
+//             setShowHeader(true);
+//             setShowContent(true);
+//         }
+//     };
+
+//     return (
+//         <div className="relative min-h-screen">
+//             {/* Animated Logo */}
+//             <AnimatedLogo onComplete={handleLogoComplete} /> {/* Pass callback */}
+
+//             {/* Header */}
+//             {showHeader && <Header />} {/* Conditionally render the header */}
+
+//             {/* Main Content */}
+//             <motion.div
+//                 initial={{ opacity: 0, y: 50 }}
+//                 animate={showContent ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+//                 transition={{ duration: 1, ease: "easeOut" }}
+//             >
+//                 <HomePage />
+//             </motion.div>
+//         </div>
+//     );
+// }
