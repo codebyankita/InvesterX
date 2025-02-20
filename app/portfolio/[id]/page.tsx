@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Button from "@/app/components/Button";
 import startuplogo from "@/public/portfoilo/startup.webp";
-import startup from "@/public/portfoilo/startupimg.jpeg";
+import startup from "@/public/portfoilo/startupimg.webp";
 import company from "@/public/portfoilo/company.webp";
 import cryptomatic from "@/public/portfoilo/cryptomatic.webp";
 import business from "@/public/portfoilo/business.webp";

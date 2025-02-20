@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import PageWrapper from "./components/PageWrapper";
+// import PageWrapper from "./components/PageWrapper";
 
 
 export const metadata: Metadata = {
@@ -27,10 +27,10 @@ export default function RootLayout({
       </head>
       <body className="font-thicccboi antialiased ">
         <Header />
-        <PageWrapper>
+        {/* <PageWrapper> */}
 
-          <main>{children}</main>
-        </PageWrapper>
+        <main>{children}</main>
+        {/* </PageWrapper> */}
         <Footer />
       </body>
     </html>

@@ -199,21 +199,21 @@ const HomePage = () => {
                 description="Social Network"
                 year="2025"
                 icon={companylogo.src}
-              // link="/company-link"
+                link="/portfolio/company"
               />
               <PortfolioCard
                 title="Startup"
                 description="Cloud Software"
                 year="2025"
                 icon={startuplogo.src}
-              // link="/startup-link"
+                link="/portfolio/startup"
               />
               <PortfolioCard
                 title="Organization"
                 description="Streaming"
                 year="2025"
                 icon={oragnzationlogo.src}
-              // link="/organization-link"
+                link="/portfolio/oranization"
               />
               <div className="lg:col-span-2 col-span-1">
                 <PortfolioCard
@@ -221,7 +221,7 @@ const HomePage = () => {
                   description="E-commerce"
                   year="2025"
                   icon={venturelogo.src}
-                // link="/venture-link"
+                  link="/portfolio/venture"
                 />
               </div>
               <PortfolioCard
@@ -229,7 +229,7 @@ const HomePage = () => {
                 description="AI Solutions"
                 year="2026"
                 icon={enterpricelogo.src}
-              // link="/enterprise-link"
+                link="/portfolio/enterprice"
               />
             </div>
             <div className="flex justify-center  py-12">
