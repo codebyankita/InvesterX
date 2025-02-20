@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import company from "@/public/home/company.svg";
-import enterprice from "@/public/home/enterprice.svg";
-import organization from "@/public/home/oragnization.svg";
-import startup from "@/public/home/startup.svg";
-import venture from "@/public/home/venture.svg";
+import company from "@/public/home/company.webp";
+import enterprice from "@/public/home/enterprice.webp";
+import organization from "@/public/home/oragnization.webp";
+import startup from "@/public/home/startup.webp";
+import venture from "@/public/home/venture.webp";
 
 const companyLogos = [
   { id: 1, src: company, alt: "Company Logo" },

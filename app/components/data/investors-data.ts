@@ -9,7 +9,7 @@ export const investors = [
     email: "",
     website: "",
     articles: ["Article 1 by John", "Article 2 by John"],
-    image: "/home-1/angela.jpg",
+    image: "/home-1/angela.webp",
   },
   {
     id: "mohit",
@@ -20,7 +20,7 @@ export const investors = [
     email: "",
     website: "https://www.mohitkapadiya.com/",
     articles: ["Article 1 by John", "Article 2 by John"],
-    image: "/home-1/mohit.jpg",
+    image: "/home-1/mohit.webp",
   },
   // {
   //   id: "john-carter",
@@ -31,7 +31,7 @@ export const investors = [
   //   email: "johncarter@invstor.com",
   //   website: "http://www.johncarter.com",
   //   articles: ["Article 1 by John", "Article 2 by John"],
-  //   image: "/home-1/john.jpg",
+  //   image: "/home-1/john.webp",
   // },
   // {
   //   id: "sophie-moore",
@@ -42,7 +42,7 @@ export const investors = [
   //   email: "sophie@invstor.com",
   //   website: "http://www.sophiemoore.com",
   //   articles: ["Article 1 by Sophie", "Article 2 by Sophie"],
-  //   image: "/home-1/sophie.jpg",
+  //   image: "/home-1/sophie.webp",
   // },
   // {
   //   id: "matt-cannon",
@@ -53,7 +53,7 @@ export const investors = [
   //   email: "matt@invstor.com",
   //   website: "http://www.mattcannon.com",
   //   articles: ["Article 1 by Matt", "Article 2 by Matt"],
-  //   image: "/home-1/matt.jpg",
+  //   image: "/home-1/matt.webp",
   // },
   // {
   //   id: "andy-smith",
@@ -64,7 +64,7 @@ export const investors = [
   //   email: "andy@invstor.com",
   //   website: "http://www.andysmith.com",
   //   articles: ["Article 1 by Andy", "Article 2 by Andy"],
-  //   image: "/home-1/andy.jpg",
+  //   image: "/home-1/andy.webp",
   // },
   // {
   //   id: "graham-hills",
@@ -75,7 +75,7 @@ export const investors = [
   //   email: "graham@invstor.com",
   //   website: "http://www.grahamhills.com",
   //   articles: ["Article 1 by Graham", "Article 2 by Graham"],
-  //   image: "/about/graham.jpg",
+  //   image: "/about/graham.webp",
   // },
   // {
   //   id: "kathie-corl",
@@ -86,7 +86,7 @@ export const investors = [
   //   email: "kathie@invstor.com",
   //   website: "http://www.kathiecorl.com",
   //   articles: ["Article 1 by Kathie", "Article 2 by Kathie"],
-  //   image: "/about/kathaie.jpg",
+  //   image: "/about/kathaie.webp",
   // },
   // {
   //   id: "stephanie-powell",
@@ -97,7 +97,7 @@ export const investors = [
   //   email: "stephanie@invstor.com",
   //   website: "http://www.stephanie.com",
   //   articles: ["Article 1 by Stephanie", "Article 2 by Stephanie"],
-  //   image: "/about/stephenie.jpg",
+  //   image: "/about/stephenie.webp",
   // },
   // {
   //   id: "emily-miller",
@@ -108,6 +108,6 @@ export const investors = [
   //   email: "emily@invstor.com",
   //   website: "http://www.emilymiller.com",
   //   articles: ["Article 1 by Emily", "Article 2 by Emily"],
-  //   image: "/about/emily.jpg",
+  //   image: "/about/emily.webp",
   // },
 ];
