@@ -9,7 +9,7 @@ import Button from "./Button";
 import { TbMenu } from "react-icons/tb";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, } from "framer-motion";
 
 const menuVariants = {
   hidden: { opacity: 0, x: 50 },

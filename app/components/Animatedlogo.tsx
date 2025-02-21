@@ -162,41 +162,44 @@ const AnimatedLogo: React.FC<AnimatedLogoProps> = ({ onComplete }) => {
     }, [onComplete]);
 
     return (
-        <div ref={containerRef} className="relative w-full min-h-[120vh] overflow-hidden">
-            <motion.div
-                style={{
-                    scale,
-                    opacity,
-                    transformOrigin: "center center",
-                    willChange: "transform, opacity"
-                }}
-                className="fixed inset-0 flex items-center justify-center z-50"
-            >
-                <Image
-                    src={Bird}
-                    alt="Bird Logo"
-                    width={400}
-                    height={400}
-                    className="transition-all duration-500"
-                    priority
-                />
-            </motion.div>
+        <div className="bg-white">
 
-            {!isScrolled && (
+            <div ref={containerRef} className="relative w-full min-h-[120vh] overflow-hidden">
                 <motion.div
-                    initial={{ translateY: 0 }}
-                    animate={{ translateY: [0, 10, 0] }}
-                    transition={{
-                        repeat: Infinity,
-                        duration: 1,
-                        ease: "easeInOut"
+                    style={{
+                        scale,
+                        opacity,
+                        transformOrigin: "center center",
+                        willChange: "transform, opacity"
                     }}
-                    className="fixed justify-center bottom-10 left-48 right-48 flex flex-col items-center"
+                    className="fixed inset-0 flex items-center justify-center z-50"
                 >
-                    <IoIosArrowDown className="animate-bounce text-gray-600" size={20} />
-                    Scroll Down
+                    <Image
+                        src={Bird}
+                        alt="Bird Logo"
+                        width={400}
+                        height={400}
+                        className="transition-all duration-500"
+                        priority
+                    />
                 </motion.div>
-            )}
+
+                {!isScrolled && (
+                    <motion.div
+                        initial={{ translateY: 0 }}
+                        animate={{ translateY: [0, 10, 0] }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 1,
+                            ease: "easeInOut"
+                        }}
+                        className="fixed justify-center bottom-10 left-48 right-48 flex flex-col items-center"
+                    >
+                        <IoIosArrowDown className="animate-bounce text-gray-600" size={20} />
+                        Scroll Down
+                    </motion.div>
+                )}
+            </div>
         </div>
     );
 };
