@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import startup from "@/public/portfoilo/startupimg.jpeg";
+import startup from "@/public/portfoilo/startupimg.webp";
 import Image from "next/image";
 import Button from "@/app/components/Button";
 import startuplogo from "@/public/portfoilo/startup.webp";
