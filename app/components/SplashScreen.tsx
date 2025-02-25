@@ -61,22 +61,11 @@ const SplashScreen = ({ onComplete }: { onComplete?: () => void }) => {
                 <Image src={Bird} alt="Company Logo" width={200} height={200} priority />
             </motion.div>
 
-            {/* Scroll down text message */}
-            <motion.p
-                className="absolute bottom-10 text-gray-700 text-lg"
-                initial={{ opacity: 0 }} // Start invisible
-                animate={{ opacity: 1 }} // Fade in effect
-                transition={{ duration: 1.5, delay: 0.5 }} // Delayed fade-in
-            >
+            {/* Scroll down hint */}
+            <motion.p className="absolute bottom-10 text-gray-700 text-lg">
                 Scroll down to explore
             </motion.p>
-            <motion.p
-                className="absolute bottom-20 text-gray-700 text-lg"
-                initial={{ opacity: 0 }} // Start invisible
-                animate={{ opacity: 1 }} // Fade in effect
-                transition={{ duration: 1.5, delay: 0.5 }} // Delayed fade-in
-            >
-
+            <motion.p className="absolute bottom-20">
                 <IoIosArrowDown className="animate-bounce text-gray-600" size={20} />
             </motion.p>
         </motion.div>

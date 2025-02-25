@@ -19,9 +19,9 @@ const PartnerCard: React.FC<PartnerCardProps> = ({ image, name, title }) => {
         <MdOutlineArrowOutward size={24} />
       </div>
       {/* Centered Image */}
-      <div className="flex justify-center items-center  rounded-full mx-auto w-30 h-30 ">
+      <div className="flex justify-center items-center  rounded-full mx-auto w-[120px] h-[120px]">
         <Image
-          className="rounded-full transform transition-transform duration-300 group-hover:scale-110"
+          className="rounded-full transform transition-transform duration-300 group-hover:scale-110 object-cover"
           src={image}
           alt={`Portrait of ${name}`}
           width={120}

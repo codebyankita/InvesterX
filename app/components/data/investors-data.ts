@@ -22,6 +22,17 @@ export const investors = [
     articles: ["Article 1 by John", "Article 2 by John"],
     image: "/home-1/mohit.webp",
   },
+  {
+    id: "tommy",
+    name: "Tommy Nguyen",
+    title: "Chief Legal Officer-CLO",
+    description:
+      "Tommy is a visionary leader with over two decades of experience in venture capital and a passion for fostering groundbreaking innovations in the Web3 space.",
+    email: "",
+    website: "https://www.mohitkapadiya.com/",
+    articles: ["Article 1 by John", "Article 2 by John"],
+    image: "/home-1/tommy.webp",
+  },
   // {
   //   id: "john-carter",
   //   name: "John Carter",
