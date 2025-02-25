@@ -528,18 +528,18 @@ const offices = [
   {
     id: "silicon-valley",
     name: "SILICON VALLEY",
-    email: "newyork@invstor.com",
+    email: "Pitch@angelica.capital",
     location: "744 San Antonio Road, Palo Alto, CA 94303 ",
-    phone: "(414) 793 - 0681",
+    // phone: "(414) 793 - 0681",
     image: Ny,
   },
   {
     id: "vietnam",
     name: "VIETNAM",
-    email: "miami@invstor.com",
+    email: "Pitch@angelica.capital",
     location:
       "Dai Phu Gia Urban Area, Nhon Binh Ward, Quy Nhon City, Binh Dinh Province",
-    phone: "(414) 793 - 0681",
+    // phone: "(414) 793 - 0681",
     image: vietnam,
   },
 ];
@@ -728,7 +728,7 @@ export default function About() {
           {/* Header Section */}
           <div className="text-center mb-12">
             <ScrollAnimationWrapper>
-              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4">
                 THE STORY BEHIND: THE HUNCH
               </h2>
               <p className="text-gray-600">
@@ -887,9 +887,15 @@ export default function About() {
                     <Image src={email} alt="Email" className="mr-2 lg:mt-1" />
                     <span className="text-black md:text-2xl text-xl  ">Email</span>
                   </div>
-                  <span className="mx-8 my-1 text-wrap text-gray-800">
+                  {/* <span className="mx-8 my-1 text-wrap text-gray-800">
                     {currentOffice?.email}
-                  </span>
+                  </span> */}
+                  <a
+                    href={`mailto:${currentOffice?.email}`}
+                    className="mx-8 my-1 text-wrap text-gray-800 hover:text-blue-500 transition-colors"
+                  >
+                    {currentOffice?.email}
+                  </a>
                 </div>
                 <div className="flex flex-col">
                   <div className="flex">
@@ -909,9 +915,9 @@ export default function About() {
                     <Image src={phone} alt="Phone" className="mr-2 lg:mt-1" />
                     <span className="text-black md:text-2xl text-xl ">Phone</span>
                   </div>
-                  <span className="mx-8 my-1 text-gray-800">
+                  {/* <span className="mx-8 my-1 text-gray-800">
                     {currentOffice?.phone}
-                  </span>
+                  </span> */}
                 </div>
               </div>
             </div>
