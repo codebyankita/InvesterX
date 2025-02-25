@@ -878,14 +878,14 @@ export default function About() {
               className="rounded-3xl w-full lg:w-1/2 mb-6 md:mb-0"
             />
             <div className="flex flex-col">
-              <h2 className="md:text-4xl text-3xl font-semibold lg:mx-4 xl:mx-8 mx-0">
+              <h2 className="lg:text-4xl text-3xl font-semibold lg:mx-4 my-4 xl:mx-8 mx-0">
                 {currentOffice?.name}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="flex flex-col lg:ml-4 xl:ml-8 ml-2">
+                <div className="flex flex-col lg:ml-4 xl:ml-8 ml-0">
                   <div className="flex lg:items-start items-center">
                     <Image src={email} alt="Email" className="mr-2 lg:mt-1" />
-                    <span className="text-black text-2xl">Email</span>
+                    <span className="text-black md:text-2xl text-xl  ">Email</span>
                   </div>
                   <span className="mx-8 my-1 text-wrap text-gray-800">
                     {currentOffice?.email}
@@ -898,7 +898,7 @@ export default function About() {
                       alt="Location"
                       className="mr-2 lg:mt-1"
                     />
-                    <span className="text-black text-2xl">Location</span>
+                    <span className="text-black md:text-2xl text-xl ">Location</span>
                   </div>
                   <span className="mx-8 my-1 text-gray-800">
                     {currentOffice?.location}
@@ -907,7 +907,7 @@ export default function About() {
                 <div className="flex flex-col lg:ml-4 xl:ml-8 ml-2">
                   <div className="flex lg:items-start items-center">
                     <Image src={phone} alt="Phone" className="mr-2 lg:mt-1" />
-                    <span className="text-black text-2xl">Phone</span>
+                    <span className="text-black md:text-2xl text-xl ">Phone</span>
                   </div>
                   <span className="mx-8 my-1 text-gray-800">
                     {currentOffice?.phone}
