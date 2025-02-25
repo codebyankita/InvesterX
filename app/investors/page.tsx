@@ -19,7 +19,7 @@ export default function page() {
 
               </h1>
               <div className="flex md:flex-row flex-col w-full text-gray-500  gap-4 lg:text-xl text-base mt-4">
-                <Button text="Pitch Your Startup" />
+                <Button text="Pitch Your Startup" href="/contact-us" />
                 <SecondaryButton text="  All " />
 
                 <SecondaryButton text="   Browse all team members " />

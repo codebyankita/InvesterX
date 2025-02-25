@@ -72,21 +72,25 @@ const Button: FC<ButtonProps> = ({ text, href }) => {
       md:px-5 md:py-3 md:text-md lg:px-6 lg:py-3 lg:text-lg cursor-pointer"
     >
       {text}
-      <GoArrowRight className="ml-2 sm:ml-1 transform group-hover:translate-x-2 transition-all duration-300" />
+      <GoArrowRight className="ml-2 sm:ml-1 transform transition-all duration-300 group-hover:translate-x-2" />
     </div>
   );
 
-  return href ? (
-    <Link href={href}>{buttonContent}</Link> // Wrap in Link if href is provided
-  ) : (
-    <div className="relative group">
-      {buttonContent}
-      <span
-        className="absolute top-[-50px] left-1/2 transform -translate-x-1/2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-sm text-white
-        rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        Upcoming
-      </span>
+  return (
+    <div className="relative group"> {/* Moved group class here */}
+      {href ? (
+        <Link href={href}>{buttonContent}</Link>
+      ) : (
+        <>
+          {buttonContent}
+          <span
+            className="absolute top-[-50px] left-1/2 transform -translate-x-1/2 px-4 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-sm text-white
+            rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            Upcoming
+          </span>
+        </>
+      )}
     </div>
   );
 };

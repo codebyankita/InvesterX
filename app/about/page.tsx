@@ -516,11 +516,11 @@ import Execution from "@/public/about/execution.webp";
 import Leadership from "@/public/about/leadership.webp";
 import PartnerCard from "../components/PartnerCard";
 import vietnam from "@/public/about/office.webp";
-import Ny from "@/public/about/office.webp";
+import ca from "@/public/about/caoffice.webp";
+
 import { investors } from "@/app/components/data/investors-data";
 import email from "@/public/about/email.webp";
 import location from "@/public/about/location.webp";
-import phone from "@/public/about/phone.webp";
 import ScrollAnimationWrapper from "../components/ScrollAnimationWrapper";
 import NavigationButton from "../components/NavigationButton";
 
@@ -531,7 +531,7 @@ const offices = [
     email: "Pitch@angelica.capital",
     location: "744 San Antonio Road, Palo Alto, CA 94303 ",
     // phone: "(414) 793 - 0681",
-    image: Ny,
+    image: ca,
   },
   {
     id: "vietnam",
@@ -855,14 +855,14 @@ export default function About() {
             </div>
           </ScrollAnimationWrapper>
           <div className="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-            <Button text="Pitch Your Startup" />
+            <Button text="Pitch Your Startup" href="/contact-us" />
             <SecondaryButton text="Browse all team members" />
           </div>
         </div>
       </div>
 
       {/* Visit Our Offices */}
-      <div className="flex flex-col items-center justify-center min-h-screen p-4 lg:px-16 xl:px-20 px-4">
+      <div className="flex flex-col  p-4 lg:px-16 xl:px-20 px-4">
         <div className="flex justify-between w-full lg:px-16 xl:px-30 mb-6">
           <h1 className="text-5xl font-semibold">Visit our offices</h1>
           <div className="hidden md:flex">
@@ -871,53 +871,35 @@ export default function About() {
           </div>
         </div>
         <ScrollAnimationWrapper>
-          <div className="p-6 flex lg:flex-row flex-col-reverse items-center md:items-start lg:gap-3 xl:gap-6 lg:px-4 xl:px-10">
-            <Image
-              src={currentOffice.image} // Updated to use dynamic image
-              alt={`Image of ${currentOffice?.name}`}
-              className="rounded-3xl w-full lg:w-1/2 mb-6 md:mb-0"
-            />
-            <div className="flex flex-col">
-              <h2 className="lg:text-4xl text-3xl font-semibold lg:mx-4 my-4 xl:mx-8 mx-0">
+          <div className="p-6 flex lg:flex-row flex-col-reverse items-center md:items-start  ">
+            <div className="w-full lg:w-1/2 mb-6 ">
+              <Image
+                src={currentOffice.image}
+                alt={`Image of ${currentOffice?.name}`}
+                className="rounded-3xl "
+                width={600}
+                height={400}
+              />
+            </div>
+            <div className="flex flex-col lg:w-1/2 md:w-full ">
+              <h2 className="lg:text-4xl text-3xl font-semibold my-4 xl:mx-8 mx-0">
                 {currentOffice?.name}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="flex flex-col lg:ml-4 xl:ml-8 ml-0">
-                  <div className="flex lg:items-start items-center">
-                    <Image src={email} alt="Email" className="mr-2 lg:mt-1" />
-                    <span className="text-black md:text-2xl text-xl  ">Email</span>
-                  </div>
-                  {/* <span className="mx-8 my-1 text-wrap text-gray-800">
-                    {currentOffice?.email}
-                  </span> */}
+              <div className="grid grid-cols-1 md:grid-cols-2 ">
+                <div className="flex items-center  gap-3 ">
+                  <Image src={email} alt="Email" width={25}
+                    height={25} className="items-center justify-center" />
                   <a
                     href={`mailto:${currentOffice?.email}`}
-                    className="mx-8 my-1 text-wrap text-gray-800 hover:text-blue-500 transition-colors"
+                    className="text-wrap text-gray-800 hover:text-blue-500 transition-colors"
                   >
                     {currentOffice?.email}
                   </a>
                 </div>
-                <div className="flex flex-col">
-                  <div className="flex">
-                    <Image
-                      src={location}
-                      alt="Location"
-                      className="mr-2 lg:mt-1"
-                    />
-                    <span className="text-black md:text-2xl text-xl ">Location</span>
-                  </div>
-                  <span className="mx-8 my-1 text-gray-800">
-                    {currentOffice?.location}
-                  </span>
-                </div>
-                <div className="flex flex-col lg:ml-4 xl:ml-8 ml-2">
-                  <div className="flex lg:items-start items-center">
-                    <Image src={phone} alt="Phone" className="mr-2 lg:mt-1" />
-                    <span className="text-black md:text-2xl text-xl ">Phone</span>
-                  </div>
-                  {/* <span className="mx-8 my-1 text-gray-800">
-                    {currentOffice?.phone}
-                  </span> */}
+                <div className="flex items-center  gap-3 ">
+                  <Image src={location} alt="Location" width={20}
+                    height={20} className="items-center justify-center" />
+                  <span className="text-gray-800 text-wrap">{currentOffice?.location}</span>
                 </div>
               </div>
             </div>
