@@ -48,7 +48,7 @@ export default function PortfolioPage() {
                 <ScrollAnimationWrapper>
 
                     <div className="flex justify-center items-center w-full md:flex-row flex-col md:space-x-0 space-y-4 md:space-y-0 my-8 gap-3">
-                        <SecondaryButton text="All" />
+                        <SecondaryButton text="All" isSelected={true} />
                         <SecondaryButton text="Social Network " />
                         <SecondaryButton text="Cloud Software" />
                         <SecondaryButton text="Streaming" />

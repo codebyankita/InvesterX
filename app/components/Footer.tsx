@@ -187,11 +187,11 @@ const Footer = () => {
         <div className="bg-white rounded-lg shadow-lg p-8 w-full lg:max-w-7xl">
           <div className="flex lg:flex-row flex-col mb-8 lg:justify-between">
             <h1 className="lg:text-4xl text-3xl flex my-4 lg:my-0 lg:w-1/2 xl:w-2/5 w-full lg:text-left text-center font-semibold text-gray-900">
-              We invest in the companies of the future.
+              We invest in who you are, not just what you do.
             </h1>
             <div className="flex flex-col md:flex-row items-center justify-center  lg:w-2/5 w-full lg:gap-5 gap-2">
               <div className="lg:hidden mb-4">
-                <Button text="Pitch Your Startup" href="/contact-us" />
+                <Button text="Pitch us" href="/contact-us" />
               </div>
               <div className="flex gap-2 md:gap-4 justify-center">
                 <div className="group flex items-center justify-center p-2 transform transition-all duration-300 hover:scale-110 hover:text-custom-blue hover:translate-y-[-5px]">
@@ -209,7 +209,7 @@ const Footer = () => {
               </div>
               {/* Button on medium and large screens */}
               <div className="hidden lg:flex">
-                <Button text="Pitch Your Startup" href="/contact-us" />
+                <Button text="Pitch us" href="/contact-us" />
               </div>
             </div>
           </div>

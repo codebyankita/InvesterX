@@ -517,7 +517,6 @@ import Leadership from "@/public/about/leadership.webp";
 import PartnerCard from "../components/PartnerCard";
 import vietnam from "@/public/about/office.webp";
 import ca from "@/public/about/caoffice.webp";
-
 import { investors } from "@/app/components/data/investors-data";
 import email from "@/public/about/email.webp";
 import location from "@/public/about/location.webp";
@@ -605,9 +604,9 @@ export default function About() {
   return (
     <div className="bg-[#f6f8ff]">
       {/* page1 */}
-      <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-center py-8">
+      <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-center py-8 lg:px-20 xl:px-28 px-4">
         {/* right section */}
-        <div className="lg:order-2 order-none w-full lg:w-auto lg:text-left text-center px-8">
+        <div className="lg:order-2  w-full order-none lg:w-auto lg:text-left text-center px-8">
           <ScrollAnimationWrapper>
             <h1 className="lg:text-4xl xl:text-6xl text-4xl font-semibold text-gray-900 mb-4">
               About{" "}
@@ -626,19 +625,20 @@ export default function About() {
             <div className="flex lg:space-x-4 space-x-0 mb-6 lg:mr-16 mr-0">
               <div className="flex flex-col justify-center lg:justify-start w-full md:flex-row lg:justify-self-start lg:flex-row space-y-5 md:space-y-0 md:space-x-4 lg:space-x-6">
                 <Button text="Join our team" />
-                <SecondaryButton text="Learn more" />
+                {/* <SecondaryButton text="Learn more" /> */}
               </div>
             </div>
             <ScrollingLogos />
           </ScrollAnimationWrapper>
         </div>
         {/* left section */}
-        <div className="lg:order-1 order-none flex justify-center lg:content-center items-center px-8">
+        <div className="lg:order-1 order-none   w-full px-8">
+
           <ScrollAnimationWrapper>
             <Image
               src={Aboutfirm}
               alt="Abstract blue and white wavy background"
-              className="rounded-2xl"
+              className="rounded-2xl w-full h-auto object-cover "
             />
           </ScrollAnimationWrapper>
         </div>
@@ -723,13 +723,14 @@ export default function About() {
       </div>
 
       {/* page4 */}
-      <div className="py-12 bg-[#f6f8ff]">
+      <div className="py-12 bg-[#f6f8ff] lg:px-20 xl:px-28 px-10">
         <div className="w-full lg:px-10 mx-auto px-4">
           {/* Header Section */}
           <div className="text-center mb-12">
             <ScrollAnimationWrapper>
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl xl:text-4xl font-semibold text-gray-900 mb-4">
                 THE STORY BEHIND: THE HUNCH
+                {/* The Story Behind: The Hunch */}
               </h2>
               <p className="text-gray-600">
                 In 2025, Angelica Capital was founded with a simple yet powerful
@@ -743,10 +744,10 @@ export default function About() {
         </div>
         {/* Timeline Cards */}
         <ScrollAnimationWrapper>
-          <div className="grid grid-cols-1 lg:grid-cols-3 px-8 gap-6">
-            <div className="bg-white rounded-3xl p-10 shadow-md">
-              <h3 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
-                2025
+          <div className="grid grid-cols-1 lg:grid-cols-3 md:px-8 px-4 gap-6">
+            <div className="bg-white rounded-3xl md:p-8  p-6 shadow-md">
+              <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 mb-4">
+                November 2024
               </h3>
               <p className="text-gray-600 text-base lg:text-lg">
                 Our board members hail from vibrant corners of the globe,
@@ -755,9 +756,9 @@ export default function About() {
                 united by a shared mindset.
               </p>
             </div>
-            <div className="bg-white rounded-3xl p-10 shadow-md">
-              <h3 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
-                2025
+            <div className="bg-white rounded-3xl md:p-8  p-6 shadow-md">
+              <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 mb-4">
+                January 2025
               </h3>
               <p className="text-gray-600">
                 We are here as proof that diversity is a powerful catalyst for
@@ -767,9 +768,9 @@ export default function About() {
                 for innovation.
               </p>
             </div>
-            <div className="bg-white rounded-3xl p-10 shadow-md">
-              <h3 className="text-3xl lg:text-5xl font-semibold text-gray-900 mb-4">
-                2025
+            <div className="bg-white rounded-3xl md:p-8  p-6 shadow-md">
+              <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 mb-4">
+                February 2025
               </h3>
               <p className="text-gray-600">
                 Together, we embrace our differences, knowing that they enhance
@@ -785,7 +786,7 @@ export default function About() {
       </div>
 
       {/* page5 */}
-      <div className="py-16 lg:px-10 px-6">
+      <div className="py-16 lg:px-20 xl:px-28 px-10">
         <ScrollAnimationWrapper>
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-800">Our Mantra</h1>
@@ -809,7 +810,7 @@ export default function About() {
 
       {/* Page 7 */}
       <div className="bg-white text-gray-900 rounded-3xl overflow-hidden">
-        <div className="px-4 lg:py-8 xl:py-16 lg:mx-20 xl:mx-48 mx-4 py-8">
+        <div className=" lg:py-8 xl:py-16 mx-4 py-8 lg:px-20 xl:px-28 px-10 ">
           <ScrollAnimationWrapper>
             <div className="flex flex-col justify-center my-8">
               <h2 className="text-4xl font-bold text-gray-900 mt-2">
@@ -855,38 +856,38 @@ export default function About() {
             </div>
           </ScrollAnimationWrapper>
           <div className="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-            <Button text="Pitch Your Startup" href="/contact-us" />
-            <SecondaryButton text="Browse all team members" />
+            <Button text="Pitch us" href="/contact-us" />
+            <SecondaryButton text="Browse all team members" link="/investors" />
           </div>
         </div>
       </div>
 
       {/* Visit Our Offices */}
-      <div className="flex flex-col  p-4 lg:px-16 xl:px-20 px-4">
-        <div className="flex justify-between w-full lg:px-16 xl:px-30 mb-6">
-          <h1 className="text-5xl font-semibold">Visit our offices</h1>
+      <div className="flex flex-col  p-4 lg:px-16 xl:px-20  ">
+        <div className="flex justify-between w-full lg:px-16 xl:px-30 mb-3">
+          <h1 className="md:text-5xl text-4xl px-4 font-semibold">Visit our offices</h1>
           <div className="hidden md:flex">
             <NavigationButton direction="prev" onClick={handlePrevious} />
             <NavigationButton direction="next" onClick={handleNext} />
           </div>
         </div>
         <ScrollAnimationWrapper>
-          <div className="p-6 flex lg:flex-row flex-col-reverse items-center md:items-start  ">
-            <div className="w-full lg:w-1/2 mb-6 ">
+          <div className="py-6 flex lg:flex-row flex-col-reverse items-center md:items-start  ">
+            <div className="flex justify-center items-center">
               <Image
                 src={currentOffice.image}
                 alt={`Image of ${currentOffice?.name}`}
-                className="rounded-3xl "
+                className="rounded-3xl  "
                 width={600}
                 height={400}
               />
             </div>
-            <div className="flex flex-col lg:w-1/2 md:w-full ">
-              <h2 className="lg:text-4xl text-3xl font-semibold my-4 xl:mx-8 mx-0">
+            <div className="flex flex-col lg:w-1/2 md:w-full px-4">
+              <h2 className="lg:text-4xl text-2xl font-semibold my-4 ">
                 {currentOffice?.name}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 ">
-                <div className="flex items-center  gap-3 ">
+              <div className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-5   ">
+                <div className="flex items-center  gap-2 my-2 ">
                   <Image src={email} alt="Email" width={25}
                     height={25} className="items-center justify-center" />
                   <a
@@ -896,7 +897,7 @@ export default function About() {
                     {currentOffice?.email}
                   </a>
                 </div>
-                <div className="flex items-center  gap-3 ">
+                <div className="flex items-center  gap-2 my-2 ">
                   <Image src={location} alt="Location" width={20}
                     height={20} className="items-center justify-center" />
                   <span className="text-gray-800 text-wrap">{currentOffice?.location}</span>

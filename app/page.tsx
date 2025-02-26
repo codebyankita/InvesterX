@@ -114,8 +114,8 @@ const HomePage = () => {
                 We are a venture capital firm dedicated to fueling the next wave of Web3 innovation. From blockchain protocols to decentralized finance (DeFi), we partner with visionary founders to shape the decentralized future.
               </p>
               <div className="flex flex-col md:justify-center md:flex-row lg:justify-self-start lg:flex-row space-y-5 md:space-y-0 md:space-x-4 lg:space-x-6">
-                <Button text="Pitch Your Startup" href="/contact-us" />
-                <SecondaryButton text="Investment portfolio" />
+                <Button text="Pitch us" href="/contact-us" />
+                <SecondaryButton text="Investment portfolio" link="/portfolio" />
               </div>
 
 
@@ -147,7 +147,7 @@ const HomePage = () => {
                 About Our Invest Firm
               </h1>
               <div className="mb-10 lg:mr-24  items-start justify-start ">
-                <Button text="Pitch Your Startup" href="/contact-us" />
+                <Button text="Pitch us" href="/contact-us" />
               </div>
               <div className="mb-16 lg:mr-16 md:justify-center">
                 <p className="text-gray-600 mb-4">
@@ -249,7 +249,7 @@ const HomePage = () => {
                 />
               </div>
               <div className="flex justify-center  py-12">
-                <SecondaryButton text="Browse investment portfolio" />
+                <SecondaryButton text="Browse investment portfolio" link="/portfolio" />
               </div>
             </div>
           </ScrollAnimationWrapper >
@@ -268,8 +268,8 @@ const HomePage = () => {
               </ScrollAnimationWrapper>
               <ScrollAnimationWrapper>
                 <div className="flex md:flex-row space-y-4 md:space-y-0 flex-col items-start lg:space-x-5 space-x-3  lg:mr-6 xl:mr-32">
-                  <Button text="Pitch Your Startup" href="/contact-us" />
-                  <SecondaryButton text=" Learn more" />
+                  <Button text="Pitch us" href="/contact-us" />
+                  {/* <SecondaryButton text=" Learn more" /> */}
                 </div>
               </ScrollAnimationWrapper>
 
@@ -392,7 +392,7 @@ const HomePage = () => {
 
                 <div className="flex   lg:flex-row flex-col items-center lg:mx-10 mx-4 justify-center  lg:gap-8 gap-4">
 
-                  <Button text="Pitch Your Startup" href="/contact-us" />
+                  <Button text="Pitch us" href="/contact-us" />
                   <div className="flex gap-4 ">
                     <div className="     transform transition-all duration-300 hover:scale-110 hover:text-gray-300 hover:translate-y-[-8px]">
                       <FaFacebookF />
@@ -440,8 +440,8 @@ const HomePage = () => {
               </div>
               {/* Footer Buttons */}
               <div className="mt-12 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 ">
-                <Button text="Pitch Your Startup" href="/contact-us" />
-                <SecondaryButton text=" Browse all team members " />
+                <Button text="Pitch us" href="/contact-us" />
+                <SecondaryButton text=" Browse all team members " link="/investors" />
               </div>
             </div>
           </ScrollAnimationWrapper>

@@ -25,7 +25,7 @@ export const investors = [
   {
     id: "tommy",
     name: "Tommy Nguyen",
-    title: "Chief Legal Officer-CLO",
+    title: "Chief Legal Officer",
     description:
       "Tommy is a visionary leader with over two decades of experience in venture capital and a passion for fostering groundbreaking innovations in the Web3 space.",
     email: "",
