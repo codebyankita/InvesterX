@@ -64,8 +64,9 @@ const HomePage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showSplash, setShowSplash] = useState(true);
   useEffect(() => {
-    // Hide splash after a delay or when scrolled
-    setTimeout(() => setShowSplash(false), 10000);
+    // Optional: Auto-hide splash after 10s if no scroll happens
+    const timer = setTimeout(() => setShowSplash(false), 10000);
+    return () => clearTimeout(timer);
   }, []);
   // Handler for changing the index
   const handlePrevious = () => {
@@ -83,26 +84,34 @@ const HomePage = () => {
   // Current research item
   const currentResearch = researchData[currentIndex];
 
-
-
+  // Animation variants for content sliding up
+  const contentVariants = {
+    hidden: { opacity: 0, y: "100vh" }, // Start fully below the viewport
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 2, ease: "easeOut", delay: 0.5 }, // Slower slide-up with delay
+    },
+  };
   return (
     <>
-      {/*-------------------------------- page1 ---------------------*/}
+      {/* -------------------------------- page1 --------------------- */}
       {/* Page 1 - Hero Section */}
       {/* Splash Screen */}
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
 
 
+      {/* Main Content with Slide-Up Animation */}
       <motion.div
-        initial={{ opacity: 0, y: 100 }} // Start below screen
-        animate={{ opacity: showSplash ? 0 : 1, y: showSplash ? 100 : 0 }} // Slide up when splash completes
-        transition={{ duration: 3, ease: "easeOut" }}
         className="bg-[#f6f8ff]"
+        variants={contentVariants}
+        initial="hidden"
+        animate={!showSplash ? "visible" : "hidden"} // Only animate when splash is gone
       >
         <div className="bg-[#f6f8ff]">
+          {/* Page 1 - Hero Section */}
 
-
-          <main className=" flex items-center justify-center lg:flex-row md:flex-col  flex-col lg:justify-between lg:px-0 lg:p-0 p-8 md:p-10 ">
+          <main className=" flex items-center justify-center relative z-30 pt-[800vh] pb-24 lg:flex-row md:flex-col  flex-col lg:justify-between lg:px-0 lg:p-0 p-8 md:p-10 ">
             <div className=" space-y-6 mb-28 w-full lg:px-10 xl:px-14 sm:w-full lg:w-2/4">
               {/* Left Content */}
 
