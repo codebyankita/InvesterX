@@ -60,7 +60,7 @@ export default function PortfolioDetailPage() {
                         <div className="bg-white lg:p-16 p-10 rounded-3xl">
                             <h2 className="text-xl font-semibold mb-4">Company details</h2>
                             <p className="text-gray-600 mb-4">
-                                At Angelica Capital, we invest in groundbreaking startups that redefine industries through innovation and technology. This company is at the forefront of Cloud Software, leveraging cutting-edge solutions to drive efficiency and scalability in the digital age.
+                                Angelica Firm fosters strong relationships with our partners. We understand that the most successful ventures are built on trust and shared goals. Our team of experienced professionals is dedicated to guiding founders through every stage of their journey, offering insights and resources that go beyond capital.
                             </p>
                             <div className="grid grid-cols-3 gap-4 mb-4">
                                 <div>

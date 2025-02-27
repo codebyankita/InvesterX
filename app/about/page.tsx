@@ -522,6 +522,7 @@ import email from "@/public/about/email.webp";
 import location from "@/public/about/location.webp";
 import ScrollAnimationWrapper from "../components/ScrollAnimationWrapper";
 import NavigationButton from "../components/NavigationButton";
+import Link from "next/link";
 
 const offices = [
   {
@@ -614,14 +615,29 @@ export default function About() {
             <h1 className="lg:text-4xl xl:text-6xl text-4xl font-semibold text-gray-900 mb-4">
               our Company
             </h1>
-            <p className="text-gray-600 mb-6 xl:mr-36 mr-0">
-              At Angelica Capital, we are dedicated to empowering visionary
-              founders and trailblazing companies in the Web3 ecosystem. As a
-              venture capital firm, we specialize in fostering innovation across
-              blockchain, decentralized technologies, and next-generation
-              protocols. Our mission is to drive transformative growth, enabling
-              a decentralized future where technology serves humanity.
-            </p>
+            <span className=" mb-6 xl:mr-36 mr-0">
+              <p className="text-gray-600 mt-4">
+                Angelica is a VC firm that not only invests in deals but also in
+                people. Recognizing that the heart of successful ventures lies
+                in strong relationships, Angelica focuses on building meaningful
+                connections with entrepreneurs and innovators.
+              </p>
+              <p className="text-gray-600 mt-4">
+                The firm goes beyond traditional financial support; it provides
+                mentorship, guidance, and resources that empower founders to
+                thrive. By prioritizing the growth and development of
+                individuals, Angelica fosters an ecosystem of collaboration and
+                creativity.
+              </p>
+              <p className="text-gray-600 mt-4">
+                This dual approach ensures that while they pursue profitable
+                investments, they also nurture talent and ideas, creating a
+                sustainable environment where both businesses and their leaders
+                can flourish. In doing so, Angelica sets itself apart in the
+                venture capital landscape, demonstrating that investing in
+                people is just as crucial as investing in deals.
+              </p>
+            </span>
             <div className="flex lg:space-x-4 space-x-0 mb-6 lg:mr-16 mr-0">
               <div className="flex flex-col justify-center lg:justify-start w-full md:flex-row lg:justify-self-start lg:flex-row space-y-5 md:space-y-0 md:space-x-4 lg:space-x-6">
                 <Button text="Join our team" />
@@ -633,12 +649,11 @@ export default function About() {
         </div>
         {/* left section */}
         <div className="lg:order-1 order-none   w-full px-8">
-
           <ScrollAnimationWrapper>
             <Image
               src={Aboutfirm}
               alt="Abstract blue and white wavy background"
-              className="rounded-2xl w-full h-auto object-cover "
+              className="rounded-2xl w-full h-full object-cover "
             />
           </ScrollAnimationWrapper>
         </div>
@@ -845,13 +860,16 @@ export default function About() {
           <ScrollAnimationWrapper>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {limitedInvestors.map((investor) => (
-                <PartnerCard
-                  key={investor.id}
-                  id={investor.id}
-                  image={investor.image}
-                  name={investor.name}
-                  title={investor.title}
-                />
+                <Link key={investor.id} href={`/investors/${investor.id}`}>
+
+                  <PartnerCard
+                    key={investor.id}
+                    id={investor.id}
+                    image={investor.image}
+                    name={investor.name}
+                    title={investor.title}
+                  />
+                </Link>
               ))}
             </div>
           </ScrollAnimationWrapper>
@@ -865,7 +883,9 @@ export default function About() {
       {/* Visit Our Offices */}
       <div className="flex flex-col  p-4 lg:px-16 xl:px-20  ">
         <div className="flex justify-between w-full lg:px-16 xl:px-30 mb-3">
-          <h1 className="md:text-5xl text-4xl px-4 font-semibold">Visit our offices</h1>
+          <h1 className="md:text-5xl text-4xl px-4 font-semibold">
+            Visit our offices
+          </h1>
           <div className="hidden md:flex">
             <NavigationButton direction="prev" onClick={handlePrevious} />
             <NavigationButton direction="next" onClick={handleNext} />
@@ -888,8 +908,13 @@ export default function About() {
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-5   ">
                 <div className="flex items-center  gap-2 my-2 ">
-                  <Image src={email} alt="Email" width={25}
-                    height={25} className="items-center justify-center" />
+                  <Image
+                    src={email}
+                    alt="Email"
+                    width={25}
+                    height={25}
+                    className="items-center justify-center"
+                  />
                   <a
                     href={`mailto:${currentOffice?.email}`}
                     className="text-wrap text-gray-800 hover:text-blue-500 transition-colors"
@@ -898,9 +923,16 @@ export default function About() {
                   </a>
                 </div>
                 <div className="flex items-center  gap-2 my-2 ">
-                  <Image src={location} alt="Location" width={20}
-                    height={20} className="items-center justify-center" />
-                  <span className="text-gray-800 text-wrap">{currentOffice?.location}</span>
+                  <Image
+                    src={location}
+                    alt="Location"
+                    width={20}
+                    height={20}
+                    className="items-center justify-center"
+                  />
+                  <span className="text-gray-800 text-wrap">
+                    {currentOffice?.location}
+                  </span>
                 </div>
               </div>
             </div>

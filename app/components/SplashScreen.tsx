@@ -87,13 +87,13 @@ const SplashScreen = ({ onComplete }: { onComplete?: () => void }) => {
     const { scrollYProgress } = useScroll();
 
     // Transformations for the bird
-    const scale = useTransform(scrollYProgress, [0, 0.5], [1, 10], { clamp: true }); // Grows bigger, up to 10x
+    const scale = useTransform(scrollYProgress, [0, 0.5,], [1, 15], { clamp: true }); // Grows bigger, up to 10x
     const opacity = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 1, 0], { clamp: true }); // Fades out after growing
     const translateY = useTransform(scrollYProgress, [0, 0.5], [0, -100], { clamp: true }); // Moves up slightly
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 200) { // Trigger fade-out earlier
+            if (window.scrollY > 300) { // Trigger fade-out earlier
                 setShowSplash(false);
                 onComplete?.();
             }
