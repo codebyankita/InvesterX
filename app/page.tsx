@@ -441,7 +441,7 @@ const HomePage = () => {
               {partners.map((partner) => (
                 <div
                   key={partner.id}
-                  className="p-4 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                  className="p-4 bg-[#f6f8ff] rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border hover:border-blue-500"
                 >
                   <h2 className="text-xl font-semibold text-gray-800 mb-2">
                     {partner.title}
