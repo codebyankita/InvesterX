@@ -1,7 +1,7 @@
 //app/page.tsx
 
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import ScrollAnimationWrapper from "@/app/components/ScrollAnimationWrapper";
 import Image from "next/image";
 import Button from "@/app/components/Button";
@@ -15,110 +15,23 @@ import enterpricelogo from "@/public/home-1/enterpricelogo.webp";
 import oragnzationlogo from "@/public/home-1/organizationlogo.webp";
 import venturelogo from "@/public/home-1/venturelogo.webp";
 import startuplogo from "@/public/home-1/startuplogo.webp";
-import reserch02 from "@/public/home-1/reserch02.webp";
-import reserch03 from "@/public/home-1/reserch03.webp";
-import reserch01 from "@/public/home-1/reserch01.webp";
-
 import { FaFacebookF } from "react-icons/fa6";
 import IndustryCard from "@/app/components/IndustryCard";
 import { industries } from "../data/industries";
 import { partners, summary } from "../data/partners";
-
-
 import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import Spline from "@splinetool/react-spline";
 import ScrollingLogos from "./components/ScrollingLogos";
-import { investors } from "@/app/components/data/investors-data";
-import NavigationButton from "@/app/components/NavigationButton";
+import { investors } from "@/data/investors-data";
 import Link from "next/link";
-// import SplashScreen from "./components/SplashScreen";
-// import { motion } from "framer-motion";
-// import About from './about/page';
-
-const researchData = [
-  {
-    id: "01",
-    title: "Relationship - Centric ",
-    description:
-      "We prioritize building strong, trust - based relationships with entrepreneurs.Understanding their vision and motivations is essential to supporting their journey effectively.",
-    image: reserch01,
-  },
-  {
-    id: "02",
-    title: "Mentorship and Guidance",
-    description:
-      "Beyond capital, we offer mentorship to help founders navigate challenges.Our team provides strategic advice, industry insights, and operational support to enhance their growth. ",
-    image: reserch02,
-  },
-  {
-    id: "03",
-    title: "Diversity and Inclusion ",
-    description:
-      "We actively seek diverse founders and ideas, believing that varied perspectives foster innovation.This approach enriches our portfolio and strengthens our decision - making. ",
-    image: reserch03,
-  },
-  {
-    id: "04",
-    title: "Long - Term Partnership ",
-    description:
-      "We view our investments as long - term partnerships.We stay engaged, offering support through various growth stages and adapting our assistance as their needs evolve.",
-    image: reserch01,
-  },
-  {
-    id: "05",
-    title: "Community Building",
-    description:
-      "We aim to connect founders with a broader network of resources, including other entrepreneurs, industry experts, and potential collaborators, creating a supportive ecosystem.",
-    image: reserch02,
-  },
-  {
-    id: "06",
-    title: "Impact Focused  ",
-    description:
-      "Our investments are driven by the potential for positive impact.We seek opportunities that not only promise financial returns but also contribute to societal and environmental well - being",
-    image: reserch03,
-  },
-];
-
+import ResearchSlider from "@/app/components/ResearchSlider";
 
 
 const HomePage = () => {
   // Slice the first 4 investors for Home or About page
   const limitedInvestors = investors.slice(0, 4);
-  // State for the current index
-  const [currentIndex, setCurrentIndex] = useState(0);
-  // const [showSplash, setShowSplash] = useState(true);
-  // useEffect(() => {
-  //   // Optional: Auto-hide splash after 10s if no scroll happens
-  //   const timer = setTimeout(() => setShowSplash(false), 10000);
-  //   return () => clearTimeout(timer);
-  // }, []);
-  // Handler for changing the index
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? researchData.length - 1 : prevIndex - 1
-    );
-  };
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === researchData.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  // Current research item
-  const currentResearch = researchData[currentIndex];
-
-  // Animation variants for content sliding up
-  // const contentVariants = {
-  //   hidden: { opacity: 0, y: "100vh" }, // Start fully below the viewport
-  //   visible: {
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: { duration: 2, ease: "easeOut", delay: 0.5 }, // Slower slide-up with delay
-  //   },
-  // };
   return (
     <>
       {/* -------------------------------- page1 --------------------- */}
@@ -190,16 +103,28 @@ const HomePage = () => {
 
             <div className="space-y-4 lg:space-y-6 text-gray-600 text-base lg:text-lg">
               <p>
-                At ANGELICA, we operate like an inclusive club where everyone can join and become an investor in innovation.
+                At ANGELICA, we operate like an inclusive club where everyone
+                can join and become an investor in innovation.
               </p>
               <p>
-                Imagine the power of LIQUID—an investment approach that emphasizes unparalleled flexibility and adaptability. With LIQUID, we can pivot quickly in response to market changes, allowing us to seize opportunities that traditional investments might miss. We embrace a legal framework that supports diverse investment strategies, ensuring we can navigate any landscape.
+                Imagine the power of LIQUID—an investment approach that
+                emphasizes unparalleled flexibility and adaptability. With
+                LIQUID, we can pivot quickly in response to market changes,
+                allowing us to seize opportunities that traditional investments
+                might miss. We embrace a legal framework that supports diverse
+                investment strategies, ensuring we can navigate any landscape.
               </p>
               <p>
-                While we may not change the world single-handedly, we stand ready to support it, especially when challenges arise. At ANGELICA, we are the guiding lights in the darkest nights—investors who illuminate the path forward.
+                While we may not change the world single-handedly, we stand
+                ready to support it, especially when challenges arise. At
+                ANGELICA, we are the guiding lights in the darkest
+                nights—investors who illuminate the path forward.
               </p>
               <p>
-                Each member of our club comes with invaluable connections across various industries, creating a truly flat world where collaboration thrives. Together, we can navigate the complexities of the market and make a real impact.
+                Each member of our club comes with invaluable connections across
+                various industries, creating a truly flat world where
+                collaboration thrives. Together, we can navigate the
+                complexities of the market and make a real impact.
               </p>
             </div>
           </div>
@@ -327,41 +252,8 @@ const HomePage = () => {
               </div>
             </ScrollAnimationWrapper>
           </div>
-          <div className="flex lg:flex-row flex-col my-12">
-            {/* Left Section - Image */}
-            <div className="lg:w-1/2">
-              <ScrollAnimationWrapper>
-                <Image
-                  src={currentResearch.image}
-                  alt={currentResearch.title}
-                  className="rounded-2xl"
-                  width={900}
-                  height={600}
-                />
-              </ScrollAnimationWrapper>
-            </div>
-            {/* Right Section - Content */}
-            <div className="lg:w-1/2 w-full lg:px-10 xl:px-16 lg:ml-0 xl:ml-6 mt-4 ">
-              <ScrollAnimationWrapper>
-                <div className="">
-                  <h2 className="lg:text-4xl xl:text-5xl text-3xl font-bold  text-gray-900">
-                    {currentResearch.id}
-                  </h2>
-                  <h3 className="lg:text-2xl text-xl font-semibold my-2 text-gray-900">
-                    {currentResearch.title}
-                  </h3>
-                  <p className="lg:mt-10 mt-5 text-wrap	lg:mr-0 xl:mr-6 mr-0 text-lg text-gray-600">
-                    {currentResearch.description}
-                  </p>
-                </div>
-                {/* Navigation Buttons */}
-                <div className="flex  mt-10 ">
-                  <NavigationButton direction="prev" onClick={handlePrevious} />
-                  <NavigationButton direction="next" onClick={handleNext} />
-                </div>
-              </ScrollAnimationWrapper>
-            </div>
-          </div>
+          {/* Research Slider */}
+          <ResearchSlider />
         </div>
       </div>
       {/* ----------------------page 5----------------------- */}
@@ -382,15 +274,16 @@ const HomePage = () => {
         </ScrollAnimationWrapper>
       </div>
 
-      {/* -------------------------page 6 --------------------------*/}
+      {/* -------------------------page 6 ------------------------*/}
+
       <div className="bg-[#f6f8ff] flex items-center justify-center lg:py-20 xl:py-28 pb-16">
         <div className="relative rounded-3xl overflow-hidden lg:mx-20 xl:mx-52 mx-4 w-full max-w-screen-lg">
           <ScrollAnimationWrapper>
             {/* Adjust Spline size for sm and md screens */}
-            <div className="w-full h-auto ">
+            <div className="w-full h-full  md:h-[500px] lg:h-[600px]">
               <Spline
                 scene="https://prod.spline.design/RKv4Qedw-h9DMTxy/scene.splinecode"
-                className="w-full h-full"
+                className=" object-cover"
               />
             </div>
             {/* Overlay Content */}
@@ -427,7 +320,6 @@ const HomePage = () => {
       </div>
       {/* ------------------------page 7 --------------------------*/}
 
-
       <div className="bg-white text-gray-900 py-8 lg:py-16">
         <ScrollAnimationWrapper>
           <div className="px-4 mx-4 lg:mx-16 xl:mx-48">
@@ -446,21 +338,24 @@ const HomePage = () => {
                   <h2 className="text-xl font-semibold text-gray-800 mb-2">
                     {partner.title}
                   </h2>
-                  <p className="text-gray-600 text-base">{partner.description}</p>
+                  <p className="text-gray-600 text-base">
+                    {partner.description}
+                  </p>
                 </div>
               ))}
             </div>
 
             {/* Summary */}
             <div className="text-center mb-12">
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">{summary}</p>
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+                {summary}
+              </p>
             </div>
 
             {/* Partner Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8">
               {limitedInvestors.map((investor) => (
                 <Link key={investor.id} href={`/investors/${investor.id}`}>
-
                   <PartnerCard
                     key={investor.id}
                     id={investor.id}

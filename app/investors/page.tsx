@@ -51,7 +51,7 @@
 // }
 // app/investors/page.tsx
 import React from 'react';
-import { investors } from "@/app/components/data/investors-data";
+import { investors } from "@/data/investors-data";
 import PartnerCard from "../components/PartnerCard";
 import Button from "@/app/components/Button";
 import SecondaryButton from "@/app/components/SecondButton";

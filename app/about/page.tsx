@@ -517,7 +517,7 @@ import Leadership from "@/public/about/leadership.webp";
 import PartnerCard from "../components/PartnerCard";
 import vietnam from "@/public/about/office.webp";
 import ca from "@/public/about/caoffice.webp";
-import { investors } from "@/app/components/data/investors-data";
+import { investors } from "@/data/investors-data";
 import email from "@/public/about/email.webp";
 import location from "@/public/about/location.webp";
 import ScrollAnimationWrapper from "../components/ScrollAnimationWrapper";

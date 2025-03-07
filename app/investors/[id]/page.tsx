@@ -281,7 +281,7 @@
 "use client";
 import React, { use } from "react";
 import Image from "next/image";
-import { investors } from "@/app/components/data/investors-data";
+import { investors } from "@/data/investors-data";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 type Investor = {
